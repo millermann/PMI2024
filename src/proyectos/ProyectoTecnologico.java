@@ -70,4 +70,6 @@ public abstract class ProyectoTecnologico {
         return "titulo=" + titulo + ", descripcion=" + descripcion + ", presupuesto=" + presupuesto + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + '}';
     }
     
+    /* Abajo metodos adicionales */
+    
 }

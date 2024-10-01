@@ -4,17 +4,17 @@ import fecha.Fecha;
 
 public class DesarrolloDeHardware extends ProyectoTecnologico {
     private String tipoDispositivo;
-    private static int cantidadHardware = 0;
+    private static int cantidadProyHardware = 0;
 
     public DesarrolloDeHardware() {
         super();
-        cantidadHardware++;
+        cantidadProyHardware++;
     }
 
     public DesarrolloDeHardware(String tipoDispositivo, String titulo, String descripcion, float presupuesto, Fecha fechaInicio, Fecha fechaFin) {
         super(titulo, descripcion, presupuesto, fechaInicio, fechaFin);
         this.tipoDispositivo = tipoDispositivo;
-        cantidadHardware++;
+        cantidadProyHardware++;
     }
 
     public String getTipoDispositivo() {
@@ -25,8 +25,8 @@ public class DesarrolloDeHardware extends ProyectoTecnologico {
         this.tipoDispositivo = tipoDispositivo;
     }
 
-    public static int getCantidadHardware() {
-        return cantidadHardware;
+    public static int getCantidadProyHardware() {
+        return cantidadProyHardware;
     }
 
     @Override
@@ -34,5 +34,5 @@ public class DesarrolloDeHardware extends ProyectoTecnologico {
         return "DesarrolloDeHardware{" + super.toString() + ", tipoDispositivo=" + tipoDispositivo + '}';
     }
     
-    
+    /* Abajo metodos adicionales */
 }

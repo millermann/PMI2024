@@ -4,17 +4,17 @@ import fecha.Fecha;
 
 public class DesarrolloDeSoftware extends ProyectoTecnologico {
     private String tipoAplicacion;
-    private static int cantidadSoftware = 0;
+    private static int cantidadProySoftware = 0;
 
     public DesarrolloDeSoftware() {
         super();
-        cantidadSoftware++;
+        cantidadProySoftware++;
     }
 
     public DesarrolloDeSoftware(String tipo, String titulo, String descripcion, float presupuesto, Fecha fechaInicio, Fecha fechaFin) {
         super(titulo, descripcion, presupuesto, fechaInicio, fechaFin);
         this.tipoAplicacion = tipo;
-        cantidadSoftware++;
+        cantidadProySoftware++;
     }
 
     public String getTipoAplicacion() {
@@ -25,8 +25,8 @@ public class DesarrolloDeSoftware extends ProyectoTecnologico {
         this.tipoAplicacion = tipoAplicacion;
     }
 
-    public static int getCantidadSoftware() {
-        return cantidadSoftware;
+    public static int getCantidadProySoftware() {
+        return cantidadProySoftware;
     }
     
     @Override

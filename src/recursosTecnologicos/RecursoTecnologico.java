@@ -4,8 +4,8 @@ public class RecursoTecnologico {
     private String nombre, descripcion;
 
     public RecursoTecnologico() {
-        this.nombre = " ";
-        this.descripcion = " ";
+        this.nombre = "No Asignado";
+        this.descripcion = "No Asignado";
     }
 
     public RecursoTecnologico(String nombre, String descripcion) {
