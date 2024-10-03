@@ -4,15 +4,18 @@
  */
 package pmi2024;
 
-/**
- *
- * @author Estudiante
- */
+import java.util.*;
+import fecha.Fecha;
+import ingenieros.Ingeniero;
+import java.awt.CardLayout;
+import proyectos.*;
+import recursosTecnologicos.RecursoTecnologico;
+
 public class OrganizadorDeProyectos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form OrganizadorDeProyectos
-     */
+    List <ProyectoTecnologico> proyectos = new ArrayList<>();
+    private CardLayout cardlayout;
+    
     public OrganizadorDeProyectos() {
         initComponents();
     }
@@ -32,8 +35,6 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
         panelInicio = new javax.swing.JPanel();
         botonSalir = new javax.swing.JButton();
         botonVerProyectos = new javax.swing.JButton();
-        botonVerIngenieros = new javax.swing.JButton();
-        botonVerMateriales = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         panelInformacionProyectos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -43,23 +44,6 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
         botonModificarProyecto = new javax.swing.JButton();
         botonEliminarProyecto = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        panelInformacionIngenieros = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        botonVolverAlMenu1 = new javax.swing.JButton();
-        botonAgregarIngeniero = new javax.swing.JButton();
-        botonModificarIngeniero = new javax.swing.JButton();
-        botonEliminarIngeniero = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        panelInformacionRecursosTecnologicos = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        botonVolverAlMenu2 = new javax.swing.JButton();
-        botonAgregarRecursoTecnologico = new javax.swing.JButton();
-        botonModificarRecursoTecnologico = new javax.swing.JButton();
-        botonEliminarRecursoTecnologico = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         panelCargarProyecto = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -123,15 +107,6 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
             }
         });
 
-        botonVerIngenieros.setText("Ver Ingenieros");
-        botonVerIngenieros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonVerIngenierosActionPerformed(evt);
-            }
-        });
-
-        botonVerMateriales.setText("Ver Materiales");
-
         jLabel2.setText("Bienvenido al gestor de proyectos tecnologicos");
 
         javax.swing.GroupLayout panelInicioLayout = new javax.swing.GroupLayout(panelInicio);
@@ -146,9 +121,7 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
                     .addGroup(panelInicioLayout.createSequentialGroup()
                         .addGap(146, 146, 146)
                         .addGroup(panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonVerIngenieros)
                             .addComponent(botonVerProyectos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonVerMateriales, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
@@ -159,11 +132,7 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(botonVerProyectos)
-                .addGap(18, 18, 18)
-                .addComponent(botonVerIngenieros)
-                .addGap(18, 18, 18)
-                .addComponent(botonVerMateriales)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 241, Short.MAX_VALUE)
                 .addComponent(botonSalir)
                 .addGap(24, 24, 24))
         );
@@ -242,162 +211,6 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
 
         panelContenedores.add(panelInformacionProyectos, "card3");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
-
-        botonVolverAlMenu1.setText("Volver Al Menu");
-        botonVolverAlMenu1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonVolverAlMenu1ActionPerformed(evt);
-            }
-        });
-
-        botonAgregarIngeniero.setText("Agregar");
-        botonAgregarIngeniero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregarIngenieroActionPerformed(evt);
-            }
-        });
-
-        botonModificarIngeniero.setText("Modificar");
-
-        botonEliminarIngeniero.setText("Eliminar");
-
-        jLabel7.setText("jLabel7");
-
-        jLabel9.setText("Ingenieros:");
-
-        javax.swing.GroupLayout panelInformacionIngenierosLayout = new javax.swing.GroupLayout(panelInformacionIngenieros);
-        panelInformacionIngenieros.setLayout(panelInformacionIngenierosLayout);
-        panelInformacionIngenierosLayout.setHorizontalGroup(
-            panelInformacionIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelInformacionIngenierosLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addGroup(panelInformacionIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addGroup(panelInformacionIngenierosLayout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(botonVolverAlMenu1))
-                    .addGroup(panelInformacionIngenierosLayout.createSequentialGroup()
-                        .addComponent(botonAgregarIngeniero)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonModificarIngeniero)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonEliminarIngeniero))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(62, Short.MAX_VALUE))
-            .addGroup(panelInformacionIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelInformacionIngenierosLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel7)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        panelInformacionIngenierosLayout.setVerticalGroup(
-            panelInformacionIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelInformacionIngenierosLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(panelInformacionIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonAgregarIngeniero)
-                    .addComponent(botonModificarIngeniero)
-                    .addComponent(botonEliminarIngeniero))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(botonVolverAlMenu1)
-                .addGap(18, 18, 18))
-            .addGroup(panelInformacionIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelInformacionIngenierosLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel7)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        panelContenedores.add(panelInformacionIngenieros, "card3");
-
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(jTable3);
-
-        botonVolverAlMenu2.setText("Volver Al Menu");
-        botonVolverAlMenu2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonVolverAlMenu2ActionPerformed(evt);
-            }
-        });
-
-        botonAgregarRecursoTecnologico.setText("Agregar");
-        botonAgregarRecursoTecnologico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregarRecursoTecnologicoActionPerformed(evt);
-            }
-        });
-
-        botonModificarRecursoTecnologico.setText("Modificar");
-
-        botonEliminarRecursoTecnologico.setText("Eliminar");
-
-        jLabel6.setText("Recursos Tecnologicos:");
-
-        javax.swing.GroupLayout panelInformacionRecursosTecnologicosLayout = new javax.swing.GroupLayout(panelInformacionRecursosTecnologicos);
-        panelInformacionRecursosTecnologicos.setLayout(panelInformacionRecursosTecnologicosLayout);
-        panelInformacionRecursosTecnologicosLayout.setHorizontalGroup(
-            panelInformacionRecursosTecnologicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelInformacionRecursosTecnologicosLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addGroup(panelInformacionRecursosTecnologicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(panelInformacionRecursosTecnologicosLayout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(botonVolverAlMenu2))
-                    .addGroup(panelInformacionRecursosTecnologicosLayout.createSequentialGroup()
-                        .addComponent(botonAgregarRecursoTecnologico)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonModificarRecursoTecnologico)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonEliminarRecursoTecnologico))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(62, Short.MAX_VALUE))
-        );
-        panelInformacionRecursosTecnologicosLayout.setVerticalGroup(
-            panelInformacionRecursosTecnologicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelInformacionRecursosTecnologicosLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(panelInformacionRecursosTecnologicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonAgregarRecursoTecnologico)
-                    .addComponent(botonModificarRecursoTecnologico)
-                    .addComponent(botonEliminarRecursoTecnologico))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(botonVolverAlMenu2)
-                .addGap(18, 18, 18))
-        );
-
-        panelContenedores.add(panelInformacionRecursosTecnologicos, "card3");
-
         jLabel3.setText("Nuevo Proyecto");
 
         jLabel4.setText("Titulo:");
@@ -426,7 +239,12 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
 
         jLabel17.setText("Tipo De Proyecto: ");
 
-        campoTipoProyecto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoTipoProyecto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Desarrollo de Hardware", "Desarrollo de Software" }));
+        campoTipoProyecto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoTipoProyectoActionPerformed(evt);
+            }
+        });
 
         jLabel18.setText("Tipo:");
 
@@ -438,6 +256,11 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
         });
 
         botonGuardar.setText("Guardar");
+        botonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelCargarProyectoLayout = new javax.swing.GroupLayout(panelCargarProyecto);
         panelCargarProyecto.setLayout(panelCargarProyectoLayout);
@@ -512,19 +335,19 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
+                    .addComponent(campoAnioInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(campoDiaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(campoMesInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(campoAnioInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel13)
                         .addComponent(jLabel14)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
+                    .addComponent(campoAnioEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(campoDiaEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(campoMesEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(campoAnioEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel15)
                         .addComponent(jLabel16)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -563,12 +386,8 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVerProyectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerProyectosActionPerformed
-        // TODO add your handling code here:
+    panelInformacionProyectos P2 = new panelInformacionProyectos();        // TODO add your handling code here:
     }//GEN-LAST:event_botonVerProyectosActionPerformed
-
-    private void botonVerIngenierosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerIngenierosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonVerIngenierosActionPerformed
 
     private void botonVolverAlMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverAlMenuActionPerformed
         // TODO add your handling code here:
@@ -578,22 +397,6 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonAgregarProyectoActionPerformed
 
-    private void botonAgregarRecursoTecnologicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarRecursoTecnologicoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregarRecursoTecnologicoActionPerformed
-
-    private void botonVolverAlMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverAlMenu2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonVolverAlMenu2ActionPerformed
-
-    private void botonAgregarIngenieroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarIngenieroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregarIngenieroActionPerformed
-
-    private void botonVolverAlMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverAlMenu1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonVolverAlMenu1ActionPerformed
-
     private void campoTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoTituloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoTituloActionPerformed
@@ -601,6 +404,14 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonVolverActionPerformed
+
+    private void campoTipoProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoTipoProyectoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoTipoProyectoActionPerformed
+
+    private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
+         // TODO add your handling code here:
+    }//GEN-LAST:event_botonGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -638,24 +449,14 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAgregarIngeniero;
     private javax.swing.JButton botonAgregarProyecto;
-    private javax.swing.JButton botonAgregarRecursoTecnologico;
-    private javax.swing.JButton botonEliminarIngeniero;
     private javax.swing.JButton botonEliminarProyecto;
-    private javax.swing.JButton botonEliminarRecursoTecnologico;
     private javax.swing.JToggleButton botonGuardar;
-    private javax.swing.JButton botonModificarIngeniero;
     private javax.swing.JButton botonModificarProyecto;
-    private javax.swing.JButton botonModificarRecursoTecnologico;
     private javax.swing.JButton botonSalir;
-    private javax.swing.JButton botonVerIngenieros;
-    private javax.swing.JButton botonVerMateriales;
     private javax.swing.JButton botonVerProyectos;
     private javax.swing.JToggleButton botonVolver;
     private javax.swing.JButton botonVolverAlMenu;
-    private javax.swing.JButton botonVolverAlMenu1;
-    private javax.swing.JButton botonVolverAlMenu2;
     private javax.swing.JTextField campoAnioEntrega;
     private javax.swing.JTextField campoAnioInicio;
     private javax.swing.JTextField campoDescripcion;
@@ -681,21 +482,12 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JPanel panelCargarProyecto;
     private javax.swing.JPanel panelContenedores;
-    private javax.swing.JPanel panelInformacionIngenieros;
     private javax.swing.JPanel panelInformacionProyectos;
-    private javax.swing.JPanel panelInformacionRecursosTecnologicos;
     private javax.swing.JPanel panelInicio;
     private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
