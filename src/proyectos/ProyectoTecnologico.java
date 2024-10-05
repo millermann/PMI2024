@@ -4,6 +4,7 @@ import fecha.Fecha;
 
 public abstract class ProyectoTecnologico {
     private String titulo, descripcion;
+    
     private float presupuesto;
     private Fecha fechaInicio, fechaFin;
     private static int cantidad = 0;
@@ -20,6 +21,8 @@ public abstract class ProyectoTecnologico {
         this.fechaFin = fechaFin;
         cantidad++;
     }
+    
+    public abstract String getTipo();
     
     public String getTitulo() {
         return titulo;

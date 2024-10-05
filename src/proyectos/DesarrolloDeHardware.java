@@ -11,10 +11,14 @@ public class DesarrolloDeHardware extends ProyectoTecnologico {
         cantidadProyHardware++;
     }
 
-    public DesarrolloDeHardware(String tipoDispositivo, String titulo, String descripcion, float presupuesto, Fecha fechaInicio, Fecha fechaFin) {
+    public DesarrolloDeHardware(String titulo, String tipoDispositivo, String descripcion, float presupuesto, Fecha fechaInicio, Fecha fechaFin) {
         super(titulo, descripcion, presupuesto, fechaInicio, fechaFin);
         this.tipoDispositivo = tipoDispositivo;
         cantidadProyHardware++;
+    }
+    
+    public String getTipo(){ //deberia reemplazar a getTipoDispositivo???
+        return tipoDispositivo;
     }
 
     public String getTipoDispositivo() {

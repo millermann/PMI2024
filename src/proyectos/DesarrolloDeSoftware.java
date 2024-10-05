@@ -11,12 +11,17 @@ public class DesarrolloDeSoftware extends ProyectoTecnologico {
         cantidadProySoftware++;
     }
 
-    public DesarrolloDeSoftware(String tipo, String titulo, String descripcion, float presupuesto, Fecha fechaInicio, Fecha fechaFin) {
+    public DesarrolloDeSoftware(String titulo, String tipoAplicacion, String descripcion, float presupuesto, Fecha fechaInicio, Fecha fechaFin) {
         super(titulo, descripcion, presupuesto, fechaInicio, fechaFin);
-        this.tipoAplicacion = tipo;
+        this.tipoAplicacion = tipoAplicacion;
         cantidadProySoftware++;
     }
-
+    
+    @Override
+    public String getTipo(){ //deberia reemplazar a getTipoAplicacion???
+        return tipoAplicacion;
+    }
+    
     public String getTipoAplicacion() {
         return tipoAplicacion;
     }
