@@ -141,15 +141,23 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "Descripcion", "Inicio", "Fin", "Tipo"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         botonVolverAlMenu.setText("Volver Al Menu");
@@ -386,7 +394,7 @@ public class OrganizadorDeProyectos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVerProyectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerProyectosActionPerformed
-    panelInformacionProyectos P2 = new panelInformacionProyectos();        // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_botonVerProyectosActionPerformed
 
     private void botonVolverAlMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverAlMenuActionPerformed
