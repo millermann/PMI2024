@@ -1,6 +1,9 @@
 package proyectos;
 
 import fecha.Fecha;
+import ingenieros.Ingeniero;
+import recursosTecnologicos.RecursoTecnologico;
+import java.util.*;
 
 public abstract class ProyectoTecnologico {
     private String titulo, descripcion;
@@ -8,6 +11,8 @@ public abstract class ProyectoTecnologico {
     private float presupuesto;
     private Fecha fechaInicio, fechaFin;
     private static int cantidad = 0;
+    private List<Ingeniero> ingenieros = new ArrayList<>();
+    private List<RecursoTecnologico> recursosTecnologicos = new ArrayList<>();
 
     public ProyectoTecnologico() {
         cantidad++;
@@ -67,12 +72,44 @@ public abstract class ProyectoTecnologico {
     public static int getCantidad() {
         return cantidad;
     }
+    
+    //metodos para modificar ingenieros y recursos tecnologicos
+    public void agregarIngeniero(Ingeniero ingeniero) {
+        ingenieros.add(ingeniero);
+    }
+
+    public boolean eliminarIngeniero(Ingeniero ingeniero) {
+        return ingenieros.remove(ingeniero);
+    }
+
+    public void agregarRecursoTecnologico(RecursoTecnologico recurso) {
+        recursosTecnologicos.add(recurso);
+    }
+
+    public boolean eliminarRecursoTecnologico(RecursoTecnologico recurso) {
+        return recursosTecnologicos.remove(recurso);
+    }
+
+    public int obtenerCantidadIngenieros() {
+        return ingenieros.size();
+    }
+
+    public int obtenerCantidadRecursosTecnologicos() {
+        return recursosTecnologicos.size();
+    }
+    
+    public List<Ingeniero> obtenerTodosLosIngenieros() {
+        return new ArrayList<>(ingenieros);  // Devuelve una copia de la lista
+    }
+
+    public List<RecursoTecnologico> obtenerTodosLosRecursosTecnologicos() {
+        return new ArrayList<>(recursosTecnologicos);  // Devuelve una copia de la lista
+    }
+
 
     @Override
     public String toString() {
         return "titulo=" + titulo + ", descripcion=" + descripcion + ", presupuesto=" + presupuesto + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + '}';
     }
-    
-    /* Abajo metodos adicionales */
     
 }
