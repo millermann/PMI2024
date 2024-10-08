@@ -6,18 +6,18 @@ public class Ingeniero {
 
     private String nombre, apellido, mail, especialidad;
     private Fecha fechaContratacion;
-    private String[] idsProyectosAsociados;
+    private String[] idsProyectosAsociados = new String[]{"No Asignado", "No Asignado", "No Asignado"};
+    ;
     private static int cantidadDeIngenieros = 0;
-    
-    //private int cantidadProyectos = 0; a evaluar
 
+    //private int cantidadProyectos = 0; a evaluar
     public Ingeniero() {
         this.nombre = "No Asignado";
         this.apellido = "No Asignado";
         this.mail = "No Asignado";
         this.especialidad = "No Asignado";
         this.fechaContratacion = new Fecha();
-        idsProyectosAsociados = new String []{"No Asignado", "No Asignado", "No Asignado"};
+
         cantidadDeIngenieros++;
     }
 
@@ -127,11 +127,26 @@ public class Ingeniero {
     public static void setCantidadDeIngenieros(int aCantidadDeIngenieros) {
         cantidadDeIngenieros = aCantidadDeIngenieros;
     }
-    
+
     @Override
     public String toString() {
         return "Ingeniero{" + "nombre=" + getNombre() + ", apellido=" + getApellido() + ", mail=" + getMail() + ", especialidad=" + getEspecialidad() + ", fechaContratacion=" + getFechaContratacion() + '}';
     }
-    
+
     /* Abajo metodos adicionales */
+    
+    /**
+     *
+     * @return devuelve true si el ingeniero esta asociado a 3 proyectos
+     */
+    public boolean getDisponible() {
+
+        for (int i = 0; i < idsProyectosAsociados.length; i++) {
+            if (idsProyectosAsociados[i].equals("No Asignado")) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
