@@ -16,10 +16,6 @@ public class DesarrolloDeHardware extends ProyectoTecnologico {
         this.tipoDispositivo = tipoDispositivo;
         cantidadProyHardware++;
     }
-    
-    public String getTipo(){ //deberia reemplazar a getTipoDispositivo???
-        return tipoDispositivo;
-    }
 
     public String getTipoDispositivo() {
         return tipoDispositivo;
@@ -36,6 +32,11 @@ public class DesarrolloDeHardware extends ProyectoTecnologico {
     @Override
     public String toString() {
         return "DesarrolloDeHardware{" + super.toString() + ", tipoDispositivo=" + tipoDispositivo + '}';
+    }
+    
+    @Override
+    public String getTipo(){ //deberia reemplazar a getTipoDispositivo???
+        return tipoDispositivo;
     }
     
     /* Abajo metodos adicionales */

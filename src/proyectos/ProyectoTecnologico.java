@@ -27,12 +27,14 @@ public abstract class ProyectoTecnologico {
         cantidad++;
     }
     
+    // metodos abstractos
     public abstract String getTipo();
     
     public String getTitulo() {
         return titulo;
     }
-
+    
+    //default
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -105,7 +107,6 @@ public abstract class ProyectoTecnologico {
     public List<RecursoTecnologico> obtenerTodosLosRecursosTecnologicos() {
         return new ArrayList<>(recursosTecnologicos);  // Devuelve una copia de la lista
     }
-
 
     @Override
     public String toString() {

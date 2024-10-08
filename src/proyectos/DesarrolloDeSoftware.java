@@ -17,11 +17,6 @@ public class DesarrolloDeSoftware extends ProyectoTecnologico {
         cantidadProySoftware++;
     }
     
-    @Override
-    public String getTipo(){ //deberia reemplazar a getTipoAplicacion???
-        return tipoAplicacion;
-    }
-    
     public String getTipoAplicacion() {
         return tipoAplicacion;
     }
@@ -37,6 +32,11 @@ public class DesarrolloDeSoftware extends ProyectoTecnologico {
     @Override
     public String toString() {
         return "DesarrolloDeSoftware{" + super.toString() + ", tipo=" + tipoAplicacion + '}';
+    }
+    
+    @Override
+    public String getTipo(){ //deberia reemplazar a getTipoAplicacion???
+        return tipoAplicacion;
     }
     
 }
