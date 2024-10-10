@@ -1,0 +1,55 @@
+private void botonCargarProyectoActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+       String titulo, descripcion, tipo;
+       float presupuesto;
+       Fecha fechaInicio, fechaFin;
+       List<Ingeniero> ingenieros = new ArrayList<>();
+       List<RecursoTecnologico> recursosTecnologicos = new ArrayList<>();
+       
+       titulo = campoProyectoTitulo.getText();
+       descripcion = campoProyectoDescripcion.getText();
+       tipo = campoProyectoTipo.getText();
+       fechaInicio = new Fecha((int)spinnerFechaInicioDia.getValue(), (int)spinnerFechaInicioMes.getValue(), (int)spinnerFechaInicioAnio.getValue());
+       fechaFin = new Fecha((int)spinnerFechaFinDia.getValue(), (int)spinnerFechaFinMes.getValue(), (int)spinnerFechaFinAnio.getValue());
+       presupuesto = (float)spinnerProyectoPresupuesto.getValue();
+       
+       for(Ingeniero x : arrayIngenieros)
+       {
+           
+       }
+       for(RecursoTecnologico x : arrayRecursos)
+       {
+           
+       }
+       
+       if (radioHardware.isSelected())
+       {
+           DesarrolloDeHardware proyecto = new DesarrolloDeHardware(titulo, tipo, descripcion, presupuesto, fechaInicio, fechaFin);
+           for (Ingeniero x : ingenieros)
+           {
+               proyecto.agregarIngeniero(x);
+           }
+           for (RecursoTecnologico x : recursosTecnologicos)
+           {
+               proyecto.agregarRecursoTecnologico(x);
+           }
+           arrayProyectos.add(proyecto);
+       }
+       if (radioSoftware.isSelected())
+       {
+           DesarrolloDeSoftware proyecto = new DesarrolloDeSoftware(titulo, tipo, descripcion, presupuesto, fechaInicio, fechaFin);
+           for (Ingeniero x : ingenieros)
+           {
+               proyecto.agregarIngeniero(x);
+           }
+           for (RecursoTecnologico x : recursosTecnologicos)
+           {
+               proyecto.agregarRecursoTecnologico(x);
+           }
+           arrayProyectos.add(proyecto);
+       }
+       
+       panelProyectos.removeAll();
+       panelProyectos.add(subpanelPrincipalProyectos);
+       contenedor.repaint();
+       contenedor.revalidate();
+    }               
