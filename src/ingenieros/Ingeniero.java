@@ -4,14 +4,17 @@ import fecha.Fecha;
 
 public class Ingeniero {
 
+    private final String idIngeniero;
     private String nombre, apellido, mail, especialidad;
     private Fecha fechaContratacion;
     private String[] idsProyectosAsociados = new String[]{"No Asignado", "No Asignado", "No Asignado"};
-    ;
+    
     private static int cantidadDeIngenieros = 0;
 
     //private int cantidadProyectos = 0; a evaluar
+    
     public Ingeniero() {
+        idIngeniero = "ING"+cantidadDeIngenieros;
         this.nombre = "No Asignado";
         this.apellido = "No Asignado";
         this.mail = "No Asignado";
@@ -22,6 +25,7 @@ public class Ingeniero {
     }
 
     public Ingeniero(String nombre, String apellido, String mail, String especialidad, Fecha fechaContratacion) {
+        idIngeniero = "ING"+cantidadDeIngenieros;
         this.nombre = nombre;
         this.apellido = apellido;
         this.mail = mail;
@@ -29,7 +33,14 @@ public class Ingeniero {
         this.fechaContratacion = fechaContratacion;
         cantidadDeIngenieros++;
     }
-
+    
+    /**
+     * @return the idIngeniero
+     */
+    public String getIdIngeniero() {
+        return idIngeniero;
+    }
+    
     /**
      * @return the nombre
      */

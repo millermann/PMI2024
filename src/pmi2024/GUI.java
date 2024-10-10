@@ -19,7 +19,6 @@ public class GUI extends javax.swing.JFrame {
     private DefaultTableModel modeloTablaProyectos;
     private DefaultTableModel modeloTablaIngenierosDisp;
     private DefaultTableModel modeloTablaIngenierosSeleccionados;
-    private DefaultTableModel modeloTablaIngenierosAsignados;
     private DefaultTableModel modeloTablaRecursosDisponibles;
     private DefaultTableModel modeloTablaRecursosSeleccionados;
     private ArrayList<Ingeniero> arrayIngenieros;
@@ -40,6 +39,8 @@ public class GUI extends javax.swing.JFrame {
         this.arrayProyectos = arrayProyectos;
         this.arrayRecursos = arrayRecursos;
 
+        //    tablas    //
+        // Para el mostrar y ordenar todos los proyectos (subpanelProy)
         String[] columnasTablaProyectos = {"Nombre", "Tipo", "Descripcion", "Inicio", "Fin", "Presupuesto", "ID"};
         modeloTablaProyectos = new DefaultTableModel(columnasTablaProyectos, 0) {
             @Override
@@ -53,33 +54,26 @@ public class GUI extends javax.swing.JFrame {
         ordenadorTablaPresupuesto.setComparator(5, Comparator.naturalOrder());
         tablaProyectos.setRowSorter(ordenadorTablaPresupuesto);
 
-        String[] columnasTablaIngenieros = {"Nombre", "Apellido", "Especialidad", "Contratacion"};
+        // Para el mostrar y seleccionar ingenieros (subpanelProyCarga y subpanelMostrarProy)
+        String[] columnasTablaIngenieros = {"Nombre", "Apellido", "Especialidad", "Contratacion", "Mail", "ID"};
         modeloTablaIngenierosDisp = new DefaultTableModel(columnasTablaIngenieros, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
         };
-        tablaIngDisponiblesCargarProyecto.setModel(modeloTablaIngenierosDisp);
-
         modeloTablaIngenierosSeleccionados = new DefaultTableModel(columnasTablaIngenieros, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
         };
-        tablaIngAsignadosCargarProyecto.setModel(modeloTablaIngenierosSeleccionados);
-        
-        String[] columnasTablaIngenierosAsignados = {"Nombre", "Apellido", "Especialidad", "Contratacion", "Mail"};
-        modeloTablaIngenierosAsignados = new DefaultTableModel(columnasTablaIngenierosAsignados, 0) {
-            @Override
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
-        };
-        tablaIngAsignadosMostrarProyecto.setModel(modeloTablaIngenierosAsignados);
-        
 
+        tablaIngDisponiblesCargarProyecto.setModel(modeloTablaIngenierosDisp);
+        tablaIngSeleccionadosCargarProyecto.setModel(modeloTablaIngenierosSeleccionados);
+        tablaIngAsignadosMostrarProyecto.setModel(modeloTablaIngenierosSeleccionados);
+
+        // Para el mostrar y seleccionar recursos (subpanelProyCarga y subpanelMostrarProy)
         String[] columnasTablaRecursos = {"Nombre", "Descripcion"};
         modeloTablaRecursosDisponibles = new DefaultTableModel(columnasTablaRecursos, 0) {
             @Override
@@ -87,17 +81,18 @@ public class GUI extends javax.swing.JFrame {
                 return false;
             }
         };
-        tablaRecDisponiblesCargarProyecto.setModel(modeloTablaRecursosDisponibles);
-
         modeloTablaRecursosSeleccionados = new DefaultTableModel(columnasTablaRecursos, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
         };
-        tablaRecAsignadosCargarProyecto.setModel(modeloTablaRecursosSeleccionados);
+
+        tablaRecDisponiblesCargarProyecto.setModel(modeloTablaRecursosDisponibles);
+        tablaRecSeleccionadosCargarProyecto.setModel(modeloTablaRecursosSeleccionados);
         tablaRecAsignadosMostrarProyecto.setModel(modeloTablaRecursosSeleccionados);
 
+        //    buttongroups    //
         buttonGroupTipoProyecto.add(radioHardware);
         buttonGroupTipoProyecto.add(radioSoftware);
         buttonGroupTipoProyecto.add(radioModHardware);
@@ -118,7 +113,7 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroupTipoProyecto = new javax.swing.ButtonGroup();
-        PanelTitulo = new javax.swing.JPanel();
+        contenedorTitulo = new javax.swing.JPanel();
         textTitulo = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
         panelMenu = new javax.swing.JPanel();
@@ -168,8 +163,8 @@ public class GUI extends javax.swing.JFrame {
         tablaIngDisponiblesCargarProyecto = new javax.swing.JTable();
         botonAgregarIng = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        scrollIngAsignados = new javax.swing.JScrollPane();
-        tablaIngAsignadosCargarProyecto = new javax.swing.JTable();
+        scrollIngSeleccionados = new javax.swing.JScrollPane();
+        tablaIngSeleccionadosCargarProyecto = new javax.swing.JTable();
         botonQuitarIng = new javax.swing.JButton();
         tabRecursos = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -178,8 +173,8 @@ public class GUI extends javax.swing.JFrame {
         botonQuitarRecurso = new javax.swing.JButton();
         scrollRecDisponibles = new javax.swing.JScrollPane();
         tablaRecDisponiblesCargarProyecto = new javax.swing.JTable();
-        scrollRecAsignados = new javax.swing.JScrollPane();
-        tablaRecAsignadosCargarProyecto = new javax.swing.JTable();
+        scrollRecSeleccionados = new javax.swing.JScrollPane();
+        tablaRecSeleccionadosCargarProyecto = new javax.swing.JTable();
         botonCargarProyecto = new javax.swing.JButton();
         botonVolverPanelPrincipalProyectos = new javax.swing.JButton();
         subpanelModProyecto = new javax.swing.JPanel();
@@ -249,24 +244,24 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PanelTitulo.setBackground(new java.awt.Color(153, 153, 255));
+        contenedorTitulo.setBackground(new java.awt.Color(153, 153, 255));
 
         textTitulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         textTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textTitulo.setText("Titulo");
 
-        javax.swing.GroupLayout PanelTituloLayout = new javax.swing.GroupLayout(PanelTitulo);
-        PanelTitulo.setLayout(PanelTituloLayout);
-        PanelTituloLayout.setHorizontalGroup(
-            PanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelTituloLayout.createSequentialGroup()
+        javax.swing.GroupLayout contenedorTituloLayout = new javax.swing.GroupLayout(contenedorTitulo);
+        contenedorTitulo.setLayout(contenedorTituloLayout);
+        contenedorTituloLayout.setHorizontalGroup(
+            contenedorTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenedorTituloLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(textTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        PanelTituloLayout.setVerticalGroup(
-            PanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelTituloLayout.createSequentialGroup()
+        contenedorTituloLayout.setVerticalGroup(
+            contenedorTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenedorTituloLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(textTitulo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -277,7 +272,7 @@ public class GUI extends javax.swing.JFrame {
         botonProyectos.setText("Proyectos");
         botonProyectos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonProyectosActionPerformed(evt);
+                handlerIrAlSubpanelPrincipalProyectos(evt);
             }
         });
 
@@ -574,7 +569,7 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel5.setText("Ingenieros Asignados:");
 
-        tablaIngAsignadosCargarProyecto.setModel(new javax.swing.table.DefaultTableModel(
+        tablaIngSeleccionadosCargarProyecto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -604,7 +599,7 @@ public class GUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        scrollIngAsignados.setViewportView(tablaIngAsignadosCargarProyecto);
+        scrollIngSeleccionados.setViewportView(tablaIngSeleccionadosCargarProyecto);
 
         botonQuitarIng.setText("Quitar");
         botonQuitarIng.addActionListener(new java.awt.event.ActionListener() {
@@ -627,7 +622,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonQuitarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollIngAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE))
+                    .addComponent(scrollIngSeleccionados, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabIngenierosLayout.setVerticalGroup(
@@ -640,7 +635,7 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrollIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                    .addComponent(scrollIngAsignados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(scrollIngSeleccionados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonAgregarIng)
@@ -707,7 +702,7 @@ public class GUI extends javax.swing.JFrame {
         });
         scrollRecDisponibles.setViewportView(tablaRecDisponiblesCargarProyecto);
 
-        tablaRecAsignadosCargarProyecto.setModel(new javax.swing.table.DefaultTableModel(
+        tablaRecSeleccionadosCargarProyecto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -744,7 +739,7 @@ public class GUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        scrollRecAsignados.setViewportView(tablaRecAsignadosCargarProyecto);
+        scrollRecSeleccionados.setViewportView(tablaRecSeleccionadosCargarProyecto);
 
         javax.swing.GroupLayout tabRecursosLayout = new javax.swing.GroupLayout(tabRecursos);
         tabRecursos.setLayout(tabRecursosLayout);
@@ -762,7 +757,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
                     .addComponent(botonQuitarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollRecAsignados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(scrollRecSeleccionados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabRecursosLayout.setVerticalGroup(
@@ -775,7 +770,7 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrollRecDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                    .addComponent(scrollRecAsignados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(scrollRecSeleccionados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonAgregarRecurso)
@@ -795,7 +790,7 @@ public class GUI extends javax.swing.JFrame {
         botonVolverPanelPrincipalProyectos.setText("Volver");
         botonVolverPanelPrincipalProyectos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                handlerVolverPanelPrincipalProyectos(evt);
+                handlerIrAlSubpanelPrincipalProyectos(evt);
             }
         });
 
@@ -1252,8 +1247,7 @@ public class GUI extends javax.swing.JFrame {
         botonVolverPanelPrincipalProyectos1.setText("Volver");
         botonVolverPanelPrincipalProyectos1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonVolverPanelPrincipalProyectos1ActionPerformed(evt);
-                handlerVolverPanelPrincipalProyectos(evt);
+                handlerIrAlSubpanelPrincipalProyectos(evt);
             }
         });
 
@@ -1507,7 +1501,7 @@ public class GUI extends javax.swing.JFrame {
         botonVolverPanelPrincipalProyectos2.setText("Volver");
         botonVolverPanelPrincipalProyectos2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                handlerVolverPanelPrincipalProyectos(evt);
+                handlerIrAlSubpanelPrincipalProyectos(evt);
             }
         });
 
@@ -1572,8 +1566,8 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(textFinalizacion)))
                     .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textPresup)
+                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textPresup, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(textMostrarPresupuesto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1594,13 +1588,13 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contenedorTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(contenedorTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1634,7 +1628,9 @@ public class GUI extends javax.swing.JFrame {
                             arrayIngenieros.get(i).getNombre(),
                             arrayIngenieros.get(i).getApellido(),
                             arrayIngenieros.get(i).getEspecialidad(),
-                            arrayIngenieros.get(i).getFechaContratacion(),}
+                            arrayIngenieros.get(i).getFechaContratacion(),
+                            arrayIngenieros.get(i).getMail(),
+                            arrayIngenieros.get(i).getIdIngeniero(),}
                 );
             }
         }
@@ -1647,44 +1643,16 @@ public class GUI extends javax.swing.JFrame {
             );
         }
 
-        panelProyectos.removeAll();
+        radioHardware.setSelected(true);
+
         textTitulo.setText("CARGA PROYECTOS");
-        panelProyectos.add(subpanelCargarProyecto);
-        panelProyectos.repaint();
-        panelProyectos.revalidate();
-    }//GEN-LAST:event_botonAgregarProyectoActionPerformed
-
-    private void botonProyectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProyectosActionPerformed
-
-        botonVolverAlMenu.setVisible(true);
-
-        modeloTablaProyectos.setRowCount(0);
-
-        for (int i = 0; i < arrayProyectos.size(); i++) {
-
-            modeloTablaProyectos.addRow(
-                    new Object[]{
-                        arrayProyectos.get(i).getTitulo(),
-                        arrayProyectos.get(i).getTipo(),
-                        arrayProyectos.get(i).getDescripcion(),
-                        arrayProyectos.get(i).getFechaInicio(),
-                        arrayProyectos.get(i).getFechaFin(),
-                        arrayProyectos.get(i).getPresupuesto(),
-                        arrayProyectos.get(i).getProyectoID()
-                    }
-            );
-
-        }
-        textTitulo.setText("PROYECTOS");
-        textCantProyectos.setText("Cantidad de proyectos: " + modeloTablaProyectos.getRowCount());
-        textCantProyectosHardware.setText("+Hardware: " + DesarrolloDeHardware.getCantidadProyHardware());
-        textCantProyectosSoftware.setText("+Software: " + DesarrolloDeSoftware.getCantidadProySoftware());
 
         contenedor.removeAll();
-        contenedor.add(panelProyectos);
+        contenedor.add(panelProyectos.add(subpanelCargarProyecto));
         contenedor.repaint();
         contenedor.revalidate();
-    }//GEN-LAST:event_botonProyectosActionPerformed
+
+    }//GEN-LAST:event_botonAgregarProyectoActionPerformed
 
     private void botonModificarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarProyectoActionPerformed
         if (tablaProyectos.getSelectedRowCount() == 0 || tablaProyectos.getSelectedRowCount() > 1) {
@@ -1710,8 +1678,8 @@ public class GUI extends javax.swing.JFrame {
             spinnerModFechaInicioAnio.setValue(arrayProyectos.get(indice).getFechaInicio().getAnio());
 
             //copiar ingenieros y recursos
-            panelProyectos.removeAll();
-            panelProyectos.add(subpanelModProyecto);
+            contenedor.removeAll();
+            contenedor.add(panelProyectos.add(subpanelModProyecto));
             contenedor.repaint();
             contenedor.revalidate();
 
@@ -1739,10 +1707,10 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAgregarIngActionPerformed
 
     private void botonQuitarIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonQuitarIngActionPerformed
-        if (tablaIngAsignadosCargarProyecto.getSelectedRowCount() == 0) {
+        if (tablaIngSeleccionadosCargarProyecto.getSelectedRowCount() == 0) {
             JOptionPane.showMessageDialog(null, "Para eliminar un ingeniero del proyecto, seleccionelo de la tabla a su derecha.", "Error", 0);
         } else {
-            permutarFilasEntreTablas(tablaIngAsignadosCargarProyecto, modeloTablaIngenierosSeleccionados, modeloTablaIngenierosDisp);
+            permutarFilasEntreTablas(tablaIngSeleccionadosCargarProyecto, modeloTablaIngenierosSeleccionados, modeloTablaIngenierosDisp);
         }
     }//GEN-LAST:event_botonQuitarIngActionPerformed
 
@@ -1755,10 +1723,10 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAgregarRecursoActionPerformed
 
     private void botonQuitarRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonQuitarRecursoActionPerformed
-        if (tablaRecAsignadosCargarProyecto.getSelectedRowCount() == 0) {
+        if (tablaRecSeleccionadosCargarProyecto.getSelectedRowCount() == 0) {
             JOptionPane.showMessageDialog(null, "Para eliminar un recurso del proyecto, seleccionelo de la tabla a su derecha.", "Error", 0);
         } else {
-            permutarFilasEntreTablas(tablaRecAsignadosCargarProyecto, modeloTablaRecursosSeleccionados, modeloTablaRecursosDisponibles);
+            permutarFilasEntreTablas(tablaRecSeleccionadosCargarProyecto, modeloTablaRecursosSeleccionados, modeloTablaRecursosDisponibles);
         }
     }//GEN-LAST:event_botonQuitarRecursoActionPerformed
 
@@ -1771,7 +1739,78 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalirActionPerformed
 
     private void botonCargarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCargarProyectoActionPerformed
-        // TODO add your handling code here:
+        String titulo, descripcion, tipo;
+        float presupuesto = 100;
+        Fecha fechaInicio = new Fecha(), fechaFin = new Fecha();
+        ArrayList<Ingeniero> ingenieros = new ArrayList<>();
+        ArrayList<RecursoTecnologico> recursosTecnologicos = new ArrayList<>();
+
+        titulo = campoProyectoTitulo.getText();
+        descripcion = campoProyectoDescripcion.getText();
+        tipo = campoProyectoTipo.getText();
+
+        fechaInicio = new Fecha(
+                (int) spinnerFechaInicioDia.getValue(),
+                (int) spinnerFechaInicioMes.getValue(),
+                (int) spinnerFechaInicioAnio.getValue()
+        );
+        fechaFin = new Fecha(
+                (int) spinnerFechaFinDia.getValue(),
+                (int) spinnerFechaFinMes.getValue(),
+                (int) spinnerFechaFinAnio.getValue()
+        );
+
+        presupuesto = (float) spinnerProyectoPresupuesto.getValue();
+
+        int filas = modeloTablaIngenierosSeleccionados.getRowCount();
+
+        for (int i = 0; i < filas; i++) {
+
+            String idIng = (String) tablaIngSeleccionadosCargarProyecto.getValueAt(i, 5);
+            for (int j = 0; j < arrayIngenieros.size(); j++) {
+
+                if (idIng.equals(arrayIngenieros.get(j).getIdIngeniero())) {
+                    ingenieros.add(arrayIngenieros.get(j));
+                    break;
+                }
+
+            }
+
+        }
+
+        if (radioHardware.isSelected()) {
+            DesarrolloDeHardware proyecto = new DesarrolloDeHardware(titulo, tipo, descripcion, presupuesto, fechaInicio, fechaFin);
+            for (Ingeniero x : ingenieros) {
+                proyecto.agregarIngeniero(x);
+            }
+            
+            // funcion que rellene ingeniero.idsProyectosAsociados (para poder controlar que no este > 3 proy.)
+            // hay ponerla en otro lado y acomodar el codigo
+            for (int i = 0; i < ingenieros.size(); i++) {
+                String[] proyectosAsignados = ingenieros.get(i).getIdsProyectosAsociados();
+                for (int j = 0; j < 3; j++) {
+                    if (proyectosAsignados[j].equals("No Asignado")) {
+                        proyectosAsignados[j] = proyecto.getProyectoID();
+                        break;
+                    }
+                }
+            }
+
+            arrayProyectos.add(proyecto);
+
+        }
+        if (radioSoftware.isSelected()) {
+            DesarrolloDeSoftware proyecto = new DesarrolloDeSoftware(titulo, tipo, descripcion, presupuesto, fechaInicio, fechaFin);
+            for (Ingeniero x : ingenieros) {
+                proyecto.agregarIngeniero(x);
+            }
+            for (RecursoTecnologico x : recursosTecnologicos) {
+                proyecto.agregarRecursoTecnologico(x);
+            }
+            arrayProyectos.add(proyecto);
+        }
+
+        handlerIrAlSubpanelPrincipalProyectos(evt);
     }//GEN-LAST:event_botonCargarProyectoActionPerformed
 
     private void radioModHardwareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioModHardwareActionPerformed
@@ -1806,23 +1845,44 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonModProyectoActionPerformed
 
-    private void botonVolverPanelPrincipalProyectos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverPanelPrincipalProyectos1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonVolverPanelPrincipalProyectos1ActionPerformed
+    private void handlerIrAlSubpanelPrincipalProyectos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handlerIrAlSubpanelPrincipalProyectos
 
-    private void handlerVolverPanelPrincipalProyectos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handlerVolverPanelPrincipalProyectos
+        botonVolverAlMenu.setVisible(true);
+
+        modeloTablaProyectos.setRowCount(0);
+
+        for (int i = 0; i < arrayProyectos.size(); i++) {
+
+            modeloTablaProyectos.addRow(
+                    new Object[]{
+                        arrayProyectos.get(i).getTitulo(),
+                        arrayProyectos.get(i).getTipo(),
+                        arrayProyectos.get(i).getDescripcion(),
+                        arrayProyectos.get(i).getFechaInicio(),
+                        arrayProyectos.get(i).getFechaFin(),
+                        arrayProyectos.get(i).getPresupuesto(),
+                        arrayProyectos.get(i).getProyectoID()
+                    }
+            );
+
+        }
         textTitulo.setText("PROYECTOS");
-        botonProyectosActionPerformed(evt);
-        panelProyectos.removeAll();
-        panelProyectos.add(subpanelPrincipalProyectos);
+        textCantProyectos.setText("Cantidad de proyectos: " + modeloTablaProyectos.getRowCount());
+        textCantProyectosHardware.setText("+Hardware: " + DesarrolloDeHardware.getCantidadProyHardware());
+        textCantProyectosSoftware.setText("+Software: " + DesarrolloDeSoftware.getCantidadProySoftware());
+
+        contenedor.removeAll();
+        contenedor.add(panelProyectos.add(subpanelPrincipalProyectos));
         contenedor.repaint();
         contenedor.revalidate();
-    }//GEN-LAST:event_handlerVolverPanelPrincipalProyectos
+    }//GEN-LAST:event_handlerIrAlSubpanelPrincipalProyectos
 
     private void tablaProyectosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaProyectosMouseClicked
         if (evt.getClickCount() >= 2) {
-
-            String idProyectoSeleccionado = (String) modeloTablaProyectos.getValueAt(tablaProyectos.getSelectedRow(), 6);
+            
+            int filaSeleccionada = tablaProyectos.convertRowIndexToModel(tablaProyectos.getSelectedRow());
+            
+            String idProyectoSeleccionado = (String) modeloTablaProyectos.getValueAt(filaSeleccionada, 6);
             ProyectoTecnologico ProyectoAMostrar;
 
             for (int i = 0; i < arrayProyectos.size(); i++) {
@@ -1839,31 +1899,30 @@ public class GUI extends javax.swing.JFrame {
                     textMostrarPresupuesto.setText(String.valueOf(ProyectoAMostrar.getPresupuesto()));
                     textMostrarFechaInicio.setText(ProyectoAMostrar.getFechaInicio().toString());
                     textMostrarFechaFin.setText(ProyectoAMostrar.getFechaFin().toString());
-                    
-                    modeloTablaIngenierosAsignados.setRowCount(0);
-                    
+
+                    modeloTablaIngenierosSeleccionados.setRowCount(0);
+
                     for (int j = 0; j < ProyectoAMostrar.obtenerCantidadIngenieros(); j++) {
                         Ingeniero ing = ProyectoAMostrar.obtenerTodosLosIngenieros().get(j);
-                        modeloTablaIngenierosAsignados.addRow(
+                        modeloTablaIngenierosSeleccionados.addRow(
                                 new Object[]{
                                     ing.getNombre(),
                                     ing.getApellido(),
                                     ing.getEspecialidad(),
                                     ing.getFechaContratacion(),
                                     ing.getMail(),
-                                }
+                                    ing.getIdIngeniero(),}
                         );
                     }
-                    
+
                     modeloTablaRecursosSeleccionados.setRowCount(0);
-                    
+
                     for (int j = 0; j < ProyectoAMostrar.obtenerCantidadRecursosTecnologicos(); j++) {
                         RecursoTecnologico rec = ProyectoAMostrar.obtenerTodosLosRecursosTecnologicos().get(j);
                         modeloTablaRecursosSeleccionados.addRow(
-                            new Object[]{
-                                        rec.getNombre(),
-                                        rec.getDescripcion(),
-                                    }
+                                new Object[]{
+                                    rec.getNombre(),
+                                    rec.getDescripcion(),}
                         );
                     }
 
@@ -1935,10 +1994,11 @@ public class GUI extends javax.swing.JFrame {
 
         arrayProyectos.add(new DesarrolloDeSoftware("Instagram", "Red Social", "la de las fotos y las trolas", (float) 1000000, new Fecha(12, 12, 2009), new Fecha()));
         arrayProyectos.add(new DesarrolloDeHardware("Nokia 1100", "Telefono Celular", "Duro durito", (float) 1800200, new Fecha(12, 12, 2000), new Fecha(2, 12, 2005)));
-        arrayIngenieros.add(new Ingeniero("Paco", "Zabala", "loquito@gmail.com", "flautista", new Fecha()));
-        arrayIngenieros.add(new Ingeniero("Carlos", "Garcia", "snm@gmail.com", "clavadista", new Fecha()));
-        arrayIngenieros.add(new Ingeniero("lolo", "Garcia", "snm@gmail.com", "clavadista", new Fecha()));
-        arrayIngenieros.add(new Ingeniero("pepe", "Garcia", "snm@gmail.com", "clavadista", new Fecha()));
+        arrayIngenieros.add(new Ingeniero("Paco", "Zabala", "loquito@gmail.com", "Flautista", new Fecha()));
+        arrayIngenieros.add(new Ingeniero("Carlos", "Garcia", "snm@gmail.com", "Clavadista", new Fecha()));
+        arrayIngenieros.add(new Ingeniero("Gerardo", "Sofovich", "ger@hotmail.com", "Chimentero", new Fecha()));
+        arrayIngenieros.add(new Ingeniero("Pepe", "Argento", "acade10@outlook.com", "Zapatero", new Fecha()));
+        arrayIngenieros.add(new Ingeniero("Homero", "Simpson", "mrX@outlook.com", "Inspector de Seguridad", new Fecha()));
         arrayRecursos.add(new RecursoTecnologico("Destornillador", "ha sido robado..."));
         arrayRecursos.add(new RecursoTecnologico("Servidor", "una coradir del 2011"));
 
@@ -1956,7 +2016,6 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PanelTitulo;
     private javax.swing.JButton botonAgregarIng;
     private javax.swing.JButton botonAgregarIng2;
     private javax.swing.JButton botonAgregarProyecto;
@@ -1987,6 +2046,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField campoProyectoTipo;
     private javax.swing.JTextField campoProyectoTitulo;
     private javax.swing.JPanel contenedor;
+    private javax.swing.JPanel contenedorTitulo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2021,16 +2081,16 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton radioModHardware;
     private javax.swing.JRadioButton radioModSoftware;
     private javax.swing.JRadioButton radioSoftware;
-    private javax.swing.JScrollPane scrollIngAsignados;
     private javax.swing.JScrollPane scrollIngAsignados2;
     private javax.swing.JScrollPane scrollIngDisponibles;
     private javax.swing.JScrollPane scrollIngDisponibles2;
     private javax.swing.JScrollPane scrollIngMostrarAsignados;
+    private javax.swing.JScrollPane scrollIngSeleccionados;
     private javax.swing.JScrollPane scrollMostrarRecAsignados;
-    private javax.swing.JScrollPane scrollRecAsignados;
     private javax.swing.JScrollPane scrollRecAsignados1;
     private javax.swing.JScrollPane scrollRecDisponibles;
     private javax.swing.JScrollPane scrollRecDisponibles1;
+    private javax.swing.JScrollPane scrollRecSeleccionados;
     private javax.swing.JScrollPane scrollTablaProyectos;
     private javax.swing.JSpinner spinnerFechaFinAnio;
     private javax.swing.JSpinner spinnerFechaFinAnio2;
@@ -2059,17 +2119,17 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel tabMostrarIngenieros;
     private javax.swing.JPanel tabMostrarRecursos;
     private javax.swing.JPanel tabRecursos;
-    private javax.swing.JTable tablaIngAsignadosCargarProyecto;
     private javax.swing.JTable tablaIngAsignadosCargarProyecto2;
     private javax.swing.JTable tablaIngAsignadosMostrarProyecto;
     private javax.swing.JTable tablaIngDisponiblesCargarProyecto;
     private javax.swing.JTable tablaIngDisponiblesCargarProyecto2;
+    private javax.swing.JTable tablaIngSeleccionadosCargarProyecto;
     private javax.swing.JTable tablaProyectos;
-    private javax.swing.JTable tablaRecAsignadosCargarProyecto;
     private javax.swing.JTable tablaRecAsignadosCargarProyecto1;
     private javax.swing.JTable tablaRecAsignadosMostrarProyecto;
     private javax.swing.JTable tablaRecDisponiblesCargarProyecto;
     private javax.swing.JTable tablaRecDisponiblesCargarProyecto1;
+    private javax.swing.JTable tablaRecSeleccionadosCargarProyecto;
     private javax.swing.JLabel textCantProyectos;
     private javax.swing.JLabel textCantProyectos1;
     private javax.swing.JLabel textCantProyectosHardware;

@@ -27,14 +27,14 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelTitulo" max="32767" attributes="0"/>
+          <Component id="contenedorTitulo" max="32767" attributes="0"/>
           <Component id="contenedor" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="PanelTitulo" min="-2" max="-2" attributes="0"/>
+              <Component id="contenedorTitulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="contenedor" max="32767" attributes="0"/>
           </Group>
@@ -42,7 +42,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="PanelTitulo">
+    <Container class="javax.swing.JPanel" name="contenedorTitulo">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -129,7 +129,7 @@
                 <Property name="text" type="java.lang.String" value="Proyectos"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonProyectosActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="handlerIrAlSubpanelPrincipalProyectos"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botonIngenieros">
@@ -690,7 +690,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="botonQuitarIng" max="32767" attributes="0"/>
                                       <Component id="jLabel5" max="32767" attributes="0"/>
-                                      <Component id="scrollIngAsignados" pref="420" max="32767" attributes="0"/>
+                                      <Component id="scrollIngSeleccionados" pref="420" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -707,7 +707,7 @@
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="scrollIngDisponibles" pref="202" max="32767" attributes="0"/>
-                                      <Component id="scrollIngAsignados" pref="0" max="32767" attributes="0"/>
+                                      <Component id="scrollIngSeleccionados" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -759,14 +759,14 @@
                             <Property name="text" type="java.lang.String" value="Ingenieros Asignados:"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JScrollPane" name="scrollIngAsignados">
+                        <Container class="javax.swing.JScrollPane" name="scrollIngSeleccionados">
                           <AuxValues>
                             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                           </AuxValues>
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="tablaIngAsignadosCargarProyecto">
+                            <Component class="javax.swing.JTable" name="tablaIngSeleccionadosCargarProyecto">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="4" rowCount="15">
@@ -816,7 +816,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel7" pref="420" max="32767" attributes="0"/>
                                       <Component id="botonQuitarRecurso" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="scrollRecAsignados" alignment="1" pref="0" max="32767" attributes="0"/>
+                                      <Component id="scrollRecSeleccionados" alignment="1" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -833,7 +833,7 @@
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="scrollRecDisponibles" alignment="0" pref="202" max="32767" attributes="0"/>
-                                      <Component id="scrollRecAsignados" alignment="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="scrollRecSeleccionados" alignment="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -891,14 +891,14 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Container class="javax.swing.JScrollPane" name="scrollRecAsignados">
+                        <Container class="javax.swing.JScrollPane" name="scrollRecSeleccionados">
                           <AuxValues>
                             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                           </AuxValues>
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="tablaRecAsignadosCargarProyecto">
+                            <Component class="javax.swing.JTable" name="tablaRecSeleccionadosCargarProyecto">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="2" rowCount="15">
@@ -927,7 +927,7 @@
                     <Property name="text" type="java.lang.String" value="Volver"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="handlerVolverPanelPrincipalProyectos"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="handlerIrAlSubpanelPrincipalProyectos"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -1487,7 +1487,7 @@
                     <Property name="text" type="java.lang.String" value="Volver"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonVolverPanelPrincipalProyectos1ActionPerformed,handlerVolverPanelPrincipalProyectos"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="handlerIrAlSubpanelPrincipalProyectos"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -1559,9 +1559,9 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="textPresup" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="textMostrarPresupuesto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textMostrarPresupuesto" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -1745,7 +1745,7 @@
                     <Property name="text" type="java.lang.String" value="Volver"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="handlerVolverPanelPrincipalProyectos"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="handlerIrAlSubpanelPrincipalProyectos"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="textMostrarTitulo">
