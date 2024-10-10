@@ -6,8 +6,9 @@ import recursosTecnologicos.RecursoTecnologico;
 import java.util.*;
 
 public abstract class ProyectoTecnologico {
+
+    private final String proyectoID; //ID unico generado por el constructor (inmodificable?)
     private String titulo, descripcion;
-    
     private float presupuesto;
     private Fecha fechaInicio, fechaFin;
     private static int cantidad = 0;
@@ -15,10 +16,12 @@ public abstract class ProyectoTecnologico {
     private List<RecursoTecnologico> recursosTecnologicos = new ArrayList<>();
 
     public ProyectoTecnologico() {
+        this.proyectoID = "PROY"+cantidad;
         cantidad++;
     }
 
     public ProyectoTecnologico(String titulo, String descripcion, float presupuesto, Fecha fechaInicio, Fecha fechaFin) {
+        this.proyectoID = "PROY"+cantidad;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.presupuesto = presupuesto;
@@ -35,6 +38,10 @@ public abstract class ProyectoTecnologico {
     }
     
     //default
+    public String getProyectoID() {
+        return proyectoID;
+    }
+    
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }

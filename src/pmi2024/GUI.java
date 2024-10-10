@@ -19,6 +19,7 @@ public class GUI extends javax.swing.JFrame {
     private DefaultTableModel modeloTablaProyectos;
     private DefaultTableModel modeloTablaIngenierosDisp;
     private DefaultTableModel modeloTablaIngenierosSeleccionados;
+    private DefaultTableModel modeloTablaIngenierosAsignados;
     private DefaultTableModel modeloTablaRecursosDisponibles;
     private DefaultTableModel modeloTablaRecursosSeleccionados;
     private ArrayList<Ingeniero> arrayIngenieros;
@@ -39,7 +40,7 @@ public class GUI extends javax.swing.JFrame {
         this.arrayProyectos = arrayProyectos;
         this.arrayRecursos = arrayRecursos;
 
-        String[] columnasTablaProyectos = {"Nombre", "Tipo", "Descripcion", "Inicio", "Fin", "Presupuesto"};
+        String[] columnasTablaProyectos = {"Nombre", "Tipo", "Descripcion", "Inicio", "Fin", "Presupuesto", "ID"};
         modeloTablaProyectos = new DefaultTableModel(columnasTablaProyectos, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -68,6 +69,16 @@ public class GUI extends javax.swing.JFrame {
             }
         };
         tablaIngAsignadosCargarProyecto.setModel(modeloTablaIngenierosSeleccionados);
+        
+        String[] columnasTablaIngenierosAsignados = {"Nombre", "Apellido", "Especialidad", "Contratacion", "Mail"};
+        modeloTablaIngenierosAsignados = new DefaultTableModel(columnasTablaIngenierosAsignados, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        tablaIngAsignadosMostrarProyecto.setModel(modeloTablaIngenierosAsignados);
+        
 
         String[] columnasTablaRecursos = {"Nombre", "Descripcion"};
         modeloTablaRecursosDisponibles = new DefaultTableModel(columnasTablaRecursos, 0) {
@@ -85,6 +96,7 @@ public class GUI extends javax.swing.JFrame {
             }
         };
         tablaRecAsignadosCargarProyecto.setModel(modeloTablaRecursosSeleccionados);
+        tablaRecAsignadosMostrarProyecto.setModel(modeloTablaRecursosSeleccionados);
 
         buttonGroupTipoProyecto.add(radioHardware);
         buttonGroupTipoProyecto.add(radioSoftware);
@@ -214,37 +226,26 @@ public class GUI extends javax.swing.JFrame {
         botonModProyecto = new javax.swing.JButton();
         botonVolverPanelPrincipalProyectos1 = new javax.swing.JButton();
         subpanelMostrarProyecto = new javax.swing.JPanel();
-        campoProyectoTitulo1 = new javax.swing.JTextField();
-        radioHardware1 = new javax.swing.JRadioButton();
-        radioSoftware1 = new javax.swing.JRadioButton();
-        campoProyectoDescripcion1 = new javax.swing.JTextField();
-        campoProyectoTipo1 = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        spinnerProyectoPresupuesto1 = new javax.swing.JSpinner();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        spinnerFechaInicioDia1 = new javax.swing.JSpinner();
-        spinnerFechaInicioMes1 = new javax.swing.JSpinner();
-        spinnerFechaInicioAnio1 = new javax.swing.JSpinner();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        spinnerFechaFinDia1 = new javax.swing.JSpinner();
-        spinnerFechaFinMes1 = new javax.swing.JSpinner();
-        spinnerFechaFinAnio1 = new javax.swing.JSpinner();
-        tabIngYRecursos1 = new javax.swing.JTabbedPane();
-        tabIngenieros1 = new javax.swing.JPanel();
+        textPresup = new javax.swing.JLabel();
+        textInicio = new javax.swing.JLabel();
+        textFinalizacion = new javax.swing.JLabel();
+        textMostrarFechaInicio = new javax.swing.JLabel();
+        textMostrarFechaFin = new javax.swing.JLabel();
+        tabMostrarIngYRecursos = new javax.swing.JTabbedPane();
+        tabMostrarIngenieros = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
-        scrollIngAsignados1 = new javax.swing.JScrollPane();
-        tablaIngAsignadosCargarProyecto1 = new javax.swing.JTable();
-        tabRecursos1 = new javax.swing.JPanel();
+        scrollIngMostrarAsignados = new javax.swing.JScrollPane();
+        tablaIngAsignadosMostrarProyecto = new javax.swing.JTable();
+        tabMostrarRecursos = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
-        scrollRecAsignados2 = new javax.swing.JScrollPane();
-        tablaRecAsignadosCargarProyecto2 = new javax.swing.JTable();
+        scrollMostrarRecAsignados = new javax.swing.JScrollPane();
+        tablaRecAsignadosMostrarProyecto = new javax.swing.JTable();
         botonVolverPanelPrincipalProyectos2 = new javax.swing.JButton();
+        textMostrarTitulo = new javax.swing.JLabel();
+        textMostrarDescripcion = new javax.swing.JLabel();
+        textMostrarTipo = new javax.swing.JLabel();
+        textMostrarHardSoft = new javax.swing.JLabel();
+        textMostrarPresupuesto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -324,20 +325,20 @@ public class GUI extends javax.swing.JFrame {
 
         tablaProyectos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Descripcion", "Tipo", "Inicio", "Fin", "Presupuesto"
+                "Nombre", "Descripcion", "Tipo", "Inicio", "Fin", "Presupuesto", "ID"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Float.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Float.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -348,6 +349,7 @@ public class GUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tablaProyectos.setToolTipText("Haga doble click sobre un proyecto para mostrar toda la información");
         tablaProyectos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tablaProyectosMouseClicked(evt);
@@ -1366,79 +1368,24 @@ public class GUI extends javax.swing.JFrame {
 
         panelProyectos.add(subpanelModProyecto, "card2");
 
-        campoProyectoTitulo1.setText("Título del Proyecto");
-        campoProyectoTitulo1.setToolTipText("Título del Proyecto");
+        textPresup.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textPresup.setText("Presupuesto:");
 
-        radioHardware1.setText("Hardware");
-        radioHardware1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioHardware1ActionPerformed(evt);
-            }
-        });
+        textInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        textInicio.setText("Fecha de inicio:");
 
-        radioSoftware1.setText("Software");
-        radioSoftware1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioSoftware1ActionPerformed(evt);
-            }
-        });
+        textFinalizacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textFinalizacion.setText("F. Finalización:");
 
-        campoProyectoDescripcion1.setText("Descripcion...");
-        campoProyectoDescripcion1.setToolTipText("Descripcion del Proyecto");
-        campoProyectoDescripcion1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                campoProyectoDescripcion1MouseClicked(evt);
-            }
-        });
+        textMostrarFechaInicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textMostrarFechaInicio.setText("12/12/2024");
 
-        campoProyectoTipo1.setText("Tipo");
-        campoProyectoTipo1.setToolTipText("Tipo del proyecto");
-
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("Presupuesto:");
-
-        spinnerProyectoPresupuesto1.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
-
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("Fecha de inicio:");
-
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel21.setText(" Finalización:");
-
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("Dia");
-
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("Mes");
-
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("Año");
-
-        spinnerFechaInicioDia1.setModel(new javax.swing.SpinnerNumberModel(12, 1, 31, 1));
-
-        spinnerFechaInicioMes1.setModel(new javax.swing.SpinnerNumberModel(12, 1, 12, 1));
-
-        spinnerFechaInicioAnio1.setModel(new javax.swing.SpinnerNumberModel(2024, 1, null, 1));
-        spinnerFechaInicioAnio1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Dia");
-
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText("Mes");
-
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("Año");
-
-        spinnerFechaFinDia1.setModel(new javax.swing.SpinnerNumberModel(12, 1, 31, 1));
-
-        spinnerFechaFinMes1.setModel(new javax.swing.SpinnerNumberModel(12, 1, 12, 1));
-
-        spinnerFechaFinAnio1.setModel(new javax.swing.SpinnerNumberModel(2024, 1, null, 1));
+        textMostrarFechaFin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textMostrarFechaFin.setText("12/12/2024");
 
         jLabel29.setText("Ingenieros Asignados:");
 
-        tablaIngAsignadosCargarProyecto1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaIngAsignadosMostrarProyecto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1468,34 +1415,34 @@ public class GUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        scrollIngAsignados1.setViewportView(tablaIngAsignadosCargarProyecto1);
+        scrollIngMostrarAsignados.setViewportView(tablaIngAsignadosMostrarProyecto);
 
-        javax.swing.GroupLayout tabIngenieros1Layout = new javax.swing.GroupLayout(tabIngenieros1);
-        tabIngenieros1.setLayout(tabIngenieros1Layout);
-        tabIngenieros1Layout.setHorizontalGroup(
-            tabIngenieros1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tabIngenieros1Layout.createSequentialGroup()
+        javax.swing.GroupLayout tabMostrarIngenierosLayout = new javax.swing.GroupLayout(tabMostrarIngenieros);
+        tabMostrarIngenieros.setLayout(tabMostrarIngenierosLayout);
+        tabMostrarIngenierosLayout.setHorizontalGroup(
+            tabMostrarIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabMostrarIngenierosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(tabIngenieros1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollIngAsignados1)
+                .addGroup(tabMostrarIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollIngMostrarAsignados)
                     .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 844, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        tabIngenieros1Layout.setVerticalGroup(
-            tabIngenieros1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabIngenieros1Layout.createSequentialGroup()
+        tabMostrarIngenierosLayout.setVerticalGroup(
+            tabMostrarIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabMostrarIngenierosLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel29)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollIngAsignados1, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                .addComponent(scrollIngMostrarAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        tabIngYRecursos1.addTab("Ingenieros", tabIngenieros1);
+        tabMostrarIngYRecursos.addTab("Ingenieros", tabMostrarIngenieros);
 
         jLabel39.setText("Recursos Asignados:");
 
-        tablaRecAsignadosCargarProyecto2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaRecAsignadosMostrarProyecto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -1532,30 +1479,30 @@ public class GUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        scrollRecAsignados2.setViewportView(tablaRecAsignadosCargarProyecto2);
+        scrollMostrarRecAsignados.setViewportView(tablaRecAsignadosMostrarProyecto);
 
-        javax.swing.GroupLayout tabRecursos1Layout = new javax.swing.GroupLayout(tabRecursos1);
-        tabRecursos1.setLayout(tabRecursos1Layout);
-        tabRecursos1Layout.setHorizontalGroup(
-            tabRecursos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tabRecursos1Layout.createSequentialGroup()
+        javax.swing.GroupLayout tabMostrarRecursosLayout = new javax.swing.GroupLayout(tabMostrarRecursos);
+        tabMostrarRecursos.setLayout(tabMostrarRecursosLayout);
+        tabMostrarRecursosLayout.setHorizontalGroup(
+            tabMostrarRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabMostrarRecursosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(tabRecursos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollRecAsignados2)
+                .addGroup(tabMostrarRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollMostrarRecAsignados)
                     .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 844, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        tabRecursos1Layout.setVerticalGroup(
-            tabRecursos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabRecursos1Layout.createSequentialGroup()
+        tabMostrarRecursosLayout.setVerticalGroup(
+            tabMostrarRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabMostrarRecursosLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel39)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollRecAsignados2, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                .addComponent(scrollMostrarRecAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        tabIngYRecursos1.addTab("Recursos", tabRecursos1);
+        tabMostrarIngYRecursos.addTab("Recursos", tabMostrarRecursos);
 
         botonVolverPanelPrincipalProyectos2.setText("Volver");
         botonVolverPanelPrincipalProyectos2.addActionListener(new java.awt.event.ActionListener() {
@@ -1564,6 +1511,17 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        textMostrarTitulo.setText("Título");
+
+        textMostrarDescripcion.setText("Descripción");
+
+        textMostrarTipo.setText("Tipo");
+
+        textMostrarHardSoft.setText("Hard/Soft Ware");
+
+        textMostrarPresupuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textMostrarPresupuesto.setText("MontoPresupuesto");
+
         javax.swing.GroupLayout subpanelMostrarProyectoLayout = new javax.swing.GroupLayout(subpanelMostrarProyecto);
         subpanelMostrarProyecto.setLayout(subpanelMostrarProyectoLayout);
         subpanelMostrarProyectoLayout.setHorizontalGroup(
@@ -1571,59 +1529,28 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelMostrarProyectoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tabIngYRecursos1)
+                    .addComponent(tabMostrarIngYRecursos)
                     .addComponent(botonVolverPanelPrincipalProyectos2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelMostrarProyectoLayout.createSequentialGroup()
-                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelMostrarProyectoLayout.createSequentialGroup()
-                                .addComponent(campoProyectoTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
+                                .addComponent(textMostrarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(radioHardware1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(radioSoftware1))
-                            .addComponent(campoProyectoTipo1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoProyectoDescripcion1, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelMostrarProyectoLayout.createSequentialGroup()
-                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelMostrarProyectoLayout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(spinnerFechaFinDia1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(spinnerFechaInicioDia1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(6, 6, 6)
-                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(textMostrarHardSoft)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(textMostrarTipo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textMostrarDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(textFinalizacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textPresup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(spinnerFechaFinMes1, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                    .addComponent(spinnerFechaInicioMes1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(6, 6, 6)
-                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(spinnerFechaInicioAnio1))
-                                    .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                                        .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(spinnerFechaFinAnio1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(spinnerProyectoPresupuesto1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textMostrarFechaInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textMostrarFechaFin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textMostrarPresupuesto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE))
                         .addGap(6, 6, 6)))
                 .addContainerGap())
         );
@@ -1634,37 +1561,26 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
                         .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(campoProyectoTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(radioHardware1)
-                            .addComponent(radioSoftware1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoProyectoDescripcion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoProyectoTipo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textMostrarTitulo)
+                            .addComponent(textMostrarHardSoft))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textMostrarDescripcion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textMostrarTipo)
+                            .addComponent(textMostrarFechaFin)
+                            .addComponent(textFinalizacion)))
                     .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
                         .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(spinnerProyectoPresupuesto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19))
+                            .addComponent(textPresup)
+                            .addComponent(textMostrarPresupuesto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(spinnerFechaInicioAnio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20)
-                            .addComponent(spinnerFechaInicioDia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spinnerFechaInicioMes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22)
-                            .addComponent(jLabel23)
-                            .addComponent(jLabel24))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(spinnerFechaFinAnio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spinnerFechaFinDia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spinnerFechaFinMes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel26)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel21))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tabIngYRecursos1, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                            .addComponent(textInicio)
+                            .addComponent(textMostrarFechaInicio))))
+                .addGap(18, 18, 18)
+                .addComponent(tabMostrarIngYRecursos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonVolverPanelPrincipalProyectos2)
                 .addGap(18, 18, 18))
@@ -1753,7 +1669,8 @@ public class GUI extends javax.swing.JFrame {
                         arrayProyectos.get(i).getDescripcion(),
                         arrayProyectos.get(i).getFechaInicio(),
                         arrayProyectos.get(i).getFechaFin(),
-                        arrayProyectos.get(i).getPresupuesto()
+                        arrayProyectos.get(i).getPresupuesto(),
+                        arrayProyectos.get(i).getProyectoID()
                     }
             );
 
@@ -1902,30 +1819,62 @@ public class GUI extends javax.swing.JFrame {
         contenedor.revalidate();
     }//GEN-LAST:event_handlerVolverPanelPrincipalProyectos
 
-    private void radioHardware1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioHardware1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radioHardware1ActionPerformed
-
-    private void radioSoftware1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioSoftware1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radioSoftware1ActionPerformed
-
-    private void campoProyectoDescripcion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campoProyectoDescripcion1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoProyectoDescripcion1MouseClicked
-
     private void tablaProyectosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaProyectosMouseClicked
         if (evt.getClickCount() >= 2) {
-            int filaSeleccionada = tablaProyectos.getSelectedRow();
-            int cantColumnas = modeloTablaProyectos.getColumnCount();
-            
-            String[] proyectoSeleccionado = new String[cantColumnas];
-            
-            for (int i = 0; i < cantColumnas; i++) {
-                proyectoSeleccionado[i] = (String) modeloTablaProyectos.getValueAt(filaSeleccionada, i);
+
+            String idProyectoSeleccionado = (String) modeloTablaProyectos.getValueAt(tablaProyectos.getSelectedRow(), 6);
+            ProyectoTecnologico ProyectoAMostrar;
+
+            for (int i = 0; i < arrayProyectos.size(); i++) {
+                if (idProyectoSeleccionado.equals(arrayProyectos.get(i).getProyectoID())) {
+                    ProyectoAMostrar = arrayProyectos.get(i);
+
+                    textMostrarTitulo.setText(ProyectoAMostrar.getTitulo());
+
+                    //hay que buscar una forma de mostrar si es soft/hard
+                    textMostrarHardSoft.setText("NO SE PUEDE");
+
+                    textMostrarDescripcion.setText(ProyectoAMostrar.getDescripcion());
+                    textMostrarTipo.setText(ProyectoAMostrar.getTipo());
+                    textMostrarPresupuesto.setText(String.valueOf(ProyectoAMostrar.getPresupuesto()));
+                    textMostrarFechaInicio.setText(ProyectoAMostrar.getFechaInicio().toString());
+                    textMostrarFechaFin.setText(ProyectoAMostrar.getFechaFin().toString());
+                    
+                    modeloTablaIngenierosAsignados.setRowCount(0);
+                    
+                    for (int j = 0; j < ProyectoAMostrar.obtenerCantidadIngenieros(); j++) {
+                        Ingeniero ing = ProyectoAMostrar.obtenerTodosLosIngenieros().get(j);
+                        modeloTablaIngenierosAsignados.addRow(
+                                new Object[]{
+                                    ing.getNombre(),
+                                    ing.getApellido(),
+                                    ing.getEspecialidad(),
+                                    ing.getFechaContratacion(),
+                                    ing.getMail(),
+                                }
+                        );
+                    }
+                    
+                    modeloTablaRecursosSeleccionados.setRowCount(0);
+                    
+                    for (int j = 0; j < ProyectoAMostrar.obtenerCantidadRecursosTecnologicos(); j++) {
+                        RecursoTecnologico rec = ProyectoAMostrar.obtenerTodosLosRecursosTecnologicos().get(j);
+                        modeloTablaRecursosSeleccionados.addRow(
+                            new Object[]{
+                                        rec.getNombre(),
+                                        rec.getDescripcion(),
+                                    }
+                        );
+                    }
+
+                    contenedor.removeAll();
+                    contenedor.add(subpanelMostrarProyecto);
+                    contenedor.repaint();
+                    contenedor.revalidate();
+
+                    break;
+                }
             }
-            
-            //continuar
 
         }
     }//GEN-LAST:event_tablaProyectosMouseClicked
@@ -2035,11 +1984,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField campoModProyectoTipo;
     private javax.swing.JTextField campoModProyectoTitulo;
     private javax.swing.JTextField campoProyectoDescripcion;
-    private javax.swing.JTextField campoProyectoDescripcion1;
     private javax.swing.JTextField campoProyectoTipo;
-    private javax.swing.JTextField campoProyectoTipo1;
     private javax.swing.JTextField campoProyectoTitulo;
-    private javax.swing.JTextField campoProyectoTitulo1;
     private javax.swing.JPanel contenedor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2051,16 +1997,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel31;
@@ -2081,71 +2018,72 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel panelMenu;
     private javax.swing.JPanel panelProyectos;
     private javax.swing.JRadioButton radioHardware;
-    private javax.swing.JRadioButton radioHardware1;
     private javax.swing.JRadioButton radioModHardware;
     private javax.swing.JRadioButton radioModSoftware;
     private javax.swing.JRadioButton radioSoftware;
-    private javax.swing.JRadioButton radioSoftware1;
     private javax.swing.JScrollPane scrollIngAsignados;
-    private javax.swing.JScrollPane scrollIngAsignados1;
     private javax.swing.JScrollPane scrollIngAsignados2;
     private javax.swing.JScrollPane scrollIngDisponibles;
     private javax.swing.JScrollPane scrollIngDisponibles2;
+    private javax.swing.JScrollPane scrollIngMostrarAsignados;
+    private javax.swing.JScrollPane scrollMostrarRecAsignados;
     private javax.swing.JScrollPane scrollRecAsignados;
     private javax.swing.JScrollPane scrollRecAsignados1;
-    private javax.swing.JScrollPane scrollRecAsignados2;
     private javax.swing.JScrollPane scrollRecDisponibles;
     private javax.swing.JScrollPane scrollRecDisponibles1;
     private javax.swing.JScrollPane scrollTablaProyectos;
     private javax.swing.JSpinner spinnerFechaFinAnio;
-    private javax.swing.JSpinner spinnerFechaFinAnio1;
     private javax.swing.JSpinner spinnerFechaFinAnio2;
     private javax.swing.JSpinner spinnerFechaFinDia;
-    private javax.swing.JSpinner spinnerFechaFinDia1;
     private javax.swing.JSpinner spinnerFechaFinDia2;
     private javax.swing.JSpinner spinnerFechaFinMes;
-    private javax.swing.JSpinner spinnerFechaFinMes1;
     private javax.swing.JSpinner spinnerFechaFinMes2;
     private javax.swing.JSpinner spinnerFechaInicioAnio;
-    private javax.swing.JSpinner spinnerFechaInicioAnio1;
     private javax.swing.JSpinner spinnerFechaInicioDia;
-    private javax.swing.JSpinner spinnerFechaInicioDia1;
     private javax.swing.JSpinner spinnerFechaInicioMes;
-    private javax.swing.JSpinner spinnerFechaInicioMes1;
     private javax.swing.JSpinner spinnerModFechaInicioAnio;
     private javax.swing.JSpinner spinnerModFechaInicioDia;
     private javax.swing.JSpinner spinnerModFechaInicioMes;
     private javax.swing.JSpinner spinnerModProyectoPresupuesto;
     private javax.swing.JSpinner spinnerProyectoPresupuesto;
-    private javax.swing.JSpinner spinnerProyectoPresupuesto1;
     private javax.swing.JPanel subpanelCargarProyecto;
     private javax.swing.JPanel subpanelModProyecto;
     private javax.swing.JPanel subpanelMostrarProyecto;
     private javax.swing.JPanel subpanelPrincipalProyectos;
     private javax.swing.JTabbedPane tabIngYRecursos;
-    private javax.swing.JTabbedPane tabIngYRecursos1;
     private javax.swing.JPanel tabIngenieros;
-    private javax.swing.JPanel tabIngenieros1;
     private javax.swing.JTabbedPane tabModIngYRecursos;
     private javax.swing.JPanel tabModIngenieros;
     private javax.swing.JPanel tabModRecursos;
+    private javax.swing.JTabbedPane tabMostrarIngYRecursos;
+    private javax.swing.JPanel tabMostrarIngenieros;
+    private javax.swing.JPanel tabMostrarRecursos;
     private javax.swing.JPanel tabRecursos;
-    private javax.swing.JPanel tabRecursos1;
     private javax.swing.JTable tablaIngAsignadosCargarProyecto;
-    private javax.swing.JTable tablaIngAsignadosCargarProyecto1;
     private javax.swing.JTable tablaIngAsignadosCargarProyecto2;
+    private javax.swing.JTable tablaIngAsignadosMostrarProyecto;
     private javax.swing.JTable tablaIngDisponiblesCargarProyecto;
     private javax.swing.JTable tablaIngDisponiblesCargarProyecto2;
     private javax.swing.JTable tablaProyectos;
     private javax.swing.JTable tablaRecAsignadosCargarProyecto;
     private javax.swing.JTable tablaRecAsignadosCargarProyecto1;
-    private javax.swing.JTable tablaRecAsignadosCargarProyecto2;
+    private javax.swing.JTable tablaRecAsignadosMostrarProyecto;
     private javax.swing.JTable tablaRecDisponiblesCargarProyecto;
     private javax.swing.JTable tablaRecDisponiblesCargarProyecto1;
     private javax.swing.JLabel textCantProyectos;
     private javax.swing.JLabel textCantProyectos1;
     private javax.swing.JLabel textCantProyectosHardware;
     private javax.swing.JLabel textCantProyectosSoftware;
+    private javax.swing.JLabel textFinalizacion;
+    private javax.swing.JLabel textInicio;
+    private javax.swing.JLabel textMostrarDescripcion;
+    private javax.swing.JLabel textMostrarFechaFin;
+    private javax.swing.JLabel textMostrarFechaInicio;
+    private javax.swing.JLabel textMostrarHardSoft;
+    private javax.swing.JLabel textMostrarPresupuesto;
+    private javax.swing.JLabel textMostrarTipo;
+    private javax.swing.JLabel textMostrarTitulo;
+    private javax.swing.JLabel textPresup;
     private javax.swing.JLabel textTitulo;
     // End of variables declaration//GEN-END:variables
 }
