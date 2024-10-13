@@ -1,0 +1,26 @@
+    public ArrayList<RecursoTecnologico> cargarRecursosDesdeArchivo() {
+        ArrayList<RecursoTecnologico> arrayRecursos = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("recursos tecnologicos.txt"))) {
+            String line;
+            String nombre = null;
+            String descripcion = null;
+
+            while ((line = br.readLine()) != null) {
+                if (line.startsWith("nombre: ")) {
+                    nombre = line.substring(8).trim();
+                } else if (line.startsWith("descripcion: ")) {
+                    descripcion = line.substring(13).trim();
+                }
+
+                // Si ambos nombre y descripcion están definidos, crea un nuevo RecursoTecnologico
+                if (nombre != null && descripcion != null) {
+                    arrayRecursos.add(new RecursoTecnologico(nombre, descripcion));
+                    nombre = null; // Resetea nombre y descripcion para el siguiente recurso
+                    descripcion = null;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return arrayRecursos;
+    }
