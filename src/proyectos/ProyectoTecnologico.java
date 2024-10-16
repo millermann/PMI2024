@@ -33,11 +33,13 @@ public abstract class ProyectoTecnologico {
     // metodos abstractos
     public abstract String getTipo();
     
+    public abstract String getWare();
+    
+    //default
     public String getTitulo() {
         return titulo;
     }
     
-    //default
     public String getProyectoID() {
         return proyectoID;
     }
@@ -107,11 +109,11 @@ public abstract class ProyectoTecnologico {
         return recursosTecnologicos.size();
     }
     
-    public List<Ingeniero> obtenerTodosLosIngenieros() {
+    public ArrayList<Ingeniero> obtenerTodosLosIngenieros() {
         return new ArrayList<>(ingenieros);  // Devuelve una copia de la lista
     }
 
-    public List<RecursoTecnologico> obtenerTodosLosRecursosTecnologicos() {
+    public ArrayList<RecursoTecnologico> obtenerTodosLosRecursosTecnologicos() {
         return new ArrayList<>(recursosTecnologicos);  // Devuelve una copia de la lista
     }
 

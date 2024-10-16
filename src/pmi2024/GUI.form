@@ -4,6 +4,8 @@
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="buttonGroupTipoProyecto">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupModWare">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -239,7 +241,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="495" max="32767" attributes="0"/>
+                          <EmptySpace pref="499" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="botonOrdenarPresupuesto" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="textCantProyectos1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -766,7 +768,7 @@
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                                                  <Component id="spinnerFechaFinDia2" min="-2" pref="50" max="-2" attributes="0"/>
+                                                  <Component id="spinnerModFechaFinDia" min="-2" pref="50" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="spinnerModFechaInicioDia" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                                           </Group>
@@ -781,7 +783,7 @@
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="spinnerFechaFinMes2" alignment="0" pref="0" max="32767" attributes="0"/>
+                                              <Component id="spinnerModFechaFinMes" alignment="0" pref="0" max="32767" attributes="0"/>
                                               <Component id="spinnerModFechaInicioMes" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
@@ -794,7 +796,7 @@
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel36" min="-2" pref="35" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="spinnerFechaFinAnio2" min="-2" pref="68" max="-2" attributes="0"/>
+                                                  <Component id="spinnerModFechaFinAnio" min="-2" pref="68" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -840,9 +842,9 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="spinnerFechaFinAnio2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="spinnerFechaFinDia2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="spinnerFechaFinMes2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="spinnerModFechaFinAnio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="spinnerModFechaFinDia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="spinnerModFechaFinMes" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -990,21 +992,21 @@
                     <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="spinnerFechaFinDia2">
+                <Component class="javax.swing.JSpinner" name="spinnerModFechaFinDia">
                   <Properties>
                     <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                       <SpinnerModel initial="12" maximum="31" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="spinnerFechaFinMes2">
+                <Component class="javax.swing.JSpinner" name="spinnerModFechaFinMes">
                   <Properties>
                     <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                       <SpinnerModel initial="12" maximum="12" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="spinnerFechaFinAnio2">
+                <Component class="javax.swing.JSpinner" name="spinnerModFechaFinAnio">
                   <Properties>
                     <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                       <SpinnerModel initial="2024" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
@@ -1040,15 +1042,15 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="botonAgregarIng2" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="botonModAgregarIng" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="scrollIngDisponibles2" alignment="0" pref="491" max="32767" attributes="0"/>
+                                      <Component id="scrollModIngDisponibles" alignment="0" pref="491" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="botonQuitarIng2" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="botonModQuitarIng" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="scrollIngAsignados2" alignment="0" pref="492" max="32767" attributes="0"/>
+                                      <Component id="scrollModIngAsignados" alignment="0" pref="492" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1064,13 +1066,13 @@
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="scrollIngDisponibles2" alignment="0" pref="333" max="32767" attributes="0"/>
-                                      <Component id="scrollIngAsignados2" alignment="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="scrollModIngDisponibles" alignment="0" pref="333" max="32767" attributes="0"/>
+                                      <Component id="scrollModIngAsignados" alignment="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="botonAgregarIng2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonQuitarIng2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonModAgregarIng" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonModQuitarIng" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1083,14 +1085,14 @@
                             <Property name="text" type="java.lang.String" value="Ingenieros Disponibles:"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JScrollPane" name="scrollIngDisponibles2">
+                        <Container class="javax.swing.JScrollPane" name="scrollModIngDisponibles">
                           <AuxValues>
                             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                           </AuxValues>
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="tablaIngDisponiblesCargarProyecto2">
+                            <Component class="javax.swing.JTable" name="tablaIngDisponiblesModProyecto">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="c8" green="c8" red="c8" type="rgb"/>
@@ -1107,12 +1109,12 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JButton" name="botonAgregarIng2">
+                        <Component class="javax.swing.JButton" name="botonModAgregarIng">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Agregar"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAgregarIng2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonModAgregarIngActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel12">
@@ -1120,14 +1122,14 @@
                             <Property name="text" type="java.lang.String" value="Ingenieros Asignados:"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JScrollPane" name="scrollIngAsignados2">
+                        <Container class="javax.swing.JScrollPane" name="scrollModIngAsignados">
                           <AuxValues>
                             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                           </AuxValues>
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="tablaIngAsignadosCargarProyecto2">
+                            <Component class="javax.swing.JTable" name="tablaIngAsignadosModProyecto">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="c8" green="c8" red="c8" type="rgb"/>
@@ -1144,12 +1146,12 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JButton" name="botonQuitarIng2">
+                        <Component class="javax.swing.JButton" name="botonModQuitarIng">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Quitar"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonQuitarIng2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonModQuitarIngActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -1178,14 +1180,14 @@
                                           <Component id="jLabel37" min="-2" pref="418" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="botonAgregarRecurso1" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="scrollRecDisponibles1" alignment="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="botonModAgregarRecurso" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="scrollModRecDisponibles" alignment="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel38" alignment="0" pref="564" max="32767" attributes="0"/>
-                                      <Component id="botonQuitarRecurso1" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="scrollRecAsignados1" alignment="1" pref="0" max="32767" attributes="0"/>
+                                      <Component id="botonModQuitarRecurso" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="scrollModRecAsignados" alignment="1" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -1201,13 +1203,13 @@
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="scrollRecDisponibles1" alignment="0" pref="333" max="32767" attributes="0"/>
-                                      <Component id="scrollRecAsignados1" alignment="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="scrollModRecDisponibles" alignment="0" pref="333" max="32767" attributes="0"/>
+                                      <Component id="scrollModRecAsignados" alignment="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="botonAgregarRecurso1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonQuitarRecurso1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonModAgregarRecurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonModQuitarRecurso" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1225,30 +1227,30 @@
                             <Property name="text" type="java.lang.String" value="Recursos Asignados:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="botonAgregarRecurso1">
+                        <Component class="javax.swing.JButton" name="botonModAgregarRecurso">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Agregar"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAgregarRecurso1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonModAgregarRecursoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="botonQuitarRecurso1">
+                        <Component class="javax.swing.JButton" name="botonModQuitarRecurso">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Quitar"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonQuitarRecurso1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonModQuitarRecursoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Container class="javax.swing.JScrollPane" name="scrollRecDisponibles1">
+                        <Container class="javax.swing.JScrollPane" name="scrollModRecDisponibles">
                           <AuxValues>
                             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                           </AuxValues>
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="tablaRecDisponiblesCargarProyecto1">
+                            <Component class="javax.swing.JTable" name="tablaRecDisponiblesModProyecto">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="c8" green="c8" red="c8" type="rgb"/>
@@ -1263,14 +1265,14 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Container class="javax.swing.JScrollPane" name="scrollRecAsignados1">
+                        <Container class="javax.swing.JScrollPane" name="scrollModRecAsignados">
                           <AuxValues>
                             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                           </AuxValues>
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="tablaRecAsignadosCargarProyecto1">
+                            <Component class="javax.swing.JTable" name="tablaRecAsignadosModProyecto">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="c8" green="c8" red="c8" type="rgb"/>
@@ -1639,15 +1641,15 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="botonAgregarIng" max="32767" attributes="0"/>
                                       <Component id="jLabel4" max="32767" attributes="0"/>
                                       <Component id="scrollIngDisponibles" pref="491" max="32767" attributes="0"/>
+                                      <Component id="botonAgregarIng" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="botonQuitarIng" max="32767" attributes="0"/>
                                       <Component id="jLabel5" max="32767" attributes="0"/>
                                       <Component id="scrollIngSeleccionados" pref="492" max="32767" attributes="0"/>
+                                      <Component id="botonQuitarIng" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1773,18 +1775,15 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel6" min="-2" pref="418" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="scrollRecDisponibles" alignment="1" pref="491" max="32767" attributes="0"/>
                                       <Component id="botonAgregarRecurso" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="scrollRecDisponibles" alignment="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel7" pref="564" max="32767" attributes="0"/>
-                                      <Component id="botonQuitarRecurso" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="scrollRecSeleccionados" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="scrollRecSeleccionados" alignment="1" pref="492" max="32767" attributes="0"/>
+                                      <Component id="botonQuitarRecurso" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="jLabel7" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>

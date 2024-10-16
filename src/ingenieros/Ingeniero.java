@@ -160,4 +160,13 @@ public class Ingeniero {
 
         return false;
     }
+    
+    public void asignarIdProyectosAsociados(String proyectoID){
+        for (int i = 0; i < 3; i++) {
+            if (idsProyectosAsociados[i].equals("No Asignado") == true){
+                idsProyectosAsociados[i] = proyectoID;
+                break;
+            }
+        }
+    }
 }

@@ -60,7 +60,7 @@ public class GUI extends javax.swing.JFrame {
         ordenadorTablaPresupuesto.setComparator(5, Comparator.naturalOrder());
         tablaProyectos.setRowSorter(ordenadorTablaPresupuesto);
 
-        // Para el mostrar y seleccionar ingenieros (subpanelProyCarga y subpanelMostrarProy)
+        // Para el mostrar y seleccionar ingenieros (subpanelProyCarga, subpanelMostrarProy, subpanelModProy)
         String[] columnasTablaIngenieros = {"Nombre", "Apellido", "Especialidad", "Contratacion", "Mail", "ID"};
         modeloTablaIngenierosDisp = new DefaultTableModel(columnasTablaIngenieros, 0) {
             @Override
@@ -78,9 +78,11 @@ public class GUI extends javax.swing.JFrame {
         tablaIngDisponiblesCargarProyecto.setModel(modeloTablaIngenierosDisp);
         tablaIngSeleccionadosCargarProyecto.setModel(modeloTablaIngenierosSeleccionados);
         tablaIngAsignadosMostrarProyecto.setModel(modeloTablaIngenierosSeleccionados);
+        tablaIngDisponiblesModProyecto.setModel(modeloTablaIngenierosDisp);
+        tablaIngAsignadosModProyecto.setModel(modeloTablaIngenierosSeleccionados);
 
-        // Para el mostrar y seleccionar recursos (subpanelProyCarga y subpanelMostrarProy)
-        String[] columnasTablaRecursos = {"Nombre", "Descripcion"};
+        // Para el mostrar y seleccionar recursos (subpanelProyCarga, subpanelMostrarProy, subpanelModProy)
+        String[] columnasTablaRecursos = {"Nombre", "Descripcion", "ID"};
         modeloTablaRecursosDisponibles = new DefaultTableModel(columnasTablaRecursos, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -97,12 +99,14 @@ public class GUI extends javax.swing.JFrame {
         tablaRecDisponiblesCargarProyecto.setModel(modeloTablaRecursosDisponibles);
         tablaRecSeleccionadosCargarProyecto.setModel(modeloTablaRecursosSeleccionados);
         tablaRecAsignadosMostrarProyecto.setModel(modeloTablaRecursosSeleccionados);
+        tablaRecDisponiblesModProyecto.setModel(modeloTablaRecursosDisponibles);
+        tablaRecAsignadosModProyecto.setModel(modeloTablaRecursosSeleccionados);
 
         //    buttongroups    //
         buttonGroupTipoProyecto.add(radioHardware);
         buttonGroupTipoProyecto.add(radioSoftware);
-        buttonGroupTipoProyecto.add(radioModHardware);
-        buttonGroupTipoProyecto.add(radioModSoftware);
+        buttonGroupModWare.add(radioModHardware);
+        buttonGroupModWare.add(radioModSoftware);
 
         setIconImage(Toolkit.getDefaultToolkit().getImage("icon.png")); // totalmente innecesario pero mira que lindo queda!
         setTitle("Organizador de Proyectos");
@@ -119,6 +123,7 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroupTipoProyecto = new javax.swing.ButtonGroup();
+        buttonGroupModWare = new javax.swing.ButtonGroup();
         contenedorTitulo = new javax.swing.JPanel();
         textTitulo = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
@@ -181,28 +186,28 @@ public class GUI extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        spinnerFechaFinDia2 = new javax.swing.JSpinner();
-        spinnerFechaFinMes2 = new javax.swing.JSpinner();
-        spinnerFechaFinAnio2 = new javax.swing.JSpinner();
+        spinnerModFechaFinDia = new javax.swing.JSpinner();
+        spinnerModFechaFinMes = new javax.swing.JSpinner();
+        spinnerModFechaFinAnio = new javax.swing.JSpinner();
         tabModIngYRecursos = new javax.swing.JTabbedPane();
         tabModIngenieros = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        scrollIngDisponibles2 = new javax.swing.JScrollPane();
-        tablaIngDisponiblesCargarProyecto2 = new javax.swing.JTable();
-        botonAgregarIng2 = new javax.swing.JButton();
+        scrollModIngDisponibles = new javax.swing.JScrollPane();
+        tablaIngDisponiblesModProyecto = new javax.swing.JTable();
+        botonModAgregarIng = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        scrollIngAsignados2 = new javax.swing.JScrollPane();
-        tablaIngAsignadosCargarProyecto2 = new javax.swing.JTable();
-        botonQuitarIng2 = new javax.swing.JButton();
+        scrollModIngAsignados = new javax.swing.JScrollPane();
+        tablaIngAsignadosModProyecto = new javax.swing.JTable();
+        botonModQuitarIng = new javax.swing.JButton();
         tabModRecursos = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        botonAgregarRecurso1 = new javax.swing.JButton();
-        botonQuitarRecurso1 = new javax.swing.JButton();
-        scrollRecDisponibles1 = new javax.swing.JScrollPane();
-        tablaRecDisponiblesCargarProyecto1 = new javax.swing.JTable();
-        scrollRecAsignados1 = new javax.swing.JScrollPane();
-        tablaRecAsignadosCargarProyecto1 = new javax.swing.JTable();
+        botonModAgregarRecurso = new javax.swing.JButton();
+        botonModQuitarRecurso = new javax.swing.JButton();
+        scrollModRecDisponibles = new javax.swing.JScrollPane();
+        tablaRecDisponiblesModProyecto = new javax.swing.JTable();
+        scrollModRecAsignados = new javax.swing.JScrollPane();
+        tablaRecAsignadosModProyecto = new javax.swing.JTable();
         botonModProyecto = new javax.swing.JButton();
         botonVolverPanelPrincipalProyectos1 = new javax.swing.JButton();
         subpanelCargarProyecto = new javax.swing.JPanel();
@@ -292,8 +297,6 @@ public class GUI extends javax.swing.JFrame {
 
         botonRecursos.setText("Recursos");
 
-        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\ceci_\\Dropbox\\PC\\Desktop\\ordenar\\Designer.jpeg")); // NOI18N
-
         botonSalir.setText("Salir");
         botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -327,7 +330,7 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 484, Short.MAX_VALUE)
                 .addComponent(botonSalir)
                 .addContainerGap())
-            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
         );
 
         contenedor.add(panelMenu, "card2");
@@ -449,7 +452,7 @@ public class GUI extends javax.swing.JFrame {
         subpanelPrincipalProyectosLayout.setVerticalGroup(
             subpanelPrincipalProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelPrincipalProyectosLayout.createSequentialGroup()
-                .addContainerGap(495, Short.MAX_VALUE)
+                .addContainerGap(499, Short.MAX_VALUE)
                 .addGroup(subpanelPrincipalProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonOrdenarPresupuesto)
                     .addComponent(textCantProyectos1))
@@ -778,11 +781,11 @@ public class GUI extends javax.swing.JFrame {
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel36.setText("Año");
 
-        spinnerFechaFinDia2.setModel(new javax.swing.SpinnerNumberModel(12, 1, 31, 1));
+        spinnerModFechaFinDia.setModel(new javax.swing.SpinnerNumberModel(12, 1, 31, 1));
 
-        spinnerFechaFinMes2.setModel(new javax.swing.SpinnerNumberModel(12, 1, 12, 1));
+        spinnerModFechaFinMes.setModel(new javax.swing.SpinnerNumberModel(12, 1, 12, 1));
 
-        spinnerFechaFinAnio2.setModel(new javax.swing.SpinnerNumberModel(2024, 1, null, 1));
+        spinnerModFechaFinAnio.setModel(new javax.swing.SpinnerNumberModel(2024, 1, null, 1));
 
         tabModIngYRecursos.setBackground(new java.awt.Color(70, 130, 180));
 
@@ -790,8 +793,8 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel11.setText("Ingenieros Disponibles:");
 
-        tablaIngDisponiblesCargarProyecto2.setBackground(new java.awt.Color(200, 200, 200));
-        tablaIngDisponiblesCargarProyecto2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaIngDisponiblesModProyecto.setBackground(new java.awt.Color(200, 200, 200));
+        tablaIngDisponiblesModProyecto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -821,19 +824,19 @@ public class GUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        scrollIngDisponibles2.setViewportView(tablaIngDisponiblesCargarProyecto2);
+        scrollModIngDisponibles.setViewportView(tablaIngDisponiblesModProyecto);
 
-        botonAgregarIng2.setText("Agregar");
-        botonAgregarIng2.addActionListener(new java.awt.event.ActionListener() {
+        botonModAgregarIng.setText("Agregar");
+        botonModAgregarIng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregarIng2ActionPerformed(evt);
+                botonModAgregarIngActionPerformed(evt);
             }
         });
 
         jLabel12.setText("Ingenieros Asignados:");
 
-        tablaIngAsignadosCargarProyecto2.setBackground(new java.awt.Color(200, 200, 200));
-        tablaIngAsignadosCargarProyecto2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaIngAsignadosModProyecto.setBackground(new java.awt.Color(200, 200, 200));
+        tablaIngAsignadosModProyecto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -863,12 +866,12 @@ public class GUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        scrollIngAsignados2.setViewportView(tablaIngAsignadosCargarProyecto2);
+        scrollModIngAsignados.setViewportView(tablaIngAsignadosModProyecto);
 
-        botonQuitarIng2.setText("Quitar");
-        botonQuitarIng2.addActionListener(new java.awt.event.ActionListener() {
+        botonModQuitarIng.setText("Quitar");
+        botonModQuitarIng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonQuitarIng2ActionPerformed(evt);
+                botonModQuitarIngActionPerformed(evt);
             }
         });
 
@@ -879,14 +882,14 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(tabModIngenierosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonAgregarIng2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonModAgregarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollIngDisponibles2, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE))
+                    .addComponent(scrollModIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonQuitarIng2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonModQuitarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollIngAsignados2, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE))
+                    .addComponent(scrollModIngAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabModIngenierosLayout.setVerticalGroup(
@@ -898,12 +901,12 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollIngDisponibles2, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                    .addComponent(scrollIngAsignados2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(scrollModIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addComponent(scrollModIngAsignados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonAgregarIng2)
-                    .addComponent(botonQuitarIng2))
+                    .addComponent(botonModAgregarIng)
+                    .addComponent(botonModQuitarIng))
                 .addContainerGap())
         );
 
@@ -915,22 +918,22 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel38.setText("Recursos Asignados:");
 
-        botonAgregarRecurso1.setText("Agregar");
-        botonAgregarRecurso1.addActionListener(new java.awt.event.ActionListener() {
+        botonModAgregarRecurso.setText("Agregar");
+        botonModAgregarRecurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregarRecurso1ActionPerformed(evt);
+                botonModAgregarRecursoActionPerformed(evt);
             }
         });
 
-        botonQuitarRecurso1.setText("Quitar");
-        botonQuitarRecurso1.addActionListener(new java.awt.event.ActionListener() {
+        botonModQuitarRecurso.setText("Quitar");
+        botonModQuitarRecurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonQuitarRecurso1ActionPerformed(evt);
+                botonModQuitarRecursoActionPerformed(evt);
             }
         });
 
-        tablaRecDisponiblesCargarProyecto1.setBackground(new java.awt.Color(200, 200, 200));
-        tablaRecDisponiblesCargarProyecto1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaRecDisponiblesModProyecto.setBackground(new java.awt.Color(200, 200, 200));
+        tablaRecDisponiblesModProyecto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -967,10 +970,10 @@ public class GUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        scrollRecDisponibles1.setViewportView(tablaRecDisponiblesCargarProyecto1);
+        scrollModRecDisponibles.setViewportView(tablaRecDisponiblesModProyecto);
 
-        tablaRecAsignadosCargarProyecto1.setBackground(new java.awt.Color(200, 200, 200));
-        tablaRecAsignadosCargarProyecto1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaRecAsignadosModProyecto.setBackground(new java.awt.Color(200, 200, 200));
+        tablaRecAsignadosModProyecto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -1007,7 +1010,7 @@ public class GUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        scrollRecAsignados1.setViewportView(tablaRecAsignadosCargarProyecto1);
+        scrollModRecAsignados.setViewportView(tablaRecAsignadosModProyecto);
 
         javax.swing.GroupLayout tabModRecursosLayout = new javax.swing.GroupLayout(tabModRecursos);
         tabModRecursos.setLayout(tabModRecursosLayout);
@@ -1019,13 +1022,13 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(tabModRecursosLayout.createSequentialGroup()
                         .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(botonAgregarRecurso1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollRecDisponibles1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(botonModAgregarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrollModRecDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
-                    .addComponent(botonQuitarRecurso1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollRecAsignados1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(botonModQuitarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrollModRecAsignados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabModRecursosLayout.setVerticalGroup(
@@ -1037,12 +1040,12 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabel38))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollRecDisponibles1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                    .addComponent(scrollRecAsignados1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(scrollModRecDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addComponent(scrollModRecAsignados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonAgregarRecurso1)
-                    .addComponent(botonQuitarRecurso1))
+                    .addComponent(botonModAgregarRecurso)
+                    .addComponent(botonModQuitarRecurso))
                 .addContainerGap())
         );
 
@@ -1100,7 +1103,7 @@ public class GUI extends javax.swing.JFrame {
                                 .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelModProyectoLayout.createSequentialGroup()
                                         .addGap(1, 1, 1)
-                                        .addComponent(spinnerFechaFinDia2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(spinnerModFechaFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(spinnerModFechaInicioDia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(6, 6, 6)
                                 .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1110,7 +1113,7 @@ public class GUI extends javax.swing.JFrame {
                         .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(subpanelModProyectoLayout.createSequentialGroup()
                                 .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(spinnerFechaFinMes2, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                    .addComponent(spinnerModFechaFinMes, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                                     .addComponent(spinnerModFechaInicioMes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(6, 6, 6)
                                 .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1121,7 +1124,7 @@ public class GUI extends javax.swing.JFrame {
                                     .addGroup(subpanelModProyectoLayout.createSequentialGroup()
                                         .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(spinnerFechaFinAnio2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(spinnerModFechaFinAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(spinnerModProyectoPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(6, 6, 6)))
                 .addContainerGap())
@@ -1155,9 +1158,9 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(jLabel33))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(spinnerFechaFinAnio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spinnerFechaFinDia2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spinnerFechaFinMes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spinnerModFechaFinAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spinnerModFechaFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spinnerModFechaFinMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel34)
                             .addComponent(jLabel35)
                             .addComponent(jLabel36)
@@ -1345,14 +1348,14 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(tabIngenierosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonAgregarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE))
+                    .addComponent(scrollIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
+                    .addComponent(botonAgregarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonQuitarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollIngSeleccionados, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE))
+                    .addComponent(scrollIngSeleccionados, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                    .addComponent(botonQuitarIng, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabIngenierosLayout.setVerticalGroup(
@@ -1483,16 +1486,14 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(tabRecursosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(tabRecursosLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(scrollRecDisponibles, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
                     .addComponent(botonAgregarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollRecDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(scrollRecSeleccionados, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
                     .addComponent(botonQuitarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollRecSeleccionados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabRecursosLayout.setVerticalGroup(
@@ -1700,12 +1701,13 @@ public class GUI extends javax.swing.JFrame {
                 );
             }
         }
-
         for (int i = 0; i < arrayRecursos.size(); i++) {
             modeloTablaRecursosDisponibles.addRow(
                     new Object[]{
                         arrayRecursos.get(i).getNombre(),
-                        arrayRecursos.get(i).getDescripcion(),}
+                        arrayRecursos.get(i).getDescripcion(),
+                        arrayRecursos.get(i).getRecursoID()
+                    }
             );
         }
 
@@ -1731,19 +1733,103 @@ public class GUI extends javax.swing.JFrame {
             for (int i = 0; i < arrayProyectos.size(); i++) {
                 if (arrayProyectos.get(i).getTitulo().equals(titulo)) {
                     indice = i;
+                    break;
                 }
             }
-            textTitulo.setText("MODIFICAR PROYECTO");
-            campoModProyectoTitulo.setText(arrayProyectos.get(indice).getTitulo());
-            campoModProyectoDescripcion.setText(arrayProyectos.get(indice).getDescripcion());
-            campoModProyectoTipo.setText(arrayProyectos.get(indice).getTipo());
-            campoModProyectoTipo.setText(arrayProyectos.get(indice).getTipo());
-            spinnerModProyectoPresupuesto.setValue(arrayProyectos.get(indice).getPresupuesto());
-            spinnerModFechaInicioDia.setValue(arrayProyectos.get(indice).getFechaInicio().getDia());
-            spinnerModFechaInicioMes.setValue(arrayProyectos.get(indice).getFechaInicio().getMes());
-            spinnerModFechaInicioAnio.setValue(arrayProyectos.get(indice).getFechaInicio().getAnio());
 
-            //copiar ingenieros y recursos
+            ProyectoTecnologico proyecto = arrayProyectos.get(indice);
+
+            if (arrayProyectos.get(indice).getWare().equals("Hardware")) {
+                radioModSoftware.setSelected(true); // tiene que ser el contrario, por que?: (?)
+
+            } else {
+                radioModHardware.setSelected(true);
+            }
+
+            textTitulo.setText("MODIFICAR PROYECTO");
+            campoModProyectoTitulo.setText(proyecto.getTitulo());
+            campoModProyectoDescripcion.setText(proyecto.getDescripcion());
+            campoModProyectoTipo.setText(proyecto.getTipo());
+            campoModProyectoTipo.setText(proyecto.getTipo());
+            spinnerModProyectoPresupuesto.setValue(proyecto.getPresupuesto());
+            spinnerModFechaInicioDia.setValue(proyecto.getFechaInicio().getDia());
+            spinnerModFechaInicioMes.setValue(proyecto.getFechaInicio().getMes());
+            spinnerModFechaInicioAnio.setValue(proyecto.getFechaInicio().getAnio());
+
+            modeloTablaIngenierosDisp.setRowCount(0);
+            modeloTablaRecursosDisponibles.setRowCount(0);
+            modeloTablaIngenierosSeleccionados.setRowCount(0);
+            modeloTablaRecursosSeleccionados.setRowCount(0);
+
+            // carga tabla de ing disp && no pertenecen al proy
+            for (int i = 0; i < arrayIngenieros.size(); i++) {
+                if (arrayIngenieros.get(i).getDisponible()) {
+                    Ingeniero ingDisponible = arrayIngenieros.get(i);
+                    
+                    Boolean dentroDelProyecto = false;
+                    for (int j = 0; j < ingDisponible.getIdsProyectosAsociados().length; j++) {
+                        if (ingDisponible.getIdsProyectosAsociados()[j].equals(proyecto.getProyectoID())) {
+                            dentroDelProyecto = true;
+                        }
+                    }
+
+                    if (dentroDelProyecto == false) {
+                        modeloTablaIngenierosDisp.addRow(
+                                new Object[]{
+                                    arrayIngenieros.get(i).getNombre(),
+                                    arrayIngenieros.get(i).getApellido(),
+                                    arrayIngenieros.get(i).getEspecialidad(),
+                                    arrayIngenieros.get(i).getFechaContratacion(),
+                                    arrayIngenieros.get(i).getMail(),
+                                    arrayIngenieros.get(i).getIdIngeniero(),}
+                        );
+                    }
+
+                }
+            }
+            
+            // carga tabla de recursos disp && no pertenecen al proy
+            for (int i = 0; i < arrayRecursos.size(); i++) {
+                RecursoTecnologico recursoDisponible = arrayRecursos.get(i);
+                ArrayList<RecursoTecnologico> recsAsignados = proyecto.obtenerTodosLosRecursosTecnologicos();
+                
+                for (int j = 0; j < proyecto.obtenerCantidadRecursosTecnologicos(); j++) {
+
+                    if (!recursoDisponible.getRecursoID().equals(recsAsignados.get(j).getRecursoID())) {
+                        modeloTablaRecursosDisponibles.addRow(
+                                new Object[]{
+                                    arrayRecursos.get(i).getNombre(),
+                                    arrayRecursos.get(i).getDescripcion(),
+                                    arrayRecursos.get(i).getRecursoID()
+                                }
+                        );
+                    }
+                }
+
+            }
+
+            // cargar tablas de los asignados
+            for (int i = 0; i < proyecto.obtenerCantidadIngenieros(); i++) {
+                modeloTablaIngenierosSeleccionados.addRow(
+                        new Object[]{
+                            proyecto.obtenerTodosLosIngenieros().get(i).getNombre(),
+                            proyecto.obtenerTodosLosIngenieros().get(i).getApellido(),
+                            proyecto.obtenerTodosLosIngenieros().get(i).getEspecialidad(),
+                            proyecto.obtenerTodosLosIngenieros().get(i).getFechaContratacion(),
+                            proyecto.obtenerTodosLosIngenieros().get(i).getMail(),
+                            proyecto.obtenerTodosLosIngenieros().get(i).getIdIngeniero(),}
+                );
+            }
+            for (int i = 0; i < proyecto.obtenerCantidadRecursosTecnologicos(); i++) {
+                modeloTablaRecursosSeleccionados.addRow(
+                        new Object[]{
+                            proyecto.obtenerTodosLosRecursosTecnologicos().get(i).getNombre(),
+                            proyecto.obtenerTodosLosRecursosTecnologicos().get(i).getDescripcion(),
+                            proyecto.obtenerTodosLosRecursosTecnologicos().get(i).getRecursoID()
+                        }
+                );
+            }
+
             contenedor.removeAll();
             contenedor.add(panelProyectos.add(subpanelModProyecto));
             contenedor.repaint();
@@ -1806,10 +1892,11 @@ public class GUI extends javax.swing.JFrame {
 
     private void botonCargarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCargarProyectoActionPerformed
         String titulo, descripcion, tipo;
-        float presupuesto = 100;
-        Fecha fechaInicio = new Fecha(), fechaFin = new Fecha();
+        float presupuesto;
+        Fecha fechaInicio, fechaFin;
         ArrayList<Ingeniero> ingenieros = new ArrayList<>();
         ArrayList<RecursoTecnologico> recursosTecnologicos = new ArrayList<>();
+        ProyectoTecnologico proyecto;
 
         titulo = campoProyectoTitulo.getText();
         descripcion = campoProyectoDescripcion.getText();
@@ -1844,37 +1931,43 @@ public class GUI extends javax.swing.JFrame {
 
         }
 
-        if (radioHardware.isSelected()) {
-            DesarrolloDeHardware proyecto = new DesarrolloDeHardware(titulo, tipo, descripcion, presupuesto, fechaInicio, fechaFin);
-            for (Ingeniero x : ingenieros) {
-                proyecto.agregarIngeniero(x);
-            }
+        filas = modeloTablaRecursosSeleccionados.getRowCount();
 
-            // funcion que rellene ingeniero.idsProyectosAsociados (para poder controlar que no este > 3 proy.)
-            // hay ponerla en otro lado y acomodar el codigo
-            for (int i = 0; i < ingenieros.size(); i++) {
-                String[] proyectosAsignados = ingenieros.get(i).getIdsProyectosAsociados();
-                for (int j = 0; j < 3; j++) {
-                    if (proyectosAsignados[j].equals("No Asignado")) {
-                        proyectosAsignados[j] = proyecto.getProyectoID();
-                        break;
-                    }
+        for (int i = 0; i < filas; i++) {
+
+            String idRec = (String) tablaRecSeleccionadosCargarProyecto.getValueAt(i, 2);
+
+            for (int j = 0; j < arrayRecursos.size(); j++) {
+
+                if (idRec.equals(arrayRecursos.get(j).getRecursoID())) {
+                    recursosTecnologicos.add(arrayRecursos.get(j));
+                    break;
                 }
+
             }
 
-            arrayProyectos.add(proyecto);
+        }
 
+        if (radioHardware.isSelected()) {
+            proyecto = new DesarrolloDeHardware(titulo, tipo, descripcion, presupuesto, fechaInicio, fechaFin);
+        } else {
+            proyecto = new DesarrolloDeSoftware(titulo, tipo, descripcion, presupuesto, fechaInicio, fechaFin);
         }
-        if (radioSoftware.isSelected()) {
-            DesarrolloDeSoftware proyecto = new DesarrolloDeSoftware(titulo, tipo, descripcion, presupuesto, fechaInicio, fechaFin);
-            for (Ingeniero x : ingenieros) {
-                proyecto.agregarIngeniero(x);
-            }
-            for (RecursoTecnologico x : recursosTecnologicos) {
-                proyecto.agregarRecursoTecnologico(x);
-            }
-            arrayProyectos.add(proyecto);
+
+        // para todos los ing seleccionados: se asigna la id del proy en IDProy.Asoc. (Para evitar que un ing trabaje en +3 Proy)
+        String id = proyecto.getProyectoID();
+        for (int i = 0; i < ingenieros.size(); i++) {
+            ingenieros.get(i).asignarIdProyectosAsociados(id);
         }
+
+        for (Ingeniero x : ingenieros) {
+            proyecto.agregarIngeniero(x);
+        }
+        for (RecursoTecnologico x : recursosTecnologicos) {
+            proyecto.agregarRecursoTecnologico(x);
+        }
+
+        arrayProyectos.add(proyecto);
 
         handlerIrAlSubpanelPrincipalProyectos(evt);
     }//GEN-LAST:event_botonCargarProyectoActionPerformed
@@ -1891,21 +1984,29 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoModProyectoDescripcionMouseClicked
 
-    private void botonAgregarIng2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarIng2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregarIng2ActionPerformed
+    private void botonModAgregarIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModAgregarIngActionPerformed
+        if (tablaIngDisponiblesModProyecto.getSelectedRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Para asociar a un ingeniero al proyecto, seleccionelo de la tabla a su izquierda.", "Error", 0);
+        } else {
+            permutarFilasEntreTablas(tablaIngDisponiblesModProyecto, modeloTablaIngenierosDisp, modeloTablaIngenierosSeleccionados);
+        }
+    }//GEN-LAST:event_botonModAgregarIngActionPerformed
 
-    private void botonQuitarIng2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonQuitarIng2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonQuitarIng2ActionPerformed
+    private void botonModQuitarIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModQuitarIngActionPerformed
+        if (tablaIngAsignadosModProyecto.getSelectedRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Para eliminar un ingeniero del proyecto, seleccionelo de la tabla a su derecha.", "Error", 0);
+        } else {
+            permutarFilasEntreTablas(tablaIngAsignadosModProyecto, modeloTablaIngenierosSeleccionados, modeloTablaIngenierosDisp);
+        }
+    }//GEN-LAST:event_botonModQuitarIngActionPerformed
 
-    private void botonAgregarRecurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarRecurso1ActionPerformed
+    private void botonModAgregarRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModAgregarRecursoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregarRecurso1ActionPerformed
+    }//GEN-LAST:event_botonModAgregarRecursoActionPerformed
 
-    private void botonQuitarRecurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonQuitarRecurso1ActionPerformed
+    private void botonModQuitarRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModQuitarRecursoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botonQuitarRecurso1ActionPerformed
+    }//GEN-LAST:event_botonModQuitarRecursoActionPerformed
 
     private void botonModProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModProyectoActionPerformed
         // TODO add your handling code here:
@@ -1956,26 +2057,7 @@ public class GUI extends javax.swing.JFrame {
                     ProyectoAMostrar = arrayProyectos.get(i);
 
                     textMostrarTitulo.setText(ProyectoAMostrar.getTitulo());
-
-                    //correcion del codigo para mostrar bien el tipo de proyecto
-                    textMostrarHardSoft.setText("ERROR");
-                    for (ProyectoTecnologico x : arrayProyectos) {
-                        if ((x.getTitulo()).equals(ProyectoAMostrar.getTitulo())) {
-                            if ((x.getDescripcion()).equals(ProyectoAMostrar.getDescripcion())) {
-                                if ((x.getTipo()).equals(ProyectoAMostrar.getTipo())) {
-                                    if (x.getPresupuesto() == ProyectoAMostrar.getPresupuesto()) {
-                                        if (x instanceof DesarrolloDeHardware) {
-                                            textMostrarHardSoft.setText("Hardware");
-                                        }
-                                        if (x instanceof DesarrolloDeSoftware) {
-                                            textMostrarHardSoft.setText("Software");
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
+                    textMostrarHardSoft.setText(ProyectoAMostrar.getWare());
                     textMostrarDescripcion.setText(ProyectoAMostrar.getDescripcion());
                     textMostrarTipo.setText(ProyectoAMostrar.getTipo());
                     textMostrarPresupuesto.setText(String.valueOf(ProyectoAMostrar.getPresupuesto()));
@@ -1993,7 +2075,8 @@ public class GUI extends javax.swing.JFrame {
                                     ing.getEspecialidad(),
                                     ing.getFechaContratacion(),
                                     ing.getMail(),
-                                    ing.getIdIngeniero(),}
+                                    ing.getIdIngeniero()
+                                }
                         );
                     }
 
@@ -2004,6 +2087,7 @@ public class GUI extends javax.swing.JFrame {
                         modeloTablaRecursosSeleccionados.addRow(
                                 new Object[]{
                                     rec.getNombre(),
+                                    rec.getDescripcion(),
                                     rec.getDescripcion(),}
                         );
                     }
@@ -2258,8 +2342,6 @@ public class GUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /*
-        arrayProyectos.add(new DesarrolloDeSoftware("Instagram", "Red Social", "la de las fotos y las trolas", (float) 1000000, new Fecha(12, 12, 2009), new Fecha()));
-        arrayProyectos.add(new DesarrolloDeHardware("Nokia 1100", "Telefono Celular", "Duro durito", (float) 1800200, new Fecha(12, 12, 2000), new Fecha(2, 12, 2005)));
         arrayIngenieros.add(new Ingeniero("Paco", "Zabala", "loquito@gmail.com", "Flautista", new Fecha()));
         arrayIngenieros.add(new Ingeniero("Carlos", "Garcia", "snm@gmail.com", "Clavadista", new Fecha()));
         arrayIngenieros.add(new Ingeniero("Gerardo", "Sofovich", "ger@hotmail.com", "Chimentero", new Fecha()));
@@ -2268,13 +2350,16 @@ public class GUI extends javax.swing.JFrame {
         arrayRecursos.add(new RecursoTecnologico("Destornillador", "ha sido robado..."));
         arrayRecursos.add(new RecursoTecnologico("Servidor", "una coradir del 2011"));
 
-        arrayProyectos.add(new DesarrolloDeSoftware("Facebook", "Red Social", "La vamos a re pegar negritooo", (float) 1000, new Fecha(12, 12, 2000), new Fecha()));
-        arrayProyectos.getLast().agregarIngeniero(arrayIngenieros.getLast());
-        arrayProyectos.getLast().agregarRecursoTecnologico(arrayRecursos.getLast());
+        
          */
         arrayIngenieros = cargarIngenierosDesdeArchivo("ingenieros.txt");
         arrayRecursos = cargarRecursosDesdeArchivo("recursos.txt");
         arrayProyectos = cargarProyectosDesdeArchivo("proyectos.txt");
+
+        arrayProyectos.add(new DesarrolloDeSoftware("Instagram", "Red Social", "la de las fotos y las trolas", (float) 1000000, new Fecha(12, 12, 2009), new Fecha()));
+        arrayProyectos.add(new DesarrolloDeHardware("Nokia 1100", "Telefono Celular", "Duro durito", (float) 1800200, new Fecha(12, 12, 2000), new Fecha(2, 12, 2005)));
+
+        arrayProyectos.add(new DesarrolloDeSoftware("Facebook", "Red Social", "La vamos a re pegar negritooo", (float) 1000, new Fecha(12, 12, 2000), new Fecha()));
 
         //Create and display the form 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -2287,27 +2372,28 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAgregarIng;
-    private javax.swing.JButton botonAgregarIng2;
     private javax.swing.JButton botonAgregarProyecto;
     private javax.swing.JButton botonAgregarRecurso;
-    private javax.swing.JButton botonAgregarRecurso1;
     private javax.swing.JButton botonCargarProyecto;
     private javax.swing.JButton botonEliminarProyecto;
     private javax.swing.JButton botonIngenieros;
+    private javax.swing.JButton botonModAgregarIng;
+    private javax.swing.JButton botonModAgregarRecurso;
     private javax.swing.JButton botonModProyecto;
+    private javax.swing.JButton botonModQuitarIng;
+    private javax.swing.JButton botonModQuitarRecurso;
     private javax.swing.JButton botonModificarProyecto;
     private javax.swing.JButton botonOrdenarPresupuesto;
     private javax.swing.JButton botonProyectos;
     private javax.swing.JButton botonQuitarIng;
-    private javax.swing.JButton botonQuitarIng2;
     private javax.swing.JButton botonQuitarRecurso;
-    private javax.swing.JButton botonQuitarRecurso1;
     private javax.swing.JButton botonRecursos;
     private javax.swing.JButton botonSalir;
     private javax.swing.JButton botonVolverAlMenu;
     private javax.swing.JButton botonVolverPanelPrincipalProyectos;
     private javax.swing.JButton botonVolverPanelPrincipalProyectos1;
     private javax.swing.JButton botonVolverPanelPrincipalProyectos2;
+    private javax.swing.ButtonGroup buttonGroupModWare;
     private javax.swing.ButtonGroup buttonGroupTipoProyecto;
     private javax.swing.JTextField campoModProyectoDescripcion;
     private javax.swing.JTextField campoModProyectoTipo;
@@ -2352,26 +2438,26 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton radioModHardware;
     private javax.swing.JRadioButton radioModSoftware;
     private javax.swing.JRadioButton radioSoftware;
-    private javax.swing.JScrollPane scrollIngAsignados2;
     private javax.swing.JScrollPane scrollIngDisponibles;
-    private javax.swing.JScrollPane scrollIngDisponibles2;
     private javax.swing.JScrollPane scrollIngMostrarAsignados;
     private javax.swing.JScrollPane scrollIngSeleccionados;
+    private javax.swing.JScrollPane scrollModIngAsignados;
+    private javax.swing.JScrollPane scrollModIngDisponibles;
+    private javax.swing.JScrollPane scrollModRecAsignados;
+    private javax.swing.JScrollPane scrollModRecDisponibles;
     private javax.swing.JScrollPane scrollMostrarRecAsignados;
-    private javax.swing.JScrollPane scrollRecAsignados1;
     private javax.swing.JScrollPane scrollRecDisponibles;
-    private javax.swing.JScrollPane scrollRecDisponibles1;
     private javax.swing.JScrollPane scrollRecSeleccionados;
     private javax.swing.JScrollPane scrollTablaProyectos;
     private javax.swing.JSpinner spinnerFechaFinAnio;
-    private javax.swing.JSpinner spinnerFechaFinAnio2;
     private javax.swing.JSpinner spinnerFechaFinDia;
-    private javax.swing.JSpinner spinnerFechaFinDia2;
     private javax.swing.JSpinner spinnerFechaFinMes;
-    private javax.swing.JSpinner spinnerFechaFinMes2;
     private javax.swing.JSpinner spinnerFechaInicioAnio;
     private javax.swing.JSpinner spinnerFechaInicioDia;
     private javax.swing.JSpinner spinnerFechaInicioMes;
+    private javax.swing.JSpinner spinnerModFechaFinAnio;
+    private javax.swing.JSpinner spinnerModFechaFinDia;
+    private javax.swing.JSpinner spinnerModFechaFinMes;
     private javax.swing.JSpinner spinnerModFechaInicioAnio;
     private javax.swing.JSpinner spinnerModFechaInicioDia;
     private javax.swing.JSpinner spinnerModFechaInicioMes;
@@ -2390,16 +2476,16 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel tabMostrarIngenieros;
     private javax.swing.JPanel tabMostrarRecursos;
     private javax.swing.JPanel tabRecursos;
-    private javax.swing.JTable tablaIngAsignadosCargarProyecto2;
+    private javax.swing.JTable tablaIngAsignadosModProyecto;
     private javax.swing.JTable tablaIngAsignadosMostrarProyecto;
     private javax.swing.JTable tablaIngDisponiblesCargarProyecto;
-    private javax.swing.JTable tablaIngDisponiblesCargarProyecto2;
+    private javax.swing.JTable tablaIngDisponiblesModProyecto;
     private javax.swing.JTable tablaIngSeleccionadosCargarProyecto;
     private javax.swing.JTable tablaProyectos;
-    private javax.swing.JTable tablaRecAsignadosCargarProyecto1;
+    private javax.swing.JTable tablaRecAsignadosModProyecto;
     private javax.swing.JTable tablaRecAsignadosMostrarProyecto;
     private javax.swing.JTable tablaRecDisponiblesCargarProyecto;
-    private javax.swing.JTable tablaRecDisponiblesCargarProyecto1;
+    private javax.swing.JTable tablaRecDisponiblesModProyecto;
     private javax.swing.JTable tablaRecSeleccionadosCargarProyecto;
     private javax.swing.JLabel textCantProyectos;
     private javax.swing.JLabel textCantProyectos1;

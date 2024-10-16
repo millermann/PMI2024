@@ -39,4 +39,9 @@ public class DesarrolloDeSoftware extends ProyectoTecnologico {
         return tipoAplicacion;
     }
     
+    @Override
+    public String getWare(){
+        return "Hardware";
+    }
+    
 }
