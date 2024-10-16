@@ -1,61 +1,43 @@
-﻿Precarga de Ingenieros
-# Formato: Nombre, Apellido, Email, Especialidad, Fecha de Contratación (dd/mm/yyyy)
+
+# Proyectos:
+
+//inicio
+id: PROY7
+proyecto de hardware
+tipo: memoria RAM
+titulo: Nvidia RAM X
+descripcion: una memoria de 16 GB de memoria RAM
+presupuesto: 5000.00
+fecha de inicio: 11/4/2000
+fecha de entrega: 15/6/2008
+
+ingenieros:
+ING1
+ING5
+
+recursos tecnologicos:
+REC2
+//fin
 
 
-Juan, Pérez, jperez@empresa.com, Desarrollo de Software, 12/03/2018
-Ana, López, alopez@empresa.com, Desarrollo de Hardware, 05/07/2020
-Carlos, Gómez, cgomez@empresa.com, Redes y Seguridad, 20/01/2017
-María, Rodríguez, mrodriguez@empresa.com, Inteligencia Artificial, 15/09/2019
-Pedro, Díaz, pdiaz@empresa.com, Desarrollo de Software, 03/11/2021
-Lucía, Torres, ltorres@empresa.com, Desarrollo de Hardware, 22/04/2020
-Santiago, Ruiz, sruiz@empresa.com, Ciberseguridad, 30/06/2019
-Julia, Fernández, jfernandez@empresa.com, Diseño UX/UI, 15/08/2020
-Roberto, García, rgarcia@empresa.com, Desarrollo de Hardware, 10/02/2018
-Elena, Sánchez, esanchez@empresa.com, Big Data, 07/05/2021
-Fernando, Castillo, fcastillo@empresa.com, Desarrollo de Software, 13/03/2019
-Sofía, Morales, smorales@empresa.com, Inteligencia Artificial, 28/06/2022
-Martín, Ríos, mrios@empresa.com, Robótica, 17/01/2019
-Paula, Gutiérrez, pgutierrez@empresa.com, Desarrollo de Software, 22/10/2020
-Alejandro, Muñoz, amunoz@empresa.com, Desarrollo de Hardware, 04/05/2017
+# Ingenieros:
+
+ING1(opcional), Juan, Pérez, jperez@empresa.com, Desarrollo de Software, 12/03/2018, No Asignado, PROY7, No Asignado
+ING2 Carlos, Gómez, cgomez@empresa.com, Redes y Seguridad, 20/01/2017 No Asignado, No Asignado, No Asignado
+ING5 Lucía, Torres, ltorres@empresa.com, Desarrollo de Hardware, 22/04/2020, PROY7, No Asignado, No Asignado
+
+# Recursos:
+
+REC2(opcional)
+nombre: Procesador (CPU)
+descripcion: Unidad central de procesamiento que ejecuta las instrucciones del sistema.
+
+REC6
+nombre: Placa Base (Motherboard)
+descripcion: Placa principal donde se conectan todos los componentes del sistema.
 
 
-Precarga de Proyectos
-# Formato
-	//inicio
-        proyecto de hardware
-        tipo: memoria RAM
-        titulo: Nvidia RAM X
-        descripcion: una memoria de 16 GB de memoria RAM
-        presupuesto: 5000.00
-        fecha de inicio: 11/4/2000
-        fecha de entrega: 15/6/2008
-        ingenieros:
-                nombre: Raul
-                apellido: Mendez
-                mail: raulM@outlook.com
-                especialidad: ingeniero en computacion.
-                fecha de contratacion: 11/4/2000
-                proyectos asignados: Nvidia RAM X, Nvidia LED.
-                //mas ingenieros...
-        recursos tecnologicos:
-                nombre: capacitor
-                descripcion: almacena energia
-                //mas recursos tecnologicos...
-        //fin
 
-no formateados!!!
-Gestión Empresarial, Sistema ERP para empresas medianas, 500000, 01/02/2023, 30/09/2023, Software, Aplicación Web
-App Móvil de Ventas, Aplicación móvil para gestión de ventas, 150000, 10/05/2023, 30/12/2023, Software, Aplicación Móvil
-Monitorización IoT, Sistema IoT para monitorear temperatura, 300000, 15/03/2023, 15/10/2023, Hardware, Dispositivo IoT
-Control Robótico, Plataforma de control para robots industriales, 800000, 01/04/2023, 01/12/2023, Hardware, Robótica
-E-commerce Avanzado, Plataforma e-commerce escalable, 200000, 15/02/2023, 30/11/2023, Software, Aplicación Web
-Wearable de Salud, Dispositivo IoT para monitoreo de salud, 450000, 10/06/2023, 31/12/2023, Hardware, Dispositivo IoT
-Plataforma Educativa, Sistema e-learning para universidades, 600000, 20/01/2023, 20/12/2023, Software, Aplicación Web
-Simulación de Producción, Sistema de simulación para líneas de producción, 250000, 01/03/2023, 01/11/2023, Software, Aplicación Desktop
-Automatización de Hogares, Sistema de automatización domótica, 700000, 05/04/2023, 31/12/2023, Hardware, Dispositivo IoT
-Plataforma de Telemedicina, Sistema para consultas médicas en línea, 350000, 15/07/2023, 31/12/2023, Software, Aplicación Web
-Desarrollo de Drone, Prototipo de drone autónomo, 900000, 10/01/2023, 30/10/2023, Hardware, Robótica
-Aplicación de Mensajería, Aplicación móvil para mensajería instantánea, 100000, 01/08/2023, 31/12/2023, Software, Aplicación Móvil
-Sistema de Seguridad, Dispositivo para control de acceso, 500000, 12/02/2023, 30/12/2023, Hardware, Robótica
-Red Social Universitaria, Red social para estudiantes universitarios, 200000, 20/06/2023, 30/11/2023, Software, Aplicación Web
-Plataforma de Realidad Virtual, Plataforma para simulaciones en RV, 600000, 01/09/2023, 31/12/2023, Software, Aplicación Desktop
+
+
+
