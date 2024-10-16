@@ -9,6 +9,7 @@ import java.time.LocalTime;
 import java.time.LocalDateTime;
 
 public class Fecha {
+
     private int dia, mes, anio;
 
     public Fecha() {
@@ -49,9 +50,8 @@ public class Fecha {
     public void setAnio(int anio) {
         this.anio = anio;
     }
-    
-    public int cantDia(Fecha d)
-    {
+
+    public int cantDia(Fecha d) {
         int cantidad, diaActual;
         LocalDateTime fechaHoraActual = LocalDateTime.now();
         LocalDate fechaActual = fechaHoraActual.toLocalDate();
@@ -61,10 +61,31 @@ public class Fecha {
         return cantidad;
     }
 
+    public static Fecha parseFecha(String fechaStr) {
+        String[] partes = fechaStr.split("/");
+        if (partes.length != 3) {
+            throw new IllegalArgumentException("Formato de fecha inválido, use 'dd/mm/yyyy'");
+        }
+
+        try {
+            int dia = Integer.parseInt(partes[0].trim());
+            int mes = Integer.parseInt(partes[1].trim());
+            int anio = Integer.parseInt(partes[2].trim());
+
+            // Validaciones opcionales
+            if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || anio < 1900) {
+                throw new IllegalArgumentException("Fecha fuera de rango");
+            }
+
+            return new Fecha(dia, mes, anio);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Error al parsear la fecha: " + e.getMessage());
+        }
+    }
+
     @Override
     public String toString() {
         return dia + "/" + mes + "/" + anio;
     }
-    
-    
+
 }

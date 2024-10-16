@@ -7,6 +7,9 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="49" green="69" red="f1" type="rgb"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -45,7 +48,12 @@
     <Container class="javax.swing.JPanel" name="contenedorTitulo">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="99" red="99" type="rgb"/>
+          <Color blue="49" green="69" red="f1" type="rgb"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
         </Property>
       </Properties>
 
@@ -63,8 +71,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="textTitulo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="textTitulo" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -86,6 +94,16 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="panelMenu">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="49" green="69" red="f1" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                <MatteColorBorder/>
+              </Border>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="card2"/>
@@ -100,26 +118,28 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="botonRecursos" max="32767" attributes="0"/>
                           <Component id="botonProyectos" alignment="0" max="32767" attributes="0"/>
-                          <Component id="botonIngenieros" alignment="0" pref="326" max="32767" attributes="0"/>
+                          <Component id="botonIngenieros" alignment="0" pref="418" max="32767" attributes="0"/>
                           <Component id="botonSalir" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="532" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel19" min="-2" pref="581" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="botonProyectos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="botonIngenieros" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="botonRecursos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="362" max="32767" attributes="0"/>
+                      <EmptySpace pref="484" max="32767" attributes="0"/>
                       <Component id="botonSalir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
+                  <Component id="jLabel19" alignment="0" pref="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -142,6 +162,8 @@
                 <Property name="text" type="java.lang.String" value="Recursos"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JLabel" name="jLabel19">
+            </Component>
             <Component class="javax.swing.JButton" name="botonSalir">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salir"/>
@@ -162,6 +184,11 @@
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
           <SubComponents>
             <Container class="javax.swing.JPanel" name="subpanelPrincipalProyectos">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="97" green="c2" red="fa" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="card3"/>
@@ -172,7 +199,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="578" max="32767" attributes="0"/>
+                          <EmptySpace pref="727" max="32767" attributes="0"/>
                           <Component id="textCantProyectos1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="botonOrdenarPresupuesto" min="-2" max="-2" attributes="0"/>
@@ -212,7 +239,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="384" max="32767" attributes="0"/>
+                          <EmptySpace pref="495" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="botonOrdenarPresupuesto" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="textCantProyectos1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -220,9 +247,9 @@
                           <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="scrollTablaProyectos" pref="370" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace pref="145" max="32767" attributes="0"/>
+                              <Component id="scrollTablaProyectos" min="-2" pref="346" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="textCantProyectos" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -253,6 +280,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JTable" name="tablaProyectos">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                        </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="7" rowCount="4">
                             <Column editable="false" title="Nombre" type="java.lang.String"/>
@@ -368,7 +398,12 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="subpanelCargarProyecto">
+            <Container class="javax.swing.JPanel" name="subpanelMostrarProyecto">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="97" green="c2" red="fa" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="card2"/>
@@ -381,75 +416,31 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="tabIngYRecursos" max="32767" attributes="0"/>
-                              <Component id="botonCargarProyecto" alignment="0" max="32767" attributes="0"/>
-                              <Component id="botonVolverPanelPrincipalProyectos" alignment="1" max="32767" attributes="0"/>
+                              <Component id="tabMostrarIngYRecursos" alignment="1" max="32767" attributes="0"/>
+                              <Component id="botonVolverPanelPrincipalProyectos2" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="campoProyectoTitulo" min="-2" pref="241" max="-2" attributes="0"/>
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="textMostrarTitulo" min="-2" pref="235" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="radioHardware" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="radioSoftware" min="-2" max="-2" attributes="0"/>
+                                          <Component id="textMostrarHardSoft" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="campoProyectoTipo" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoProyectoDescripcion" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="textMostrarTipo" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="textMostrarDescripcion" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel1" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                                  <Component id="jLabel3" linkSize="5" min="-2" pref="89" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jLabel16" min="-2" pref="35" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel2" linkSize="5" min="-2" pref="89" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jLabel13" min="-2" pref="35" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                                                  <Component id="spinnerFechaFinDia" min="-2" pref="50" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="spinnerFechaInicioDia" linkSize="4" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel17" min="-2" pref="35" max="-2" attributes="0"/>
-                                              <Component id="jLabel14" min="-2" pref="35" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="textFinalizacion" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="textInicio" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="textPresup" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="spinnerFechaFinMes" alignment="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="spinnerFechaInicioMes" linkSize="4" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel15" min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="spinnerFechaInicioAnio" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel18" min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="spinnerFechaFinAnio" min="-2" pref="68" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                      <Component id="spinnerProyectoPresupuesto" min="-2" pref="166" max="-2" attributes="0"/>
+                                      <Component id="textMostrarFechaInicio" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="textMostrarFechaFin" max="32767" attributes="0"/>
+                                      <Component id="textMostrarPresupuesto" alignment="1" pref="211" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               </Group>
@@ -463,211 +454,88 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="campoProyectoTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioHardware" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioSoftware" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textMostrarTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textMostrarHardSoft" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="campoProyectoDescripcion" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="campoProyectoTipo" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="textMostrarDescripcion" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="textMostrarTipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textMostrarFechaFin" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textFinalizacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="spinnerProyectoPresupuesto" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="textPresup" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textMostrarPresupuesto" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="spinnerFechaInicioAnio" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="spinnerFechaInicioDia" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="spinnerFechaInicioMes" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="spinnerFechaFinAnio" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="spinnerFechaFinDia" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="spinnerFechaFinMes" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textInicio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textMostrarFechaInicio" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="tabIngYRecursos" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="tabMostrarIngYRecursos" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botonCargarProyecto" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botonVolverPanelPrincipalProyectos" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonVolverPanelPrincipalProyectos2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="campoProyectoTitulo">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="T&#xed;tulo del Proyecto"/>
-                    <Property name="toolTipText" type="java.lang.String" value="T&#xed;tulo del Proyecto"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="radioHardware">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Hardware"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioHardwareActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="radioSoftware">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Software"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioSoftwareActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="campoProyectoDescripcion">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Descripcion..."/>
-                    <Property name="toolTipText" type="java.lang.String" value="Descripcion del Proyecto"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="campoProyectoDescripcionMouseClicked"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="campoProyectoTipo">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Tipo"/>
-                    <Property name="toolTipText" type="java.lang.String" value="Tipo del proyecto"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel1">
+                <Component class="javax.swing.JLabel" name="textPresup">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Presupuesto:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="spinnerProyectoPresupuesto">
+                <Component class="javax.swing.JLabel" name="textInicio">
                   <Properties>
-                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                      <SpinnerModel initial="0.0" minimum="0.0" numberType="java.lang.Float" stepSize="1.0" type="number"/>
-                    </Property>
-                  </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
-                    <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="Presupuesto del proyecto"/>
-                  </AccessibilityProperties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel2">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="Fecha de inicio:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel3">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value=" Finalizaci&#xf3;n:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel13">
+                <Component class="javax.swing.JLabel" name="textFinalizacion">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Dia"/>
+                    <Property name="text" type="java.lang.String" value="F. Finalizaci&#xf3;n:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel14">
+                <Component class="javax.swing.JLabel" name="textMostrarFechaInicio">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Mes"/>
+                    <Property name="text" type="java.lang.String" value="12/12/2024"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel15">
+                <Component class="javax.swing.JLabel" name="textMostrarFechaFin">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
+                    <Property name="text" type="java.lang.String" value="12/12/2024"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="spinnerFechaInicioDia">
+                <Container class="javax.swing.JTabbedPane" name="tabMostrarIngYRecursos">
                   <Properties>
-                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                      <SpinnerModel initial="12" maximum="31" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="b4" green="82" red="46" type="rgb"/>
                     </Property>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JSpinner" name="spinnerFechaInicioMes">
-                  <Properties>
-                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                      <SpinnerModel initial="12" maximum="12" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JSpinner" name="spinnerFechaInicioAnio">
-                  <Properties>
-                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                      <SpinnerModel initial="2024" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
-                    </Property>
-                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="GUI_spinnerFechaInicioAnio"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel16">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Dia"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel17">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Mes"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel18">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JSpinner" name="spinnerFechaFinDia">
-                  <Properties>
-                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                      <SpinnerModel initial="12" maximum="31" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JSpinner" name="spinnerFechaFinMes">
-                  <Properties>
-                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                      <SpinnerModel initial="12" maximum="12" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JSpinner" name="spinnerFechaFinAnio">
-                  <Properties>
-                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                      <SpinnerModel initial="2024" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Container class="javax.swing.JTabbedPane" name="tabIngYRecursos">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="tabIngenieros">
+                    <Container class="javax.swing.JPanel" name="tabMostrarIngenieros">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="be" green="ef" red="ff" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Ingenieros">
@@ -680,19 +548,12 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="botonAgregarIng" max="32767" attributes="0"/>
-                                      <Component id="jLabel4" max="32767" attributes="0"/>
-                                      <Component id="scrollIngDisponibles" pref="418" max="32767" attributes="0"/>
+                                      <Component id="scrollIngMostrarAsignados" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel29" alignment="0" pref="989" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="botonQuitarIng" max="32767" attributes="0"/>
-                                      <Component id="jLabel5" max="32767" attributes="0"/>
-                                      <Component id="scrollIngSeleccionados" pref="420" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -700,74 +561,33 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel4" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="scrollIngDisponibles" pref="202" max="32767" attributes="0"/>
-                                      <Component id="scrollIngSeleccionados" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="botonAgregarIng" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonQuitarIng" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="scrollIngMostrarAsignados" pref="391" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="jLabel4">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Ingenieros Disponibles:"/>
-                          </Properties>
-                        </Component>
-                        <Container class="javax.swing.JScrollPane" name="scrollIngDisponibles">
-                          <AuxValues>
-                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                          </AuxValues>
-
-                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                          <SubComponents>
-                            <Component class="javax.swing.JTable" name="tablaIngDisponiblesCargarProyecto">
-                              <Properties>
-                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="4" rowCount="15">
-                                    <Column editable="false" title="Nombre" type="java.lang.Object"/>
-                                    <Column editable="false" title="Apellido" type="java.lang.Object"/>
-                                    <Column editable="false" title="Especialidad" type="java.lang.Object"/>
-                                    <Column editable="false" title="Contratacion" type="java.lang.Object"/>
-                                  </Table>
-                                </Property>
-                              </Properties>
-                            </Component>
-                          </SubComponents>
-                        </Container>
-                        <Component class="javax.swing.JButton" name="botonAgregarIng">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Agregar"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAgregarIngActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel5">
+                        <Component class="javax.swing.JLabel" name="jLabel29">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Ingenieros Asignados:"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JScrollPane" name="scrollIngSeleccionados">
+                        <Container class="javax.swing.JScrollPane" name="scrollIngMostrarAsignados">
                           <AuxValues>
                             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                           </AuxValues>
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="tablaIngSeleccionadosCargarProyecto">
+                            <Component class="javax.swing.JTable" name="tablaIngAsignadosMostrarProyecto">
                               <Properties>
+                                <Property name="autoCreateRowSorter" type="boolean" value="true"/>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="4" rowCount="15">
                                     <Column editable="false" title="Nombre" type="java.lang.Object"/>
@@ -780,17 +600,14 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JButton" name="botonQuitarIng">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Quitar"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonQuitarIngActionPerformed"/>
-                          </Events>
-                        </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="javax.swing.JPanel" name="tabRecursos">
+                    <Container class="javax.swing.JPanel" name="tabMostrarRecursos">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="be" green="ef" red="ff" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Recursos">
@@ -802,21 +619,11 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel6" min="-2" pref="418" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="botonAgregarRecurso" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="scrollRecDisponibles" alignment="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel7" pref="420" max="32767" attributes="0"/>
-                                      <Component id="botonQuitarRecurso" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="scrollRecSeleccionados" alignment="1" pref="0" max="32767" attributes="0"/>
+                                      <Component id="scrollMostrarRecAsignados" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel39" alignment="0" pref="989" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -826,80 +633,35 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel6" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="scrollRecDisponibles" alignment="0" pref="202" max="32767" attributes="0"/>
-                                      <Component id="scrollRecSeleccionados" alignment="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="botonAgregarRecurso" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonQuitarRecurso" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="scrollMostrarRecAsignados" pref="391" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="jLabel6">
+                        <Component class="javax.swing.JLabel" name="jLabel39">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Recursos Disponibles:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel7">
-                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="be" green="ef" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="Recursos Asignados:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="botonAgregarRecurso">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Agregar"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAgregarRecursoActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="botonQuitarRecurso">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Quitar"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonQuitarRecursoActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Container class="javax.swing.JScrollPane" name="scrollRecDisponibles">
+                        <Container class="javax.swing.JScrollPane" name="scrollMostrarRecAsignados">
                           <AuxValues>
                             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                           </AuxValues>
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="tablaRecDisponiblesCargarProyecto">
+                            <Component class="javax.swing.JTable" name="tablaRecAsignadosMostrarProyecto">
                               <Properties>
-                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="2" rowCount="15">
-                                    <Column editable="false" title="Nombre" type="java.lang.String"/>
-                                    <Column editable="false" title="Descripcion" type="java.lang.String"/>
-                                  </Table>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
                                 </Property>
-                              </Properties>
-                            </Component>
-                          </SubComponents>
-                        </Container>
-                        <Container class="javax.swing.JScrollPane" name="scrollRecSeleccionados">
-                          <AuxValues>
-                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                          </AuxValues>
-
-                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                          <SubComponents>
-                            <Component class="javax.swing.JTable" name="tablaRecSeleccionadosCargarProyecto">
-                              <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="2" rowCount="15">
                                     <Column editable="false" title="Nombre" type="java.lang.String"/>
@@ -914,15 +676,7 @@
                     </Container>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="botonCargarProyecto">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Cargar Proyecto"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCargarProyectoActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="botonVolverPanelPrincipalProyectos">
+                <Component class="javax.swing.JButton" name="botonVolverPanelPrincipalProyectos2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Volver"/>
                   </Properties>
@@ -930,9 +684,40 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="handlerIrAlSubpanelPrincipalProyectos"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JLabel" name="textMostrarTitulo">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="T&#xed;tulo"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="textMostrarDescripcion">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Descripci&#xf3;n"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="textMostrarTipo">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tipo"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="textMostrarHardSoft">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Hard/Soft Ware"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="textMostrarPresupuesto">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="MontoPresupuesto"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="subpanelModProyecto">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="97" green="c2" red="fa" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="card2"/>
@@ -1082,6 +867,9 @@
                     <Property name="text" type="java.lang.String" value="T&#xed;tulo del Proyecto"/>
                     <Property name="toolTipText" type="java.lang.String" value="T&#xed;tulo del Proyecto"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoModProyectoTituloActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="radioModHardware">
                   <Properties>
@@ -1224,10 +1012,20 @@
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JTabbedPane" name="tabModIngYRecursos">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="b4" green="82" red="46" type="rgb"/>
+                    </Property>
+                  </Properties>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="tabModIngenieros">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="be" green="ef" red="ff" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Ingenieros">
@@ -1244,13 +1042,13 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="botonAgregarIng2" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="scrollIngDisponibles2" alignment="0" pref="418" max="32767" attributes="0"/>
+                                      <Component id="scrollIngDisponibles2" alignment="0" pref="491" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="botonQuitarIng2" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="scrollIngAsignados2" alignment="0" pref="420" max="32767" attributes="0"/>
+                                      <Component id="scrollIngAsignados2" alignment="0" pref="492" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1266,7 +1064,7 @@
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="scrollIngDisponibles2" alignment="0" pref="202" max="32767" attributes="0"/>
+                                      <Component id="scrollIngDisponibles2" alignment="0" pref="333" max="32767" attributes="0"/>
                                       <Component id="scrollIngAsignados2" alignment="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -1294,6 +1092,9 @@
                           <SubComponents>
                             <Component class="javax.swing.JTable" name="tablaIngDisponiblesCargarProyecto2">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="4" rowCount="15">
                                     <Column editable="false" title="Nombre" type="java.lang.Object"/>
@@ -1328,6 +1129,9 @@
                           <SubComponents>
                             <Component class="javax.swing.JTable" name="tablaIngAsignadosCargarProyecto2">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="4" rowCount="15">
                                     <Column editable="false" title="Nombre" type="java.lang.Object"/>
@@ -1351,6 +1155,11 @@
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="tabModRecursos">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="be" green="ef" red="ff" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Recursos">
@@ -1374,7 +1183,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel38" alignment="0" pref="420" max="32767" attributes="0"/>
+                                      <Component id="jLabel38" alignment="0" pref="564" max="32767" attributes="0"/>
                                       <Component id="botonQuitarRecurso1" alignment="0" max="32767" attributes="0"/>
                                       <Component id="scrollRecAsignados1" alignment="1" pref="0" max="32767" attributes="0"/>
                                   </Group>
@@ -1392,7 +1201,7 @@
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="scrollRecDisponibles1" alignment="0" pref="202" max="32767" attributes="0"/>
+                                      <Component id="scrollRecDisponibles1" alignment="0" pref="333" max="32767" attributes="0"/>
                                       <Component id="scrollRecAsignados1" alignment="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -1441,6 +1250,9 @@
                           <SubComponents>
                             <Component class="javax.swing.JTable" name="tablaRecDisponiblesCargarProyecto1">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="2" rowCount="15">
                                     <Column editable="false" title="Nombre" type="java.lang.String"/>
@@ -1460,6 +1272,9 @@
                           <SubComponents>
                             <Component class="javax.swing.JTable" name="tablaRecAsignadosCargarProyecto1">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="2" rowCount="15">
                                     <Column editable="false" title="Nombre" type="java.lang.String"/>
@@ -1492,7 +1307,12 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="subpanelMostrarProyecto">
+            <Container class="javax.swing.JPanel" name="subpanelCargarProyecto">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="97" green="c2" red="fa" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="card2"/>
@@ -1505,31 +1325,75 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="tabMostrarIngYRecursos" alignment="1" max="32767" attributes="0"/>
-                              <Component id="botonVolverPanelPrincipalProyectos2" alignment="1" max="32767" attributes="0"/>
+                              <Component id="tabIngYRecursos" max="32767" attributes="0"/>
+                              <Component id="botonCargarProyecto" alignment="0" max="32767" attributes="0"/>
+                              <Component id="botonVolverPanelPrincipalProyectos" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="textMostrarTitulo" min="-2" pref="235" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="campoProyectoTitulo" min="-2" pref="241" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="textMostrarHardSoft" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="radioHardware" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="radioSoftware" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="textMostrarTipo" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="textMostrarDescripcion" max="32767" attributes="0"/>
+                                      <Component id="campoProyectoTipo" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="campoProyectoDescripcion" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="textFinalizacion" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="textInicio" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="textPresup" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel1" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                                  <Component id="jLabel3" linkSize="5" min="-2" pref="89" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="jLabel16" min="-2" pref="35" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel2" linkSize="5" min="-2" pref="89" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="jLabel13" min="-2" pref="35" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                                  <Component id="spinnerFechaFinDia" min="-2" pref="50" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="spinnerFechaInicioDia" linkSize="4" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel17" min="-2" pref="35" max="-2" attributes="0"/>
+                                              <Component id="jLabel14" min="-2" pref="35" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="textMostrarFechaInicio" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="textMostrarFechaFin" max="32767" attributes="0"/>
-                                      <Component id="textMostrarPresupuesto" alignment="1" pref="211" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="spinnerFechaFinMes" alignment="0" pref="0" max="32767" attributes="0"/>
+                                              <Component id="spinnerFechaInicioMes" linkSize="4" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel15" min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="spinnerFechaInicioAnio" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel18" min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="spinnerFechaFinAnio" min="-2" pref="68" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <Component id="spinnerProyectoPresupuesto" min="-2" pref="166" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               </Group>
@@ -1543,78 +1407,224 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="textMostrarTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="textMostrarHardSoft" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="campoProyectoTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="radioHardware" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="radioSoftware" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="textMostrarDescripcion" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="textMostrarTipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="textMostrarFechaFin" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="textFinalizacion" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="campoProyectoDescripcion" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="campoProyectoTipo" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="textPresup" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="textMostrarPresupuesto" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="spinnerProyectoPresupuesto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="textInicio" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="textMostrarFechaInicio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="spinnerFechaInicioAnio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="spinnerFechaInicioDia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="spinnerFechaInicioMes" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="spinnerFechaFinAnio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="spinnerFechaFinDia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="spinnerFechaFinMes" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="tabMostrarIngYRecursos" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="tabIngYRecursos" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botonVolverPanelPrincipalProyectos2" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonCargarProyecto" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="botonVolverPanelPrincipalProyectos" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="textPresup">
+                <Component class="javax.swing.JTextField" name="campoProyectoTitulo">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="T&#xed;tulo del Proyecto"/>
+                    <Property name="toolTipText" type="java.lang.String" value="T&#xed;tulo del Proyecto"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoProyectoTituloActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="radioHardware">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Hardware"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioHardwareActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="radioSoftware">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Software"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioSoftwareActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="campoProyectoDescripcion">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Descripcion..."/>
+                    <Property name="toolTipText" type="java.lang.String" value="Descripcion del Proyecto"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="campoProyectoDescripcionMouseClicked"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="campoProyectoTipo">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tipo"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Tipo del proyecto"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Presupuesto:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="textInicio">
+                <Component class="javax.swing.JSpinner" name="spinnerProyectoPresupuesto">
                   <Properties>
-                    <Property name="horizontalAlignment" type="int" value="4"/>
+                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                      <SpinnerModel initial="0.0" minimum="0.0" numberType="java.lang.Float" stepSize="1.0" type="number"/>
+                    </Property>
+                  </Properties>
+                  <AccessibilityProperties>
+                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+                    <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="Presupuesto del proyecto"/>
+                  </AccessibilityProperties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel2">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Fecha de inicio:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="textFinalizacion">
+                <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="F. Finalizaci&#xf3;n:"/>
+                    <Property name="horizontalAlignment" type="int" value="2"/>
+                    <Property name="text" type="java.lang.String" value=" Finalizaci&#xf3;n:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="textMostrarFechaInicio">
+                <Component class="javax.swing.JLabel" name="jLabel13">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="12/12/2024"/>
+                    <Property name="text" type="java.lang.String" value="Dia"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="textMostrarFechaFin">
+                <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="12/12/2024"/>
+                    <Property name="text" type="java.lang.String" value="Mes"/>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JTabbedPane" name="tabMostrarIngYRecursos">
+                <Component class="javax.swing.JLabel" name="jLabel15">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JSpinner" name="spinnerFechaInicioDia">
+                  <Properties>
+                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                      <SpinnerModel initial="12" maximum="31" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JSpinner" name="spinnerFechaInicioMes">
+                  <Properties>
+                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                      <SpinnerModel initial="12" maximum="12" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JSpinner" name="spinnerFechaInicioAnio">
+                  <Properties>
+                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                      <SpinnerModel initial="2024" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                    </Property>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Default Cursor"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="GUI_spinnerFechaInicioAnio"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel16">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Dia"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel17">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Mes"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel18">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JSpinner" name="spinnerFechaFinDia">
+                  <Properties>
+                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                      <SpinnerModel initial="12" maximum="31" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JSpinner" name="spinnerFechaFinMes">
+                  <Properties>
+                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                      <SpinnerModel initial="12" maximum="12" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JSpinner" name="spinnerFechaFinAnio">
+                  <Properties>
+                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                      <SpinnerModel initial="2024" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JTabbedPane" name="tabIngYRecursos">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="b4" green="82" red="46" type="rgb"/>
+                    </Property>
+                  </Properties>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="tabMostrarIngenieros">
+                    <Container class="javax.swing.JPanel" name="tabIngenieros">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="be" green="ef" red="ff" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Ingenieros">
@@ -1627,12 +1637,19 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="scrollIngMostrarAsignados" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel29" alignment="0" pref="844" max="32767" attributes="0"/>
+                                      <Component id="botonAgregarIng" max="32767" attributes="0"/>
+                                      <Component id="jLabel4" max="32767" attributes="0"/>
+                                      <Component id="scrollIngDisponibles" pref="491" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="botonQuitarIng" max="32767" attributes="0"/>
+                                      <Component id="jLabel5" max="32767" attributes="0"/>
+                                      <Component id="scrollIngSeleccionados" pref="492" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1640,29 +1657,43 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                  <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="scrollIngMostrarAsignados" pref="280" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel4" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="scrollIngDisponibles" pref="333" max="32767" attributes="0"/>
+                                      <Component id="scrollIngSeleccionados" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="botonAgregarIng" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonQuitarIng" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="jLabel29">
+                        <Component class="javax.swing.JLabel" name="jLabel4">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Ingenieros Asignados:"/>
+                            <Property name="text" type="java.lang.String" value="Ingenieros Disponibles:"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JScrollPane" name="scrollIngMostrarAsignados">
+                        <Container class="javax.swing.JScrollPane" name="scrollIngDisponibles">
                           <AuxValues>
                             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                           </AuxValues>
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="tablaIngAsignadosMostrarProyecto">
+                            <Component class="javax.swing.JTable" name="tablaIngDisponiblesCargarProyecto">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="4" rowCount="15">
                                     <Column editable="false" title="Nombre" type="java.lang.Object"/>
@@ -1675,9 +1706,59 @@
                             </Component>
                           </SubComponents>
                         </Container>
+                        <Component class="javax.swing.JButton" name="botonAgregarIng">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Agregar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAgregarIngActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel5">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Ingenieros Asignados:"/>
+                          </Properties>
+                        </Component>
+                        <Container class="javax.swing.JScrollPane" name="scrollIngSeleccionados">
+                          <AuxValues>
+                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                          </AuxValues>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JTable" name="tablaIngSeleccionadosCargarProyecto">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                  <Table columnCount="4" rowCount="15">
+                                    <Column editable="false" title="Nombre" type="java.lang.Object"/>
+                                    <Column editable="false" title="Apellido" type="java.lang.Object"/>
+                                    <Column editable="false" title="Especialidad" type="java.lang.Object"/>
+                                    <Column editable="false" title="Contratacion" type="java.lang.Object"/>
+                                  </Table>
+                                </Property>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Component class="javax.swing.JButton" name="botonQuitarIng">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Quitar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonQuitarIngActionPerformed"/>
+                          </Events>
+                        </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="javax.swing.JPanel" name="tabMostrarRecursos">
+                    <Container class="javax.swing.JPanel" name="tabRecursos">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="be" green="ef" red="ff" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Recursos">
@@ -1689,11 +1770,21 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="scrollMostrarRecAsignados" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel39" alignment="0" pref="844" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel6" min="-2" pref="418" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="botonAgregarRecurso" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="scrollRecDisponibles" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel7" pref="564" max="32767" attributes="0"/>
+                                      <Component id="botonQuitarRecurso" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="scrollRecSeleccionados" alignment="1" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -1703,29 +1794,89 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                  <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="scrollMostrarRecAsignados" pref="280" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel6" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="scrollRecDisponibles" alignment="0" pref="333" max="32767" attributes="0"/>
+                                      <Component id="scrollRecSeleccionados" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="botonAgregarRecurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonQuitarRecurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="jLabel39">
+                        <Component class="javax.swing.JLabel" name="jLabel6">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="be" green="ef" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Recursos Disponibles:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel7">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Recursos Asignados:"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JScrollPane" name="scrollMostrarRecAsignados">
+                        <Component class="javax.swing.JButton" name="botonAgregarRecurso">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Agregar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAgregarRecursoActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="botonQuitarRecurso">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Quitar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonQuitarRecursoActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Container class="javax.swing.JScrollPane" name="scrollRecDisponibles">
                           <AuxValues>
                             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                           </AuxValues>
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="tablaRecAsignadosMostrarProyecto">
+                            <Component class="javax.swing.JTable" name="tablaRecDisponiblesCargarProyecto">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                  <Table columnCount="2" rowCount="15">
+                                    <Column editable="false" title="Nombre" type="java.lang.String"/>
+                                    <Column editable="false" title="Descripcion" type="java.lang.String"/>
+                                  </Table>
+                                </Property>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JScrollPane" name="scrollRecSeleccionados">
+                          <AuxValues>
+                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                          </AuxValues>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JTable" name="tablaRecSeleccionadosCargarProyecto">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="2" rowCount="15">
                                     <Column editable="false" title="Nombre" type="java.lang.String"/>
@@ -1740,39 +1891,21 @@
                     </Container>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="botonVolverPanelPrincipalProyectos2">
+                <Component class="javax.swing.JButton" name="botonCargarProyecto">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Cargar Proyecto"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCargarProyectoActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="botonVolverPanelPrincipalProyectos">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Volver"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="handlerIrAlSubpanelPrincipalProyectos"/>
                   </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="textMostrarTitulo">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="T&#xed;tulo"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="textMostrarDescripcion">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Descripci&#xf3;n"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="textMostrarTipo">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Tipo"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="textMostrarHardSoft">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Hard/Soft Ware"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="textMostrarPresupuesto">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="MontoPresupuesto"/>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

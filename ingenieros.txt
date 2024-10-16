@@ -1,0 +1,15 @@
+Juan, Pérez, jperez@empresa.com, Desarrollo de Software, 12/03/2018
+Ana, López, alopez@empresa.com, Desarrollo de Hardware, 05/07/2020
+Carlos, Gómez, cgomez@empresa.com, Redes y Seguridad, 20/01/2017
+María, Rodríguez, mrodriguez@empresa.com, Inteligencia Artificial, 15/09/2019
+Pedro, Díaz, pdiaz@empresa.com, Desarrollo de Software, 03/11/2021
+Lucía, Torres, ltorres@empresa.com, Desarrollo de Hardware, 22/04/2020
+Santiago, Ruiz, sruiz@empresa.com, Ciberseguridad, 30/06/2019
+Julia, Fernández, jfernandez@empresa.com, Diseño UX/UI, 15/08/2020
+Roberto, García, rgarcia@empresa.com, Desarrollo de Hardware, 10/02/2018
+Elena, Sánchez, esanchez@empresa.com, Big Data, 07/05/2021
+Fernando, Castillo, fcastillo@empresa.com, Desarrollo de Software, 13/03/2019
+Sofía, Morales, smorales@empresa.com, Inteligencia Artificial, 28/06/2022
+Martín, Ríos, mrios@empresa.com, Robótica, 17/01/2019
+Paula, Gutiérrez, pgutierrez@empresa.com, Desarrollo de Software, 22/10/2020
+Alejandro, Muñoz, amunoz@empresa.com, Desarrollo de Hardware, 04/05/2017
