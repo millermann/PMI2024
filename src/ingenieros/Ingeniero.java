@@ -161,10 +161,10 @@ public class Ingeniero {
         return false;
     }
     
-    public void asignarIdProyectosAsociados(String proyectoID){
+    public void reemplazarIdProyectosAsociados(String idNuevo, String idViejo){
         for (int i = 0; i < 3; i++) {
-            if (idsProyectosAsociados[i].equals("No Asignado") == true){
-                idsProyectosAsociados[i] = proyectoID;
+            if (idsProyectosAsociados[i].equals(idViejo) == true){
+                idsProyectosAsociados[i] = idNuevo;
                 break;
             }
         }

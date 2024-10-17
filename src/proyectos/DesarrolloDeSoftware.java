@@ -41,7 +41,12 @@ public class DesarrolloDeSoftware extends ProyectoTecnologico {
     
     @Override
     public String getWare(){
-        return "Hardware";
+        return "Software";
     }
     
+    /* Abajo metodos adicionales */
+    
+    public static void disminuirCantidadProyectosSoftware(){
+        cantidadProySoftware--;
+    }
 }

@@ -9,6 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -167,6 +169,10 @@ public class GUI extends javax.swing.JFrame {
         textMostrarTipo = new javax.swing.JLabel();
         textMostrarHardSoft = new javax.swing.JLabel();
         textMostrarPresupuesto = new javax.swing.JLabel();
+        textMostrarTitulo1 = new javax.swing.JLabel();
+        textMostrarTitulo2 = new javax.swing.JLabel();
+        textMostrarTitulo3 = new javax.swing.JLabel();
+        textMostrarHardSoft1 = new javax.swing.JLabel();
         subpanelModProyecto = new javax.swing.JPanel();
         campoModProyectoTitulo = new javax.swing.JTextField();
         radioModHardware = new javax.swing.JRadioButton();
@@ -210,6 +216,7 @@ public class GUI extends javax.swing.JFrame {
         tablaRecAsignadosModProyecto = new javax.swing.JTable();
         botonModProyecto = new javax.swing.JButton();
         botonVolverPanelPrincipalProyectos1 = new javax.swing.JButton();
+        indiceArrayProyectos = new javax.swing.JLabel();
         subpanelCargarProyecto = new javax.swing.JPanel();
         campoProyectoTitulo = new javax.swing.JTextField();
         radioHardware = new javax.swing.JRadioButton();
@@ -313,7 +320,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonRecursos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonProyectos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonIngenieros, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+                    .addComponent(botonIngenieros, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
                     .addComponent(botonSalir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -399,6 +406,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         botonEliminarProyecto.setText("Eliminar");
+        botonEliminarProyecto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarProyectoActionPerformed(evt);
+            }
+        });
 
         textCantProyectos.setText("Cantidad de proyectos: NA");
 
@@ -420,7 +432,7 @@ public class GUI extends javax.swing.JFrame {
         subpanelPrincipalProyectosLayout.setHorizontalGroup(
             subpanelPrincipalProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelPrincipalProyectosLayout.createSequentialGroup()
-                .addContainerGap(727, Short.MAX_VALUE)
+                .addContainerGap(730, Short.MAX_VALUE)
                 .addComponent(textCantProyectos1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botonOrdenarPresupuesto)
@@ -543,16 +555,16 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(tabMostrarIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrollIngMostrarAsignados)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 989, Short.MAX_VALUE))
+                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 996, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabMostrarIngenierosLayout.setVerticalGroup(
             tabMostrarIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabMostrarIngenierosLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addContainerGap()
                 .addComponent(jLabel29)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollIngMostrarAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+                .addComponent(scrollIngMostrarAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -611,16 +623,16 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(tabMostrarRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrollMostrarRecAsignados)
-                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 989, Short.MAX_VALUE))
+                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 996, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabMostrarRecursosLayout.setVerticalGroup(
             tabMostrarRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabMostrarRecursosLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addContainerGap()
                 .addComponent(jLabel39)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollMostrarRecAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+                .addComponent(scrollMostrarRecAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -644,6 +656,14 @@ public class GUI extends javax.swing.JFrame {
         textMostrarPresupuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textMostrarPresupuesto.setText("MontoPresupuesto");
 
+        textMostrarTitulo1.setText("Título:");
+
+        textMostrarTitulo2.setText("Descripción:");
+
+        textMostrarTitulo3.setText("Tipo:");
+
+        textMostrarHardSoft1.setText("Desarrollo de");
+
         javax.swing.GroupLayout subpanelMostrarProyectoLayout = new javax.swing.GroupLayout(subpanelMostrarProyecto);
         subpanelMostrarProyecto.setLayout(subpanelMostrarProyectoLayout);
         subpanelMostrarProyectoLayout.setHorizontalGroup(
@@ -657,13 +677,25 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                                .addComponent(textMostrarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(textMostrarHardSoft)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(textMostrarTipo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textMostrarDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(textMostrarTitulo3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textMostrarTipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
+                                .addComponent(textMostrarTitulo1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textMostrarTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
+                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
+                                        .addComponent(textMostrarTitulo2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(textMostrarDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
+                                        .addComponent(textMostrarHardSoft1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(textMostrarHardSoft)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
                         .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(textFinalizacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(textInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -684,14 +716,26 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
                         .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(textMostrarTitulo)
-                            .addComponent(textMostrarHardSoft))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textMostrarDescripcion)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textMostrarTipo)
-                            .addComponent(textMostrarFechaFin)
-                            .addComponent(textFinalizacion)))
+                            .addComponent(textMostrarTitulo1))
+                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(textMostrarFechaFin)
+                                    .addComponent(textFinalizacion)))
+                            .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textMostrarHardSoft1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(textMostrarHardSoft, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textMostrarDescripcion)
+                                    .addComponent(textMostrarTitulo2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(textMostrarTitulo3)
+                                    .addComponent(textMostrarTipo)))))
                     .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -701,8 +745,8 @@ public class GUI extends javax.swing.JFrame {
                         .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(textInicio)
                             .addComponent(textMostrarFechaInicio))))
-                .addGap(18, 18, 18)
-                .addComponent(tabMostrarIngYRecursos)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(tabMostrarIngYRecursos, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonVolverPanelPrincipalProyectos2)
                 .addGap(18, 18, 18))
@@ -714,46 +758,41 @@ public class GUI extends javax.swing.JFrame {
 
         campoModProyectoTitulo.setText("Título del Proyecto");
         campoModProyectoTitulo.setToolTipText("Título del Proyecto");
-        campoModProyectoTitulo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoModProyectoTituloActionPerformed(evt);
+        campoModProyectoTitulo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                handlerSeleccionarCampoTexto(evt);
             }
         });
 
         radioModHardware.setText("Hardware");
-        radioModHardware.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioModHardwareActionPerformed(evt);
-            }
-        });
 
         radioModSoftware.setText("Software");
-        radioModSoftware.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioModSoftwareActionPerformed(evt);
-            }
-        });
 
         campoModProyectoDescripcion.setText("Descripcion...");
         campoModProyectoDescripcion.setToolTipText("Descripcion del Proyecto");
         campoModProyectoDescripcion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                campoModProyectoDescripcionMouseClicked(evt);
+                handlerSeleccionarCampoTexto(evt);
             }
         });
 
         campoModProyectoTipo.setText("Tipo");
         campoModProyectoTipo.setToolTipText("Tipo del proyecto");
+        campoModProyectoTipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                handlerSeleccionarCampoTexto(evt);
+            }
+        });
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Presupuesto:");
 
         spinnerModProyectoPresupuesto.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
 
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Fecha de inicio:");
 
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText(" Finalización:");
 
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -768,6 +807,11 @@ public class GUI extends javax.swing.JFrame {
         spinnerModFechaInicioDia.setModel(new javax.swing.SpinnerNumberModel(12, 1, 31, 1));
 
         spinnerModFechaInicioMes.setModel(new javax.swing.SpinnerNumberModel(12, 1, 12, 1));
+        spinnerModFechaInicioMes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                handlerSeleccionarCampoTexto(evt);
+            }
+        });
 
         spinnerModFechaInicioAnio.setModel(new javax.swing.SpinnerNumberModel(2024, 1, null, 1));
         spinnerModFechaInicioAnio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -883,13 +927,13 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonModAgregarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollModIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE))
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE)
+                    .addComponent(scrollModIngDisponibles))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonModQuitarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollModIngAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE))
+                    .addComponent(scrollModIngAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabModIngenierosLayout.setVerticalGroup(
@@ -1016,21 +1060,24 @@ public class GUI extends javax.swing.JFrame {
         tabModRecursos.setLayout(tabModRecursosLayout);
         tabModRecursosLayout.setHorizontalGroup(
             tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tabModRecursosLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabModRecursosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(tabModRecursosLayout.createSequentialGroup()
-                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(botonModAgregarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollModRecDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(botonModAgregarRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabModRecursosLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(scrollModRecDisponibles))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonModQuitarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollModRecAsignados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrollModRecAsignados))
                 .addContainerGap())
         );
+
+        tabModRecursosLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {botonModAgregarRecurso, botonModQuitarRecurso});
+
         tabModRecursosLayout.setVerticalGroup(
             tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabModRecursosLayout.createSequentialGroup()
@@ -1051,7 +1098,7 @@ public class GUI extends javax.swing.JFrame {
 
         tabModIngYRecursos.addTab("Recursos", tabModRecursos);
 
-        botonModProyecto.setText("Cargar Proyecto");
+        botonModProyecto.setText("Modificar Proyecto");
         botonModProyecto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonModProyectoActionPerformed(evt);
@@ -1065,6 +1112,10 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        indiceArrayProyectos.setFont(new java.awt.Font("Segoe UI", 0, 3)); // NOI18N
+        indiceArrayProyectos.setText("Indice");
+        indiceArrayProyectos.setEnabled(false);
+
         javax.swing.GroupLayout subpanelModProyectoLayout = new javax.swing.GroupLayout(subpanelModProyecto);
         subpanelModProyecto.setLayout(subpanelModProyectoLayout);
         subpanelModProyectoLayout.setHorizontalGroup(
@@ -1076,39 +1127,42 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(botonModProyecto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonVolverPanelPrincipalProyectos1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelModProyectoLayout.createSequentialGroup()
-                        .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelModProyectoLayout.createSequentialGroup()
-                                .addComponent(campoModProyectoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelModProyectoLayout.createSequentialGroup()
+                                .addComponent(campoModProyectoTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(radioModHardware)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(radioModSoftware))
-                            .addComponent(campoModProyectoTipo, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoModProyectoDescripcion, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelModProyectoLayout.createSequentialGroup()
+                                .addComponent(radioModSoftware)
+                                .addGap(10, 10, 10))
+                            .addComponent(campoModProyectoDescripcion)
+                            .addComponent(campoModProyectoTipo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(subpanelModProyectoLayout.createSequentialGroup()
                                 .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(subpanelModProyectoLayout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12))
                                     .addGroup(subpanelModProyectoLayout.createSequentialGroup()
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(11, 11, 11)))
                                 .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelModProyectoLayout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(spinnerModFechaFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(spinnerModFechaInicioDia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(spinnerModFechaFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(spinnerModFechaInicioDia, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(6, 6, 6)
                                 .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelModProyectoLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(indiceArrayProyectos)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(subpanelModProyectoLayout.createSequentialGroup()
@@ -1138,7 +1192,8 @@ public class GUI extends javax.swing.JFrame {
                         .addGroup(subpanelModProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(campoModProyectoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(radioModHardware)
-                            .addComponent(radioModSoftware))
+                            .addComponent(radioModSoftware)
+                            .addComponent(indiceArrayProyectos))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoModProyectoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1161,10 +1216,10 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(spinnerModFechaFinAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(spinnerModFechaFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(spinnerModFechaFinMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel34)
                             .addComponent(jLabel35)
                             .addComponent(jLabel36)
-                            .addComponent(jLabel10))))
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel34))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tabModIngYRecursos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1180,9 +1235,9 @@ public class GUI extends javax.swing.JFrame {
 
         campoProyectoTitulo.setText("Título del Proyecto");
         campoProyectoTitulo.setToolTipText("Título del Proyecto");
-        campoProyectoTitulo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoProyectoTituloActionPerformed(evt);
+        campoProyectoTitulo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                handlerSeleccionarCampoTexto(evt);
             }
         });
 
@@ -1200,7 +1255,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        campoProyectoDescripcion.setText("Descripcion...");
+        campoProyectoDescripcion.setText("Descripción...");
         campoProyectoDescripcion.setToolTipText("Descripcion del Proyecto");
         campoProyectoDescripcion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1208,19 +1263,24 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        campoProyectoTipo.setText("Tipo");
+        campoProyectoTipo.setText("Tipo de Dispositivo");
         campoProyectoTipo.setToolTipText("Tipo del proyecto");
+        campoProyectoTipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                handlerSeleccionarCampoTexto(evt);
+            }
+        });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Presupuesto:");
 
         spinnerProyectoPresupuesto.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Fecha de inicio:");
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setText(" Finalización:");
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("F. Finalización:");
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Dia");
@@ -1349,12 +1409,12 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
+                    .addComponent(scrollIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE)
                     .addComponent(botonAgregarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollIngSeleccionados, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                    .addComponent(scrollIngSeleccionados, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE)
                     .addComponent(botonQuitarIng, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1486,7 +1546,7 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(tabRecursosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollRecDisponibles, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
+                    .addComponent(scrollRecDisponibles, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
                     .addComponent(botonAgregarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1541,30 +1601,28 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(botonCargarProyecto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonVolverPanelPrincipalProyectos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelCargarProyectoLayout.createSequentialGroup()
-                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelCargarProyectoLayout.createSequentialGroup()
-                                .addComponent(campoProyectoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
+                                .addComponent(campoProyectoTitulo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(radioHardware)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(radioSoftware))
-                            .addComponent(campoProyectoTipo, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoProyectoDescripcion, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelCargarProyectoLayout.createSequentialGroup()
+                                .addComponent(radioSoftware)
+                                .addGap(8, 8, 8))
+                            .addComponent(campoProyectoDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+                            .addComponent(campoProyectoTipo))
+                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
                                 .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(222, 222, 222)
+                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(11, 11, 11)))
                                 .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelCargarProyectoLayout.createSequentialGroup()
                                         .addGap(1, 1, 1)
@@ -1573,7 +1631,14 @@ public class GUI extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(145, 145, 145)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
@@ -1597,26 +1662,25 @@ public class GUI extends javax.swing.JFrame {
 
         subpanelCargarProyectoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {spinnerFechaInicioDia, spinnerFechaInicioMes});
 
-        subpanelCargarProyectoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel2, jLabel3});
-
         subpanelCargarProyectoLayout.setVerticalGroup(
             subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(campoProyectoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(radioHardware)
-                            .addComponent(radioSoftware))
+                        .addComponent(campoProyectoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoProyectoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoProyectoTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(spinnerProyectoPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
+                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(radioHardware)
+                                .addComponent(radioSoftware))
+                            .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(spinnerProyectoPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(spinnerFechaInicioAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1723,15 +1787,16 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAgregarProyectoActionPerformed
 
     private void botonModificarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarProyectoActionPerformed
+
         if (tablaProyectos.getSelectedRowCount() == 0 || tablaProyectos.getSelectedRowCount() > 1) {
             JOptionPane.showMessageDialog(null, "Por favor, seleccione un único proyecto de la tabla.", "Error", 0);
         } else {
 
             int filaSeleccionada = tablaProyectos.getSelectedRow(), indice = 0;
-            String titulo = (String) tablaProyectos.getValueAt(filaSeleccionada, 0);
+            String id = (String) tablaProyectos.getValueAt(filaSeleccionada, 6);
 
             for (int i = 0; i < arrayProyectos.size(); i++) {
-                if (arrayProyectos.get(i).getTitulo().equals(titulo)) {
+                if (arrayProyectos.get(i).getProyectoID().equals(id)) {
                     indice = i;
                     break;
                 }
@@ -1740,12 +1805,13 @@ public class GUI extends javax.swing.JFrame {
             ProyectoTecnologico proyecto = arrayProyectos.get(indice);
 
             if (arrayProyectos.get(indice).getWare().equals("Hardware")) {
-                radioModSoftware.setSelected(true); // tiene que ser el contrario, por que?: (?)
+                radioModHardware.setSelected(true);
 
             } else {
-                radioModHardware.setSelected(true);
+                radioModSoftware.setSelected(true);
             }
 
+            indiceArrayProyectos.setText(String.valueOf(indice));
             textTitulo.setText("MODIFICAR PROYECTO");
             campoModProyectoTitulo.setText(proyecto.getTitulo());
             campoModProyectoDescripcion.setText(proyecto.getDescripcion());
@@ -1765,7 +1831,7 @@ public class GUI extends javax.swing.JFrame {
             for (int i = 0; i < arrayIngenieros.size(); i++) {
                 if (arrayIngenieros.get(i).getDisponible()) {
                     Ingeniero ingDisponible = arrayIngenieros.get(i);
-                    
+
                     Boolean dentroDelProyecto = false;
                     for (int j = 0; j < ingDisponible.getIdsProyectosAsociados().length; j++) {
                         if (ingDisponible.getIdsProyectosAsociados()[j].equals(proyecto.getProyectoID())) {
@@ -1787,12 +1853,13 @@ public class GUI extends javax.swing.JFrame {
 
                 }
             }
-            
+
             // carga tabla de recursos disp && no pertenecen al proy
             for (int i = 0; i < arrayRecursos.size(); i++) {
                 RecursoTecnologico recursoDisponible = arrayRecursos.get(i);
                 ArrayList<RecursoTecnologico> recsAsignados = proyecto.obtenerTodosLosRecursosTecnologicos();
-                
+
+                // si no hay recursos cargados no aparece nada -> controlar que siempre se carguen con recursos
                 for (int j = 0; j < proyecto.obtenerCantidadRecursosTecnologicos(); j++) {
 
                     if (!recursoDisponible.getRecursoID().equals(recsAsignados.get(j).getRecursoID())) {
@@ -1887,7 +1954,11 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_botonOrdenarPresupuestoActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        // TODO add your handling code here:
+        try {
+            guardarProyectosEnArchivo(arrayProyectos, "proyectos.data");
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_botonSalirActionPerformed
 
     private void botonCargarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCargarProyectoActionPerformed
@@ -1957,7 +2028,7 @@ public class GUI extends javax.swing.JFrame {
         // para todos los ing seleccionados: se asigna la id del proy en IDProy.Asoc. (Para evitar que un ing trabaje en +3 Proy)
         String id = proyecto.getProyectoID();
         for (int i = 0; i < ingenieros.size(); i++) {
-            ingenieros.get(i).asignarIdProyectosAsociados(id);
+            ingenieros.get(i).reemplazarIdProyectosAsociados(id, "No Asignado");
         }
 
         for (Ingeniero x : ingenieros) {
@@ -1971,18 +2042,6 @@ public class GUI extends javax.swing.JFrame {
 
         handlerIrAlSubpanelPrincipalProyectos(evt);
     }//GEN-LAST:event_botonCargarProyectoActionPerformed
-
-    private void radioModHardwareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioModHardwareActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radioModHardwareActionPerformed
-
-    private void radioModSoftwareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioModSoftwareActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radioModSoftwareActionPerformed
-
-    private void campoModProyectoDescripcionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campoModProyectoDescripcionMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoModProyectoDescripcionMouseClicked
 
     private void botonModAgregarIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModAgregarIngActionPerformed
         if (tablaIngDisponiblesModProyecto.getSelectedRowCount() == 0) {
@@ -2001,19 +2060,121 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_botonModQuitarIngActionPerformed
 
     private void botonModAgregarRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModAgregarRecursoActionPerformed
-        // TODO add your handling code here:
+        if (tablaRecDisponiblesModProyecto.getSelectedRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Para asociar un recurso al proyecto, seleccionelo de la tabla a su izquierda.", "Error", 0);
+        } else {
+            permutarFilasEntreTablas(tablaRecDisponiblesModProyecto, modeloTablaRecursosDisponibles, modeloTablaRecursosSeleccionados);
+        }
     }//GEN-LAST:event_botonModAgregarRecursoActionPerformed
 
     private void botonModQuitarRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModQuitarRecursoActionPerformed
-        // TODO add your handling code here:
+        if (tablaRecAsignadosModProyecto.getSelectedRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Para eliminar un recurso del proyecto, seleccionelo de la tabla a su derecha.", "Error", 0);
+        } else {
+            permutarFilasEntreTablas(tablaRecAsignadosModProyecto, modeloTablaRecursosSeleccionados, modeloTablaRecursosDisponibles);
+        }
     }//GEN-LAST:event_botonModQuitarRecursoActionPerformed
 
     private void botonModProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModProyectoActionPerformed
-        // TODO add your handling code here:
+
+        // Confirmar
+        String[] opciones = {"Si", "No"};
+        int confirmacion = JOptionPane.showOptionDialog(
+                null,
+                "Esta seguro de guardar los cambios?",
+                "Confirmar Modificacion",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                opciones,
+                opciones[1]
+        );
+
+        if (confirmacion == 0) {
+            int indice = Integer.parseInt(indiceArrayProyectos.getText());
+
+            String titulo, descripcion, tipo, ware;
+            int dia, mes, anio;
+            float presupuesto;
+
+            titulo = campoModProyectoTitulo.getText();
+            descripcion = campoModProyectoDescripcion.getText();
+            tipo = campoModProyectoTipo.getText();
+
+            dia = (int) spinnerModFechaInicioDia.getValue();
+            mes = (int) spinnerModFechaInicioMes.getValue();
+            anio = (int) spinnerModFechaInicioAnio.getValue();
+            Fecha inicio = new Fecha(dia, mes, anio);
+
+            dia = (int) spinnerModFechaFinDia.getValue();
+            mes = (int) spinnerModFechaFinMes.getValue();
+            anio = (int) spinnerModFechaFinAnio.getValue();
+            Fecha fin = new Fecha(dia, mes, anio);
+
+            presupuesto = (float) spinnerModProyectoPresupuesto.getValue();
+
+            ProyectoTecnologico proyectoMod;
+            if (radioModHardware.isSelected()) {
+                proyectoMod = new DesarrolloDeHardware(titulo, tipo, descripcion, presupuesto, inicio, fin);
+            } else {
+                proyectoMod = new DesarrolloDeSoftware(titulo, tipo, descripcion, presupuesto, inicio, fin);
+            }
+
+            int filas = modeloTablaIngenierosSeleccionados.getRowCount();
+            ArrayList<Ingeniero> ingenierosMod = new ArrayList<>();
+            for (int i = 0; i < filas; i++) {
+
+                String idIng = (String) tablaIngSeleccionadosCargarProyecto.getValueAt(i, 5);
+                for (int j = 0; j < arrayIngenieros.size(); j++) {
+
+                    if (idIng.equals(arrayIngenieros.get(j).getIdIngeniero())) {
+                        ingenierosMod.add(arrayIngenieros.get(j));
+                        break;
+                    }
+
+                }
+
+            }
+
+            filas = modeloTablaRecursosSeleccionados.getRowCount();
+            ArrayList<RecursoTecnologico> recursosMod = new ArrayList<>();
+            for (int i = 0; i < filas; i++) {
+
+                String idRec = (String) tablaRecSeleccionadosCargarProyecto.getValueAt(i, 2);
+
+                for (int j = 0; j < arrayRecursos.size(); j++) {
+
+                    if (idRec.equals(arrayRecursos.get(j).getRecursoID())) {
+                        recursosMod.add(arrayRecursos.get(j));
+                        break;
+                    }
+
+                }
+
+            }
+
+            String id = proyectoMod.getProyectoID();
+            for (int i = 0; i < ingenierosMod.size(); i++) {
+                ingenierosMod.get(i).reemplazarIdProyectosAsociados(id, "No Asignado");
+            }
+
+            for (Ingeniero x : ingenierosMod) {
+                proyectoMod.agregarIngeniero(x);
+            }
+            for (RecursoTecnologico x : recursosMod) {
+                proyectoMod.agregarRecursoTecnologico(x);
+            }
+
+            arrayProyectos.set(indice, proyectoMod);
+
+            System.out.print("listo: " + arrayProyectos.get(indice).toString());
+            System.out.print("\npepe: " + arrayProyectos.get(indice).getWare());
+            handlerIrAlSubpanelPrincipalProyectos(evt);
+
+        }
     }//GEN-LAST:event_botonModProyectoActionPerformed
 
     private void handlerIrAlSubpanelPrincipalProyectos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handlerIrAlSubpanelPrincipalProyectos
-
         botonVolverAlMenu.setVisible(true);
 
         modeloTablaProyectos.setRowCount(0);
@@ -2092,6 +2253,7 @@ public class GUI extends javax.swing.JFrame {
                         );
                     }
 
+                    textTitulo.setText("VER PROYECTO");
                     contenedor.removeAll();
                     contenedor.add(subpanelMostrarProyecto);
                     contenedor.repaint();
@@ -2104,15 +2266,56 @@ public class GUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tablaProyectosMouseClicked
 
-    private void campoProyectoTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoProyectoTituloActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoProyectoTituloActionPerformed
+    private void botonEliminarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarProyectoActionPerformed
+        if (tablaProyectos.getSelectedRowCount() == 0 || tablaProyectos.getSelectedRowCount() > 1) {
+            JOptionPane.showMessageDialog(null, "Por favor, seleccione un único proyecto de la tabla.", "Error", 0);
+        } else {
 
-    private void campoModProyectoTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoModProyectoTituloActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoModProyectoTituloActionPerformed
+            String[] opciones = {"Si", "No"};
+            int confirmacion = JOptionPane.showOptionDialog(
+                    null,
+                    "Esta seguro de eliminar el proyecto?",
+                    "Confirmar Eliminación",
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.WARNING_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[1]
+            );
 
-    //permuta las filas seleccionadas de A a la tabla B (deben tener las mismas columnas)
+            int filaSeleccionada = tablaProyectos.getSelectedRow(), indice = 0;
+            String id = (String) tablaProyectos.getValueAt(filaSeleccionada, 6);
+
+            for (int i = 0; i < arrayProyectos.size(); i++) {
+                if (arrayProyectos.get(i).getProyectoID().equals(id)) {
+                    indice = i;
+                    break;
+                }
+            }
+
+            for (int i = 0; i < arrayProyectos.get(indice).obtenerCantidadIngenieros(); i++) {
+                arrayProyectos.get(indice).obtenerTodosLosIngenieros().get(i).reemplazarIdProyectosAsociados("No Asignado", id);
+            }
+
+            if (arrayProyectos.get(indice).getWare().equals("Hardware")) {
+                DesarrolloDeHardware.disminuirCantidadProyectosHardware();
+            } else {
+                DesarrolloDeSoftware.disminuirCantidadProyectosSoftware();
+            }
+
+            arrayProyectos.remove(indice);
+
+            handlerIrAlSubpanelPrincipalProyectos(evt);
+
+        }
+    }//GEN-LAST:event_botonEliminarProyectoActionPerformed
+
+    // solo para jTextField
+    private void handlerSeleccionarCampoTexto(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_handlerSeleccionarCampoTexto
+        ((javax.swing.JTextField) evt.getSource()).selectAll();
+    }//GEN-LAST:event_handlerSeleccionarCampoTexto
+
+    // permuta las filas seleccionadas de A a la tabla B (deben tener las mismas columnas)
     private void permutarFilasEntreTablas(javax.swing.JTable tablaA, DefaultTableModel modeloTablaA, DefaultTableModel modeloTablaB) {
         int[] indicesFilas = tablaA.getSelectedRows();
         int columnas = tablaA.getColumnCount();
@@ -2136,53 +2339,30 @@ public class GUI extends javax.swing.JFrame {
     }
 
     public static ArrayList<ProyectoTecnologico> cargarProyectosDesdeArchivo(String nombreArchivo) throws IOException {
-        /*
-        //inicio
-        todo esto se basa en este formato:
-        proyecto de hardware
-        tipo: memoria RAM
-        titulo: Nvidia RAM X
-        descripcion: una memoria de 16 GB de memoria RAM
-        presupuesto: 5000.00
-        fecha de inicio: 11/4/2000
-        fecha de entrega: 15/6/2008
-        ingenieros:
-                nombre: Raul
-                apellido: Mendez
-                mail: raulM@outlook.com
-                especialidad: ingeniero en computacion.
-                fecha de contratacion: 11/4/2000
-                proyectos asignados: Nvidia RAM X, Nvidia LED.
-                //mas ingenieros...
-        recursos tecnologicos:
-                nombre: capacitor
-                descripcion: almacena energia
-                //mas recursos tecnologicos...
-        //fin
-         */
         ArrayList<ProyectoTecnologico> proyectos = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(nombreArchivo))) {
             String linea;
             ProyectoTecnologico proyecto = null;
-
             while ((linea = reader.readLine()) != null) {
-
+                linea = linea.trim(); // Eliminar espacios en blanco
                 if (linea.startsWith("proyecto de hardware")) {
                     proyecto = new DesarrolloDeHardware();
                 } else if (linea.startsWith("proyecto de software")) {
                     proyecto = new DesarrolloDeSoftware();
                 } else if (linea.startsWith("tipo: ")) {
                     if (proyecto instanceof DesarrolloDeHardware) {
-                        ((DesarrolloDeHardware) proyecto).setTipoDispositivo(linea.substring(6));
+                        ((DesarrolloDeHardware) proyecto).setTipoDispositivo(linea.substring(6).trim());
                     } else if (proyecto instanceof DesarrolloDeSoftware) {
-                        ((DesarrolloDeSoftware) proyecto).setTipoAplicacion(linea.substring(6));
+                        ((DesarrolloDeSoftware) proyecto).setTipoAplicacion(linea.substring(6).trim());
                     }
+                } else if (linea.startsWith("ID: ")) {
+                    proyecto.setProyectoID(linea.substring(4).trim());
                 } else if (linea.startsWith("titulo: ")) {
-                    proyecto.setTitulo(linea.substring(8));
+                    proyecto.setTitulo(linea.substring(8).trim());
                 } else if (linea.startsWith("descripcion: ")) {
-                    proyecto.setDescripcion(linea.substring(13));
+                    proyecto.setDescripcion(linea.substring(13).trim());
                 } else if (linea.startsWith("presupuesto: ")) {
-                    proyecto.setPresupuesto(Float.parseFloat(linea.substring(13)));
+                    proyecto.setPresupuesto(Float.parseFloat(linea.substring(13).trim()));
                 } else if (linea.startsWith("fecha de inicio: ")) {
                     String[] fecha = linea.substring(17).split("/");
                     proyecto.setFechaInicio(new Fecha(Integer.parseInt(fecha[0]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[2])));
@@ -2190,33 +2370,39 @@ public class GUI extends javax.swing.JFrame {
                     String[] fecha = linea.substring(18).split("/");
                     proyecto.setFechaFin(new Fecha(Integer.parseInt(fecha[0]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[2])));
                 } else if (linea.startsWith("ingenieros:")) {
-                    while (!(linea = reader.readLine()).startsWith("recursos tecnologicos:")) {
-                        if (linea.startsWith("\tnombre: ")) {
+                    while (!(linea = reader.readLine().trim()).startsWith("recursos tecnologicos:")) {
+                        if (linea.startsWith("nombre: ")) {
+                            // hay que leer el id del ingeniero, buscarlo del arrayingenieros, 
+                            // agregarlo a este proy y llamar a la funcion reemplazarIdProyectosAsociados
+                            // para no que no haya ing trabajando en +3 proy
+                            /* 
                             Ingeniero ingeniero = new Ingeniero();
-                            ingeniero.setNombre(linea.substring(9));
-                            ingeniero.setApellido(reader.readLine().substring(10));
-                            ingeniero.setMail(reader.readLine().substring(6));
-                            ingeniero.setEspecialidad(reader.readLine().substring(13));
+                            ingeniero.setNombre(linea.substring(9).trim());
+                            ingeniero.setApellido(reader.readLine().substring(10).trim());
+                            ingeniero.setMail(reader.readLine().substring(6).trim());
+                            ingeniero.setEspecialidad(reader.readLine().substring(13).trim());
                             String[] fechaContratacion = reader.readLine().substring(21).split("/");
                             ingeniero.setFechaContratacion(new Fecha(Integer.parseInt(fechaContratacion[0]), Integer.parseInt(fechaContratacion[1]), Integer.parseInt(fechaContratacion[2])));
                             ingeniero.setIdsProyectosAsociados(reader.readLine().substring(19).split(", "));
                             proyecto.agregarIngeniero(ingeniero);
+                            */
                         }
-                        // hasta si llega
                     }
-
                 } else if (linea.startsWith("recursos tecnologicos:")) {
-                    while (!(linea = reader.readLine()).startsWith("//fin")) {
-                        if (linea.startsWith("\tnombre: ")) {
+                    // hay que leer el id del recurso, buscarlo del arrayrecursos
+                    // y agregarlo a este proy
+                    
+                    /*
+                    while (!(linea = reader.readLine().trim()).startsWith("//fin")) {
+                        if (linea.startsWith("nombre: ")) {
                             RecursoTecnologico recurso = new RecursoTecnologico();
-                            recurso.setNombre(linea.substring(9));
-                            recurso.setDescripcion(reader.readLine().substring(13));
+                            recurso.setNombre(linea.substring(9).trim());
+                            recurso.setDescripcion(reader.readLine().substring(13).trim());
                             proyecto.agregarRecursoTecnologico(recurso);
                         }
                     }
-                    // hasta aca no llega
                     proyectos.add(proyecto);
-
+                    */
                 }
             }
         }
@@ -2280,7 +2466,7 @@ public class GUI extends javax.swing.JFrame {
         return ingenieros;
     }
 
-    public static void guardarProyectosEnArchivo(ArrayList<ProyectoTecnologico> proyectos, String nombreArchivo) throws IOException {
+    public void guardarProyectosEnArchivo(ArrayList<ProyectoTecnologico> proyectos, String nombreArchivo) throws IOException {
         try (FileWriter writer = new FileWriter(nombreArchivo)) {
             for (ProyectoTecnologico proyecto : proyectos) {
                 if (proyecto instanceof DesarrolloDeHardware) {
@@ -2290,6 +2476,7 @@ public class GUI extends javax.swing.JFrame {
                     writer.write("proyecto de software\n");
                     writer.write("tipo: " + ((DesarrolloDeSoftware) proyecto).getTipoAplicacion() + "\n");
                 }
+                writer.write("ID: " + proyecto.getProyectoID() + "\n");
                 writer.write("titulo: " + proyecto.getTitulo() + "\n");
                 writer.write("descripcion: " + proyecto.getDescripcion() + "\n");
                 writer.write("presupuesto: " + proyecto.getPresupuesto() + "\n");
@@ -2311,6 +2498,7 @@ public class GUI extends javax.swing.JFrame {
                 }
                 writer.write("//fin\n");
             }
+            writer.close();
         }
     }
 
@@ -2323,6 +2511,7 @@ public class GUI extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -2341,20 +2530,11 @@ public class GUI extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /*
-        arrayIngenieros.add(new Ingeniero("Paco", "Zabala", "loquito@gmail.com", "Flautista", new Fecha()));
-        arrayIngenieros.add(new Ingeniero("Carlos", "Garcia", "snm@gmail.com", "Clavadista", new Fecha()));
-        arrayIngenieros.add(new Ingeniero("Gerardo", "Sofovich", "ger@hotmail.com", "Chimentero", new Fecha()));
-        arrayIngenieros.add(new Ingeniero("Pepe", "Argento", "acade10@outlook.com", "Zapatero", new Fecha()));
-        arrayIngenieros.add(new Ingeniero("Homero", "Simpson", "mrX@outlook.com", "Inspector de Seguridad", new Fecha()));
-        arrayRecursos.add(new RecursoTecnologico("Destornillador", "ha sido robado..."));
-        arrayRecursos.add(new RecursoTecnologico("Servidor", "una coradir del 2011"));
-
+        arrayIngenieros = cargarIngenierosDesdeArchivo("datos/ingenieros.datos");
+        arrayRecursos = cargarRecursosDesdeArchivo("datos/recursos.datos");
+        //arrayProyectos = cargarProyectosDesdeArchivo("datos/proyectos.datos");
         
-         */
-        arrayIngenieros = cargarIngenierosDesdeArchivo("ingenieros.txt");
-        arrayRecursos = cargarRecursosDesdeArchivo("recursos.txt");
-        arrayProyectos = cargarProyectosDesdeArchivo("proyectos.txt");
+        arrayProyectos = new ArrayList<>();
 
         arrayProyectos.add(new DesarrolloDeSoftware("Instagram", "Red Social", "la de las fotos y las trolas", (float) 1000000, new Fecha(12, 12, 2009), new Fecha()));
         arrayProyectos.add(new DesarrolloDeHardware("Nokia 1100", "Telefono Celular", "Duro durito", (float) 1800200, new Fecha(12, 12, 2000), new Fecha(2, 12, 2005)));
@@ -2403,6 +2583,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField campoProyectoTitulo;
     private javax.swing.JPanel contenedor;
     private javax.swing.JPanel contenedorTitulo;
+    private javax.swing.JLabel indiceArrayProyectos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2497,9 +2678,13 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel textMostrarFechaFin;
     private javax.swing.JLabel textMostrarFechaInicio;
     private javax.swing.JLabel textMostrarHardSoft;
+    private javax.swing.JLabel textMostrarHardSoft1;
     private javax.swing.JLabel textMostrarPresupuesto;
     private javax.swing.JLabel textMostrarTipo;
     private javax.swing.JLabel textMostrarTitulo;
+    private javax.swing.JLabel textMostrarTitulo1;
+    private javax.swing.JLabel textMostrarTitulo2;
+    private javax.swing.JLabel textMostrarTitulo3;
     private javax.swing.JLabel textPresup;
     private javax.swing.JLabel textTitulo;
     // End of variables declaration//GEN-END:variables

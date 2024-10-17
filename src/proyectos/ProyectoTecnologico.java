@@ -7,7 +7,7 @@ import java.util.*;
 
 public abstract class ProyectoTecnologico {
 
-    private final String proyectoID; //ID unico generado por el constructor (inmodificable?)
+    private String proyectoID; //ID unico generado por el constructor (inmodificable?)
     private String titulo, descripcion;
     private float presupuesto;
     private Fecha fechaInicio, fechaFin;
@@ -16,12 +16,12 @@ public abstract class ProyectoTecnologico {
     private List<RecursoTecnologico> recursosTecnologicos = new ArrayList<>();
 
     public ProyectoTecnologico() {
-        this.proyectoID = "PROY"+cantidad;
+        this.proyectoID = generarCodigo();
         cantidad++;
     }
 
     public ProyectoTecnologico(String titulo, String descripcion, float presupuesto, Fecha fechaInicio, Fecha fechaFin) {
-        this.proyectoID = "PROY"+cantidad;
+        this.proyectoID = generarCodigo();
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.presupuesto = presupuesto;
@@ -36,12 +36,16 @@ public abstract class ProyectoTecnologico {
     public abstract String getWare();
     
     //default
-    public String getTitulo() {
-        return titulo;
+    public void setProyectoID(String proyectoID) {
+        this.proyectoID = proyectoID;
     }
     
     public String getProyectoID() {
         return proyectoID;
+    }
+    
+    public String getTitulo() {
+        return titulo;
     }
     
     public void setTitulo(String titulo) {
@@ -120,6 +124,20 @@ public abstract class ProyectoTecnologico {
     @Override
     public String toString() {
         return "titulo=" + titulo + ", descripcion=" + descripcion + ", presupuesto=" + presupuesto + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + '}';
+    }
+    
+    /* Abajo metodos adicionales */
+    
+    public static String generarCodigo() {
+        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder codigo = new StringBuilder();
+        Random random = new Random();
+        
+        for (int i = 0; i < 10; i++) {
+            int index = random.nextInt(caracteres.length());
+            codigo.append(caracteres.charAt(index));
+        }
+        return codigo.toString();
     }
     
 }
