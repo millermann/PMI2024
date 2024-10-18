@@ -1,19 +1,13 @@
-//inicio
-proyecto de hardware
-tipo: memoria RAM
-titulo: Nvidia RAM X
-descripcion: una memoria de 16 GB de memoria RAM
-presupuesto: 5000.00
-fecha de inicio: 11/4/2000
-fecha de entrega: 15/6/2008
+proyecto de software
+tipo: Base de Datos
+ID: 72QR1uNbNh
+titulo: Base de datos Mercado Libre
+descripcion: Es la maldita base de datos Mercado Libre
+presupuesto: 1250000.0
+fecha de inicio: 8/6/2018
+fecha de entrega: 12/12/2026
 ingenieros:
-nombre: Raul
-apellido: Mendez
-mail: raulM@outlook.com
-especialidad: ingeniero en computacion.
-fecha de contratacion: 11/4/2000
-proyectos asignados: Nvidia RAM X, Nvidia LED.
+	ID: ING11
 recursos tecnologicos:
-nombre: capacitor
-descripcion: almacena energia
+	ID: REC23
 //fin

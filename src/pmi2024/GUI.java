@@ -1955,7 +1955,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
         try {
-            guardarProyectosEnArchivo(arrayProyectos, "proyectos.data");
+            guardarProyectosEnArchivo(arrayProyectos, "datos/proyectos.datos");
         } catch (IOException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2338,18 +2338,23 @@ public class GUI extends javax.swing.JFrame {
 
     }
 
-    public static ArrayList<ProyectoTecnologico> cargarProyectosDesdeArchivo(String nombreArchivo) throws IOException {
+    public static ArrayList<ProyectoTecnologico> cargarProyectosDesdeArchivo(String nombreArchivo, ArrayList<Ingeniero> ingenierosDisponibles, ArrayList<RecursoTecnologico> recursosDisponibles) throws IOException {
+
         ArrayList<ProyectoTecnologico> proyectos = new ArrayList<>();
+
         try (BufferedReader reader = new BufferedReader(new FileReader(nombreArchivo))) {
             String linea;
             ProyectoTecnologico proyecto = null;
             while ((linea = reader.readLine()) != null) {
                 linea = linea.trim(); // Eliminar espacios en blanco
+
+                // Determinar el tipo de proyecto
                 if (linea.startsWith("proyecto de hardware")) {
                     proyecto = new DesarrolloDeHardware();
                 } else if (linea.startsWith("proyecto de software")) {
                     proyecto = new DesarrolloDeSoftware();
-                } else if (linea.startsWith("tipo: ")) {
+                } // Leer atributos del proyecto
+                else if (linea.startsWith("tipo: ")) {
                     if (proyecto instanceof DesarrolloDeHardware) {
                         ((DesarrolloDeHardware) proyecto).setTipoDispositivo(linea.substring(6).trim());
                     } else if (proyecto instanceof DesarrolloDeSoftware) {
@@ -2365,47 +2370,60 @@ public class GUI extends javax.swing.JFrame {
                     proyecto.setPresupuesto(Float.parseFloat(linea.substring(13).trim()));
                 } else if (linea.startsWith("fecha de inicio: ")) {
                     String[] fecha = linea.substring(17).split("/");
-                    proyecto.setFechaInicio(new Fecha(Integer.parseInt(fecha[0]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[2])));
+                    proyecto.setFechaInicio(new Fecha(
+                            Integer.parseInt(fecha[0]),
+                            Integer.parseInt(fecha[1]),
+                            Integer.parseInt(fecha[2])
+                    ));
                 } else if (linea.startsWith("fecha de entrega: ")) {
                     String[] fecha = linea.substring(18).split("/");
-                    proyecto.setFechaFin(new Fecha(Integer.parseInt(fecha[0]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[2])));
-                } else if (linea.startsWith("ingenieros:")) {
-                    while (!(linea = reader.readLine().trim()).startsWith("recursos tecnologicos:")) {
-                        if (linea.startsWith("nombre: ")) {
-                            // hay que leer el id del ingeniero, buscarlo del arrayingenieros, 
-                            // agregarlo a este proy y llamar a la funcion reemplazarIdProyectosAsociados
-                            // para no que no haya ing trabajando en +3 proy
-                            /* 
-                            Ingeniero ingeniero = new Ingeniero();
-                            ingeniero.setNombre(linea.substring(9).trim());
-                            ingeniero.setApellido(reader.readLine().substring(10).trim());
-                            ingeniero.setMail(reader.readLine().substring(6).trim());
-                            ingeniero.setEspecialidad(reader.readLine().substring(13).trim());
-                            String[] fechaContratacion = reader.readLine().substring(21).split("/");
-                            ingeniero.setFechaContratacion(new Fecha(Integer.parseInt(fechaContratacion[0]), Integer.parseInt(fechaContratacion[1]), Integer.parseInt(fechaContratacion[2])));
-                            ingeniero.setIdsProyectosAsociados(reader.readLine().substring(19).split(", "));
-                            proyecto.agregarIngeniero(ingeniero);
-                            */
-                        }
-                    }
-                } else if (linea.startsWith("recursos tecnologicos:")) {
-                    // hay que leer el id del recurso, buscarlo del arrayrecursos
-                    // y agregarlo a este proy
+                    proyecto.setFechaFin(new Fecha(
+                            Integer.parseInt(fecha[0]),
+                            Integer.parseInt(fecha[1]),
+                            Integer.parseInt(fecha[2])
+                    ));
+                } // Verificar y agregar ingenieros
+                else if (linea.startsWith("ingenieros:")) {
                     
-                    /*
-                    while (!(linea = reader.readLine().trim()).startsWith("//fin")) {
-                        if (linea.startsWith("nombre: ")) {
-                            RecursoTecnologico recurso = new RecursoTecnologico();
-                            recurso.setNombre(linea.substring(9).trim());
-                            recurso.setDescripcion(reader.readLine().substring(13).trim());
-                            proyecto.agregarRecursoTecnologico(recurso);
+                    while (!(linea = reader.readLine().trim()).startsWith("recursos tecnologicos:")) {
+                        if (linea.startsWith("ID: ")) {
+                            String ingenieroId = linea.substring(4).trim(); // tiene que leer un id, por ej: ING12
+                            
+                            for (int i = 0; i < ingenierosDisponibles.size(); i++) {
+                                if (ingenieroId.equals(arrayIngenieros.get(i).getIdIngeniero())) {
+                                    ingenierosDisponibles.get(i).reemplazarIdProyectosAsociados(proyecto.getProyectoID(), "No Asignado");
+                                    proyecto.agregarIngeniero(ingenierosDisponibles.get(i));
+                                }
+                            }
+                            
                         }
                     }
+
+                } // agregar recursos tecnológicos
+                else if (linea.startsWith("recursos tecnologicos:")) {
+
+                    while (!(linea = reader.readLine().trim()).startsWith("//fin")) {
+                        if (linea.startsWith("ID: ")) {
+                            String recursoId = linea.substring(4).trim(); // tiene que leer un id, por ej: REC21
+                            //String nombreRecurso = linea.substring(9).trim();
+                            
+                            // Buscar el recurso en la lista de recursos disponibles
+                            RecursoTecnologico recursoEncontrado = null;
+                            for (int i = 0; i < recursosDisponibles.size() ; i++) {
+                                if (recursoId.equals(recursosDisponibles.get(i).getRecursoID())) {
+                                    recursoEncontrado = recursosDisponibles.get(i);
+                                }
+                            }
+
+                            proyecto.agregarRecursoTecnologico(recursoEncontrado);
+                            }
+                        }
+                    }
+
                     proyectos.add(proyecto);
-                    */
                 }
             }
-        }
+        
         return proyectos;
     }
 
@@ -2484,17 +2502,13 @@ public class GUI extends javax.swing.JFrame {
                 writer.write("fecha de entrega: " + proyecto.getFechaFin() + "\n");
                 writer.write("ingenieros:\n");
                 for (Ingeniero ingeniero : proyecto.obtenerTodosLosIngenieros()) {
-                    writer.write("\tnombre: " + ingeniero.getNombre() + "\n");
-                    writer.write("\tapellido: " + ingeniero.getApellido() + "\n");
-                    writer.write("\tmail: " + ingeniero.getMail() + "\n");
-                    writer.write("\tespecialidad: " + ingeniero.getEspecialidad() + "\n");
-                    writer.write("\tfecha de contratacion: " + ingeniero.getFechaContratacion() + "\n");
-                    writer.write("\tproyectos asignados: " + String.join(", ", ingeniero.getIdsProyectosAsociados()) + "\n");
+                    writer.write("\tID: " + ingeniero.getIdIngeniero()+ "\n");
+                    
                 }
                 writer.write("recursos tecnologicos:\n");
                 for (RecursoTecnologico recurso : proyecto.obtenerTodosLosRecursosTecnologicos()) {
-                    writer.write("\tnombre: " + recurso.getNombre() + "\n");
-                    writer.write("\tdescripcion: " + recurso.getDescripcion() + "\n");
+                    writer.write("\tID: " + recurso.getRecursoID()+ "\n");
+ 
                 }
                 writer.write("//fin\n");
             }
@@ -2532,14 +2546,13 @@ public class GUI extends javax.swing.JFrame {
 
         arrayIngenieros = cargarIngenierosDesdeArchivo("datos/ingenieros.datos");
         arrayRecursos = cargarRecursosDesdeArchivo("datos/recursos.datos");
-        //arrayProyectos = cargarProyectosDesdeArchivo("datos/proyectos.datos");
-        
-        arrayProyectos = new ArrayList<>();
+        arrayProyectos = cargarProyectosDesdeArchivo("datos/proyectos.datos", arrayIngenieros, arrayRecursos);
 
-        arrayProyectos.add(new DesarrolloDeSoftware("Instagram", "Red Social", "la de las fotos y las trolas", (float) 1000000, new Fecha(12, 12, 2009), new Fecha()));
-        arrayProyectos.add(new DesarrolloDeHardware("Nokia 1100", "Telefono Celular", "Duro durito", (float) 1800200, new Fecha(12, 12, 2000), new Fecha(2, 12, 2005)));
 
-        arrayProyectos.add(new DesarrolloDeSoftware("Facebook", "Red Social", "La vamos a re pegar negritooo", (float) 1000, new Fecha(12, 12, 2000), new Fecha()));
+
+        //arrayProyectos.add(new DesarrolloDeSoftware("Instagram", "Red Social", "la de las fotos y las trolas", (float) 1000000, new Fecha(12, 12, 2009), new Fecha()));
+        //arrayProyectos.add(new DesarrolloDeHardware("Nokia 1100", "Telefono Celular", "Duro durito", (float) 1800200, new Fecha(12, 12, 2000), new Fecha(2, 12, 2005)));
+        //arrayProyectos.add(new DesarrolloDeSoftware("Facebook", "Red Social", "La vamos a re pegar negritooo", (float) 1000, new Fecha(12, 12, 2000), new Fecha()));
 
         //Create and display the form 
         java.awt.EventQueue.invokeLater(new Runnable() {
