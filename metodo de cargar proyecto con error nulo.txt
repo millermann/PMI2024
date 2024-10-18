@@ -1,0 +1,331 @@
+//clase proyecto tecnologico modificada
+package proyectos;
+
+import fecha.Fecha;
+import ingenieros.Ingeniero;
+import recursosTecnologicos.RecursoTecnologico;
+import java.util.*;
+
+public abstract class ProyectoTecnologico {
+
+    private String proyectoID; //ID unico generado por el constructor (inmodificable?)
+    private String titulo, descripcion;
+    private float presupuesto;
+    private Fecha fechaInicio, fechaFin;
+    private static int cantidad = 0;
+    private List<Ingeniero> ingenieros = new ArrayList<>();
+    private List<RecursoTecnologico> recursosTecnologicos = new ArrayList<>();
+
+    public static String generarCodigo() {
+        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder codigo = new StringBuilder();
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            int index = random.nextInt(caracteres.length());
+            codigo.append(caracteres.charAt(index));
+        }
+        return codigo.toString();
+    }
+    
+    public ProyectoTecnologico() {
+        cantidad++;
+    }
+    
+    public ProyectoTecnologico(String titulo, String descripcion, float presupuesto, Fecha fechaInicio, Fecha fechaFin) {
+        this.proyectoID = generarCodigo();
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.presupuesto = presupuesto;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        cantidad++;
+    }
+    
+    // metodos abstractos
+    public abstract String getTipo();
+    
+    public String getTitulo() {
+        return titulo;
+    }
+    
+    //default
+
+    public void setProyectoID(String proyectoID) {
+        this.proyectoID = proyectoID;
+    }
+    
+    public String getProyectoID() {
+        return proyectoID;
+    }
+    
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public float getPresupuesto() {
+        return presupuesto;
+    }
+
+    public void setPresupuesto(float presupuesto) {
+        this.presupuesto = presupuesto;
+    }
+
+    public Fecha getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(Fecha fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public Fecha getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(Fecha fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+    public static int getCantidad() {
+        return cantidad;
+    }
+    
+    //metodos para modificar ingenieros y recursos tecnologicos
+    public void agregarIngeniero(Ingeniero ingeniero) {
+        ingenieros.add(ingeniero);
+    }
+
+    public boolean eliminarIngeniero(Ingeniero ingeniero) {
+        return ingenieros.remove(ingeniero);
+    }
+
+    public void agregarRecursoTecnologico(RecursoTecnologico recurso) {
+        recursosTecnologicos.add(recurso);
+    }
+
+    public boolean eliminarRecursoTecnologico(RecursoTecnologico recurso) {
+        return recursosTecnologicos.remove(recurso);
+    }
+
+    public int obtenerCantidadIngenieros() {
+        return ingenieros.size();
+    }
+
+    public int obtenerCantidadRecursosTecnologicos() {
+        return recursosTecnologicos.size();
+    }
+    
+    public List<Ingeniero> obtenerTodosLosIngenieros() {
+        return new ArrayList<>(ingenieros);  // Devuelve una copia de la lista
+    }
+
+    public List<RecursoTecnologico> obtenerTodosLosRecursosTecnologicos() {
+        return new ArrayList<>(recursosTecnologicos);  // Devuelve una copia de la lista
+    }
+    
+    @Override
+    public String toString() {
+        return "titulo=" + titulo + ", descripcion=" + descripcion + ", presupuesto=" + presupuesto + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + '}';
+    }
+    
+    public boolean esValido ()
+    {
+        return proyectoID != null && !proyectoID.isEmpty()
+               && titulo != null && !titulo.isEmpty() &&
+               descripcion != null && !descripcion.isEmpty() &&
+               presupuesto > 0 &&
+               fechaInicio != null &&
+               fechaFin != null;
+    }  
+}
+//fin clase proyecto tecnologico modificada
+
+//clase software
+package proyectos;
+
+import fecha.Fecha;
+
+public class DesarrolloDeSoftware extends ProyectoTecnologico {
+    private String tipoAplicacion;
+    private static int cantidadProySoftware = 0;
+
+    public DesarrolloDeSoftware() {
+        super();
+        cantidadProySoftware++;
+    }
+
+    public DesarrolloDeSoftware(String titulo, String tipoAplicacion, String descripcion, float presupuesto, Fecha fechaInicio, Fecha fechaFin) {
+        super(titulo, descripcion, presupuesto, fechaInicio, fechaFin);
+        this.tipoAplicacion = tipoAplicacion;
+        cantidadProySoftware++;
+    }
+    
+    public String getTipoAplicacion() {
+        return tipoAplicacion;
+    }
+
+    public void setTipoAplicacion(String tipoAplicacion) {
+        this.tipoAplicacion = tipoAplicacion;
+    }
+
+    public static int getCantidadProySoftware() {
+        return cantidadProySoftware;
+    }
+    
+    @Override
+    public String toString() {
+        return "DesarrolloDeSoftware{" + super.toString() + ", tipo=" + tipoAplicacion + '}';
+    }
+    
+    @Override
+    public String getTipo(){ //deberia reemplazar a getTipoAplicacion???
+        return tipoAplicacion;
+    }
+    
+    @Override
+    public boolean esValido ()
+    {
+        return super.esValido() && tipoAplicacion != null && tipoAplicacion.isEmpty();
+    } 
+}
+//fin clase software
+
+//clase hardware
+package proyectos;
+
+import fecha.Fecha;
+
+public class DesarrolloDeHardware extends ProyectoTecnologico {
+    private String tipoDispositivo;
+    private static int cantidadProyHardware = 0;
+
+    public DesarrolloDeHardware() {
+        super();
+        cantidadProyHardware++;
+    }
+
+    public DesarrolloDeHardware(String titulo, String tipoDispositivo, String descripcion, float presupuesto, Fecha fechaInicio, Fecha fechaFin) {
+        super(titulo, descripcion, presupuesto, fechaInicio, fechaFin);
+        this.tipoDispositivo = tipoDispositivo;
+        cantidadProyHardware++;
+    }
+
+    public String getTipoDispositivo() {
+        return tipoDispositivo;
+    }
+
+    public void setTipoDispositivo(String tipoDispositivo) {
+        this.tipoDispositivo = tipoDispositivo;
+    }
+
+    public static int getCantidadProyHardware() {
+        return cantidadProyHardware;
+    }
+
+    @Override
+    public String toString() {
+        return "DesarrolloDeHardware{" + super.toString() + ", tipoDispositivo=" + tipoDispositivo + '}';
+    }
+    
+    @Override
+    public String getTipo(){ //deberia reemplazar a getTipoDispositivo???
+        return tipoDispositivo;
+    }
+    
+    @Override
+    public boolean esValido ()
+    {
+        return super.esValido() && tipoDispositivo != null && tipoDispositivo.isEmpty();
+    } 
+    
+    /* Abajo metodos adicionales */
+}
+//fin clase hardware
+
+//metodo cargar desde archivo
+    public List<ProyectoTecnologico> cargarProyectosDesdeArchivo(String nombreArchivo) throws IOException {
+        File archivo = new File(nombreArchivo);
+        List<ProyectoTecnologico> proyectos = new ArrayList<>();
+
+        if (!archivo.exists()) {
+            throw new IOException("El archivo no existe: " + nombreArchivo);
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            ProyectoTecnologico proyecto = null;
+            while ((linea = reader.readLine()) != null) {
+                linea = linea.trim(); // Eliminar espacios en blanco
+                if (linea.startsWith("proyecto de hardware")) {
+                    proyecto = new DesarrolloDeHardware();
+                } else if (linea.startsWith("proyecto de software")) {
+                    proyecto = new DesarrolloDeSoftware();
+                } else if (linea.startsWith("tipo: ")) {
+                    if (proyecto instanceof DesarrolloDeHardware) {
+                        ((DesarrolloDeHardware) proyecto).setTipoDispositivo(linea.substring(6).trim());
+                    } else if (proyecto instanceof DesarrolloDeSoftware) {
+                        ((DesarrolloDeSoftware) proyecto).setTipoAplicacion(linea.substring(6).trim());
+                    }
+                } else if (linea.startsWith("ID: ")) {
+                    proyecto.setProyectoID(linea.substring(4).trim());
+                } else if (linea.startsWith("titulo: ")) {
+                    proyecto.setTitulo(linea.substring(8).trim());
+                } else if (linea.startsWith("descripcion: ")) {
+                    proyecto.setDescripcion(linea.substring(13).trim());
+                } else if (linea.startsWith("presupuesto: ")) {
+                    proyecto.setPresupuesto(Float.parseFloat(linea.substring(13).trim()));
+                } else if (linea.startsWith("fecha de inicio: ")) {
+                    String[] fecha = linea.substring(17).split("/");
+                    proyecto.setFechaInicio(new Fecha(Integer.parseInt(fecha[0]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[2])));
+                } else if (linea.startsWith("fecha de entrega: ")) {
+                    String[] fecha = linea.substring(18).split("/");
+                    proyecto.setFechaFin(new Fecha(Integer.parseInt(fecha[0]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[2])));
+                } else if (linea.startsWith("ingenieros:")) {
+                    while (!(linea = reader.readLine().trim()).startsWith("recursos tecnologicos:")) {
+                        if (linea.startsWith("nombre: ")) {
+                            Ingeniero ingeniero = new Ingeniero();
+                            ingeniero.setNombre(linea.substring(8).trim());
+                            ingeniero.setApellido(reader.readLine().substring(10).trim());
+                            ingeniero.setMail(reader.readLine().substring(6).trim());
+                            ingeniero.setEspecialidad(reader.readLine().substring(13).trim());
+                            String[] fechaContratacion = reader.readLine().substring(21).split("/");
+                            ingeniero.setFechaContratacion(new Fecha(Integer.parseInt(fechaContratacion[0]), Integer.parseInt(fechaContratacion[1]), Integer.parseInt(fechaContratacion[2])));
+                            ingeniero.setIdsProyectosAsociados(reader.readLine().substring(19).split(", "));
+                            proyecto.agregarIngeniero(ingeniero);
+                        }
+                    }
+                } else if (linea.startsWith("recursos tecnologicos:")) {
+                    while (!(linea = reader.readLine().trim()).startsWith("//fin")) {
+                        if (linea.startsWith("nombre: ")) {
+                            RecursoTecnologico recurso = new RecursoTecnologico();
+                            recurso.setNombre(linea.substring(9).trim());
+                            recurso.setDescripcion(reader.readLine().substring(13).trim());
+                            proyecto.agregarRecursoTecnologico(recurso);
+                        }
+                    }
+
+                    // Antes de agregar el proyecto, validar si es válido
+                    if (proyecto != null && proyecto.esValido()) {
+                        proyectos.add(proyecto);
+                    } else {
+                        System.out.println("Proyecto inválido, no se añadirá a la lista.");
+                    }
+                }
+            }
+        } catch (IOException e) {
+            // Manejo de errores de lectura
+            System.err.println("Error al leer el archivo: " + e.getMessage());
+            throw e;
+        }
+
+        return proyectos;
+    }
+//fin metodo cargar desde archivo
