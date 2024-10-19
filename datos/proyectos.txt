@@ -1,0 +1,13 @@
+proyecto de software
+tipo: Tipo de Aplicacion
+ID: pSTxIgDpAv
+titulo: pepe
+descripcion: loso
+presupuesto: 1200.0
+fecha de inicio: 12/12/2024
+fecha de entrega: 12/12/2024
+ingenieros:
+	ID: ING2
+recursos tecnologicos:
+	ID: REC3
+//fin

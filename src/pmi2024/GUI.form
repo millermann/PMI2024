@@ -1419,13 +1419,13 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="-2" pref="222" max="-2" attributes="0"/>
-                                                  <Component id="jLabel13" min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <Component id="textCargarInicioDia" min="-2" pref="35" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jLabel3" min="-2" pref="170" max="-2" attributes="0"/>
+                                                  <Component id="textCargarFin" min="-2" pref="170" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jLabel16" min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <Component id="textCargarFinDia" min="-2" pref="35" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -1438,16 +1438,16 @@
                                           </Group>
                                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel17" min="-2" pref="35" max="-2" attributes="0"/>
-                                              <Component id="jLabel14" min="-2" pref="35" max="-2" attributes="0"/>
+                                              <Component id="textCargarFinMes" min="-2" pref="35" max="-2" attributes="0"/>
+                                              <Component id="textCargarInicioMes" min="-2" pref="35" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel1" alignment="1" min="-2" pref="320" max="-2" attributes="0"/>
+                                              <Component id="textCargarPresupuesto" alignment="1" min="-2" pref="320" max="-2" attributes="0"/>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jLabel2" min="-2" pref="169" max="-2" attributes="0"/>
+                                                  <Component id="textCargarInicio" min="-2" pref="169" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -1463,12 +1463,12 @@
                                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel15" min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <Component id="textCargarInicioAnio" min="-2" pref="35" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="spinnerFechaInicioAnio" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel18" min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <Component id="textCargarFinAnio" min="-2" pref="35" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="spinnerFechaFinAnio" min="-2" pref="68" max="-2" attributes="0"/>
                                               </Group>
@@ -1503,28 +1503,28 @@
                                       </Group>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="spinnerProyectoPresupuesto" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="textCargarPresupuesto" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="spinnerFechaInicioAnio" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textCargarInicio" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="spinnerFechaInicioDia" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="spinnerFechaInicioMes" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textCargarInicioDia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textCargarInicioMes" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textCargarInicioAnio" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="spinnerFechaFinAnio" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="spinnerFechaFinDia" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="spinnerFechaFinMes" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textCargarFinDia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textCargarFinMes" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textCargarFinAnio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textCargarFin" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1583,7 +1583,7 @@
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="handlerSeleccionarCampoTexto"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel1">
+                <Component class="javax.swing.JLabel" name="textCargarPresupuesto">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Presupuesto:"/>
@@ -1600,31 +1600,25 @@
                     <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="Presupuesto del proyecto"/>
                   </AccessibilityProperties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel2">
+                <Component class="javax.swing.JLabel" name="textCargarInicio">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="Fecha de inicio:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel3">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="4"/>
-                    <Property name="text" type="java.lang.String" value="F. Finalizaci&#xf3;n:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel13">
+                <Component class="javax.swing.JLabel" name="textCargarInicioDia">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Dia"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel14">
+                <Component class="javax.swing.JLabel" name="textCargarInicioMes">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Mes"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel15">
+                <Component class="javax.swing.JLabel" name="textCargarInicioAnio">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
@@ -1657,19 +1651,25 @@
                     <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="GUI_spinnerFechaInicioAnio"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel16">
+                <Component class="javax.swing.JLabel" name="textCargarFin">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
+                    <Property name="text" type="java.lang.String" value="F. Finalizaci&#xf3;n:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="textCargarFinDia">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Dia"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel17">
+                <Component class="javax.swing.JLabel" name="textCargarFinMes">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Mes"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel18">
+                <Component class="javax.swing.JLabel" name="textCargarFinAnio">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="A&#xf1;o"/>

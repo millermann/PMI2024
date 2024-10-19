@@ -223,19 +223,19 @@ public class GUI extends javax.swing.JFrame {
         radioSoftware = new javax.swing.JRadioButton();
         campoProyectoDescripcion = new javax.swing.JTextField();
         campoProyectoTipo = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        textCargarPresupuesto = new javax.swing.JLabel();
         spinnerProyectoPresupuesto = new javax.swing.JSpinner();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        textCargarInicio = new javax.swing.JLabel();
+        textCargarInicioDia = new javax.swing.JLabel();
+        textCargarInicioMes = new javax.swing.JLabel();
+        textCargarInicioAnio = new javax.swing.JLabel();
         spinnerFechaInicioDia = new javax.swing.JSpinner();
         spinnerFechaInicioMes = new javax.swing.JSpinner();
         spinnerFechaInicioAnio = new javax.swing.JSpinner();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        textCargarFin = new javax.swing.JLabel();
+        textCargarFinDia = new javax.swing.JLabel();
+        textCargarFinMes = new javax.swing.JLabel();
+        textCargarFinAnio = new javax.swing.JLabel();
         spinnerFechaFinDia = new javax.swing.JSpinner();
         spinnerFechaFinMes = new javax.swing.JSpinner();
         spinnerFechaFinAnio = new javax.swing.JSpinner();
@@ -1271,25 +1271,22 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Presupuesto:");
+        textCargarPresupuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarPresupuesto.setText("Presupuesto:");
 
         spinnerProyectoPresupuesto.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("Fecha de inicio:");
+        textCargarInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        textCargarInicio.setText("Fecha de inicio:");
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("F. Finalización:");
+        textCargarInicioDia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarInicioDia.setText("Dia");
 
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Dia");
+        textCargarInicioMes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarInicioMes.setText("Mes");
 
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Mes");
-
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("Año");
+        textCargarInicioAnio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarInicioAnio.setText("Año");
 
         spinnerFechaInicioDia.setModel(new javax.swing.SpinnerNumberModel(12, 1, 31, 1));
 
@@ -1298,14 +1295,17 @@ public class GUI extends javax.swing.JFrame {
         spinnerFechaInicioAnio.setModel(new javax.swing.SpinnerNumberModel(2024, 1, null, 1));
         spinnerFechaInicioAnio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("Dia");
+        textCargarFin.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        textCargarFin.setText("F. Finalización:");
 
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("Mes");
+        textCargarFinDia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarFinDia.setText("Dia");
 
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("Año");
+        textCargarFinMes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarFinMes.setText("Mes");
+
+        textCargarFinAnio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarFinAnio.setText("Año");
 
         spinnerFechaFinDia.setModel(new javax.swing.SpinnerNumberModel(12, 1, 31, 1));
 
@@ -1616,12 +1616,12 @@ public class GUI extends javax.swing.JFrame {
                                 .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
                                         .addGap(222, 222, 222)
-                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textCargarInicioDia, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(12, 12, 12))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textCargarFin, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textCargarFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(11, 11, 11)))
                                 .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelCargarProyectoLayout.createSequentialGroup()
@@ -1630,14 +1630,14 @@ public class GUI extends javax.swing.JFrame {
                                     .addComponent(spinnerFechaInicioDia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(6, 6, 6)
                                 .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(textCargarFinMes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textCargarInicioMes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textCargarPresupuesto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textCargarInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(145, 145, 145)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1648,11 +1648,11 @@ public class GUI extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textCargarInicioAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(spinnerFechaInicioAnio))
                                     .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textCargarFinAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(spinnerFechaFinAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(spinnerProyectoPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1680,25 +1680,25 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(radioSoftware))
                             .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(spinnerProyectoPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel1)))
+                                .addComponent(textCargarPresupuesto)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(spinnerFechaInicioAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
+                            .addComponent(textCargarInicio)
                             .addComponent(spinnerFechaInicioDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(spinnerFechaInicioMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15))
+                            .addComponent(textCargarInicioDia)
+                            .addComponent(textCargarInicioMes)
+                            .addComponent(textCargarInicioAnio))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(spinnerFechaFinAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(spinnerFechaFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(spinnerFechaFinMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel3))))
+                            .addComponent(textCargarFinDia)
+                            .addComponent(textCargarFinMes)
+                            .addComponent(textCargarFinAnio)
+                            .addComponent(textCargarFin))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tabIngYRecursos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1955,92 +1955,205 @@ public class GUI extends javax.swing.JFrame {
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
         try {
-            guardarProyectosEnArchivo(arrayProyectos, "datos/proyectos.datos");
+            guardarProyectosEnArchivo(arrayProyectos, "datos/proyectos.txt");
         } catch (IOException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_botonSalirActionPerformed
 
+    private int[] validarCargarProyecto() {
+        int[] errores = new int[7];
+        /* 
+        Pos. 0: presupuesto / Pos. 1: fechas / Pos. 2: tabla ing / Pos. 3: tabla rec 
+        Pos. 4: campoProyectoTitulo  / Pos. 5: campoProyectoDescripcion / Pos. 6: campoProyectoTipo  
+        */
+        // presupuesto
+        float presupuesto = (float) spinnerProyectoPresupuesto.getValue();
+        if (presupuesto == 0) {
+            errores[0] = 1;
+        }
+
+        // fechas
+        int finAnio = (int) spinnerFechaFinAnio.getValue();
+        int inicioAnio = (int) spinnerFechaInicioAnio.getValue();
+        if (finAnio <= inicioAnio) {
+            errores[1] = 1;
+
+            if (finAnio == inicioAnio) {
+                int finMes = (int) spinnerFechaFinMes.getValue();
+                int inicioMes = (int) spinnerFechaInicioMes.getValue();
+
+                if (finMes <= inicioMes) {
+                    if (finMes == inicioMes) {
+                        int finDia = (int) spinnerFechaFinDia.getValue();
+                        int inicioDia = (int) spinnerFechaInicioDia.getValue();
+
+                        if (finDia >= inicioDia) {
+                            errores[1] = 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        // tablas
+        if (modeloTablaIngenierosSeleccionados.getRowCount() == 0) {
+            errores[2] = 1;
+        }
+        if (modeloTablaRecursosSeleccionados.getRowCount() == 0) {
+            errores[3] = 1;
+        }
+
+        // jtextfields
+        if (campoProyectoTitulo.getText().trim().isEmpty()) {
+            errores[4] = 1;
+        }
+        if (campoProyectoTitulo.getText().equals("Título del Proyecto")) {
+            errores[4] = 2;
+        }
+        if (campoProyectoDescripcion.getText().trim().isEmpty()) {
+            errores[5] = 1;
+        }
+        if (campoProyectoDescripcion.getText().equals("Descripción...")) {
+            errores[5] = 2;
+        }
+        if (campoProyectoTipo.getText().trim().isEmpty()) {
+            errores[6] = 1;
+        }
+        if (campoProyectoTipo.getText().equals("Tipo de Dispositivo") || campoProyectoTipo.getText().equals("Tipo de Aplicacion")) {
+            errores[6] = 2;
+        }
+
+        return errores;
+    }
+
     private void botonCargarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCargarProyectoActionPerformed
-        String titulo, descripcion, tipo;
-        float presupuesto;
-        Fecha fechaInicio, fechaFin;
-        ArrayList<Ingeniero> ingenieros = new ArrayList<>();
-        ArrayList<RecursoTecnologico> recursosTecnologicos = new ArrayList<>();
-        ProyectoTecnologico proyecto;
+        int[] errores = validarCargarProyecto();
 
-        titulo = campoProyectoTitulo.getText();
-        descripcion = campoProyectoDescripcion.getText();
-        tipo = campoProyectoTipo.getText();
+        if (errores[0] == 0 && errores[1] == 0 && errores[2] == 0 && errores[3] == 0 && errores[4] == 0) {
+            String titulo, descripcion, tipo;
+            float presupuesto;
+            Fecha fechaInicio, fechaFin;
+            ArrayList<Ingeniero> ingenieros = new ArrayList<>();
+            ArrayList<RecursoTecnologico> recursosTecnologicos = new ArrayList<>();
+            ProyectoTecnologico proyecto;
 
-        fechaInicio = new Fecha(
-                (int) spinnerFechaInicioDia.getValue(),
-                (int) spinnerFechaInicioMes.getValue(),
-                (int) spinnerFechaInicioAnio.getValue()
-        );
-        fechaFin = new Fecha(
-                (int) spinnerFechaFinDia.getValue(),
-                (int) spinnerFechaFinMes.getValue(),
-                (int) spinnerFechaFinAnio.getValue()
-        );
+            titulo = campoProyectoTitulo.getText();
+            descripcion = campoProyectoDescripcion.getText();
+            tipo = campoProyectoTipo.getText();
 
-        presupuesto = (float) spinnerProyectoPresupuesto.getValue();
+            fechaInicio = new Fecha(
+                    (int) spinnerFechaInicioDia.getValue(),
+                    (int) spinnerFechaInicioMes.getValue(),
+                    (int) spinnerFechaInicioAnio.getValue()
+            );
+            fechaFin = new Fecha(
+                    (int) spinnerFechaFinDia.getValue(),
+                    (int) spinnerFechaFinMes.getValue(),
+                    (int) spinnerFechaFinAnio.getValue()
+            );
 
-        int filas = modeloTablaIngenierosSeleccionados.getRowCount();
+            presupuesto = (float) spinnerProyectoPresupuesto.getValue();
 
-        for (int i = 0; i < filas; i++) {
+            int filas = modeloTablaIngenierosSeleccionados.getRowCount();
 
-            String idIng = (String) tablaIngSeleccionadosCargarProyecto.getValueAt(i, 5);
-            for (int j = 0; j < arrayIngenieros.size(); j++) {
+            for (int i = 0; i < filas; i++) {
 
-                if (idIng.equals(arrayIngenieros.get(j).getIdIngeniero())) {
-                    ingenieros.add(arrayIngenieros.get(j));
-                    break;
+                String idIng = (String) tablaIngSeleccionadosCargarProyecto.getValueAt(i, 5);
+                for (int j = 0; j < arrayIngenieros.size(); j++) {
+
+                    if (idIng.equals(arrayIngenieros.get(j).getIdIngeniero())) {
+                        ingenieros.add(arrayIngenieros.get(j));
+                        break;
+                    }
+
                 }
 
             }
 
-        }
+            filas = modeloTablaRecursosSeleccionados.getRowCount();
 
-        filas = modeloTablaRecursosSeleccionados.getRowCount();
+            for (int i = 0; i < filas; i++) {
 
-        for (int i = 0; i < filas; i++) {
+                String idRec = (String) tablaRecSeleccionadosCargarProyecto.getValueAt(i, 2);
 
-            String idRec = (String) tablaRecSeleccionadosCargarProyecto.getValueAt(i, 2);
+                for (int j = 0; j < arrayRecursos.size(); j++) {
 
-            for (int j = 0; j < arrayRecursos.size(); j++) {
+                    if (idRec.equals(arrayRecursos.get(j).getRecursoID())) {
+                        recursosTecnologicos.add(arrayRecursos.get(j));
+                        break;
+                    }
 
-                if (idRec.equals(arrayRecursos.get(j).getRecursoID())) {
-                    recursosTecnologicos.add(arrayRecursos.get(j));
-                    break;
                 }
 
             }
 
-        }
+            if (radioHardware.isSelected()) {
+                proyecto = new DesarrolloDeHardware(titulo, tipo, descripcion, presupuesto, fechaInicio, fechaFin);
+            } else {
+                proyecto = new DesarrolloDeSoftware(titulo, tipo, descripcion, presupuesto, fechaInicio, fechaFin);
+            }
 
-        if (radioHardware.isSelected()) {
-            proyecto = new DesarrolloDeHardware(titulo, tipo, descripcion, presupuesto, fechaInicio, fechaFin);
+            // para todos los ing seleccionados: se asigna la id del proy en IDProy.Asoc. (Para evitar que un ing trabaje en +3 Proy)
+            String id = proyecto.getProyectoID();
+            for (int i = 0; i < ingenieros.size(); i++) {
+                ingenieros.get(i).reemplazarIdProyectosAsociados(id, "No Asignado");
+            }
+
+            for (Ingeniero x : ingenieros) {
+                proyecto.agregarIngeniero(x);
+            }
+            for (RecursoTecnologico x : recursosTecnologicos) {
+                proyecto.agregarRecursoTecnologico(x);
+            }
+
+            arrayProyectos.add(proyecto);
+
+            handlerIrAlSubpanelPrincipalProyectos(evt);
         } else {
-            proyecto = new DesarrolloDeSoftware(titulo, tipo, descripcion, presupuesto, fechaInicio, fechaFin);
-        }
+            /* 
+                Pos. 0: presupuesto / Pos. 1: fechas / Pos. 2: tabla ing / Pos. 3: tabla rec  
+                Pos. 4: campoProyectoTitulo  / Pos. 5: campoProyectoDescripcion / Pos. 6: campoProyectoTipo  
+            */
+            String mensajeError = "Se encontraron los siguientes problemas:";
+            if (errores[4] == 1) {
+                mensajeError += "\n + No se ha ingresado ningun título.";
+            }
+            if (errores[4] == 2) {
+                mensajeError += "\n + El título ingresado no es válido.";
+            }
+            if (errores[5] == 1) {
+                mensajeError += "\n + No se ha ingresado ninguna descripción.";
+            }
+            if (errores[5] == 2) {
+                mensajeError += "\n + La descripción ingresada no es válida.";
+            }
+            if (errores[6] == 1) {
+                mensajeError += "\n + No se ha ingresado ningun tipo.";
+            }
+            if (errores[6] == 2) {
+                mensajeError += "\n + El tipo ingresado no es válido.";
+            }
+            if (errores[0] == 1) {
+                mensajeError += "\n + Presupuesto no válido.";
+            }
+            if (errores[1] == 1) {
+                mensajeError += "\n + Fechas inválidas.";
+            }
+            if (errores[2] == 1) {
+                mensajeError += "\n + No se han seleccionado ingenieros.";
+            }
+            if (errores[3] == 1) {
+                mensajeError += "\n + No se han seleccionado recursos.";
+            }
 
-        // para todos los ing seleccionados: se asigna la id del proy en IDProy.Asoc. (Para evitar que un ing trabaje en +3 Proy)
-        String id = proyecto.getProyectoID();
-        for (int i = 0; i < ingenieros.size(); i++) {
-            ingenieros.get(i).reemplazarIdProyectosAsociados(id, "No Asignado");
+            JOptionPane.showMessageDialog(
+                    null,
+                    mensajeError,
+                    "Error",
+                    0
+            );
         }
-
-        for (Ingeniero x : ingenieros) {
-            proyecto.agregarIngeniero(x);
-        }
-        for (RecursoTecnologico x : recursosTecnologicos) {
-            proyecto.agregarRecursoTecnologico(x);
-        }
-
-        arrayProyectos.add(proyecto);
-
-        handlerIrAlSubpanelPrincipalProyectos(evt);
     }//GEN-LAST:event_botonCargarProyectoActionPerformed
 
     private void botonModAgregarIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModAgregarIngActionPerformed
@@ -2384,18 +2497,18 @@ public class GUI extends javax.swing.JFrame {
                     ));
                 } // Verificar y agregar ingenieros
                 else if (linea.startsWith("ingenieros:")) {
-                    
+
                     while (!(linea = reader.readLine().trim()).startsWith("recursos tecnologicos:")) {
                         if (linea.startsWith("ID: ")) {
                             String ingenieroId = linea.substring(4).trim(); // tiene que leer un id, por ej: ING12
-                            
+
                             for (int i = 0; i < ingenierosDisponibles.size(); i++) {
                                 if (ingenieroId.equals(arrayIngenieros.get(i).getIdIngeniero())) {
                                     ingenierosDisponibles.get(i).reemplazarIdProyectosAsociados(proyecto.getProyectoID(), "No Asignado");
                                     proyecto.agregarIngeniero(ingenierosDisponibles.get(i));
                                 }
                             }
-                            
+
                         }
                     }
 
@@ -2405,25 +2518,25 @@ public class GUI extends javax.swing.JFrame {
                     while (!(linea = reader.readLine().trim()).startsWith("//fin")) {
                         if (linea.startsWith("ID: ")) {
                             String recursoId = linea.substring(4).trim(); // tiene que leer un id, por ej: REC21
-                            //String nombreRecurso = linea.substring(9).trim();
-                            
+
+
                             // Buscar el recurso en la lista de recursos disponibles
                             RecursoTecnologico recursoEncontrado = null;
-                            for (int i = 0; i < recursosDisponibles.size() ; i++) {
+                            for (int i = 0; i < recursosDisponibles.size(); i++) {
                                 if (recursoId.equals(recursosDisponibles.get(i).getRecursoID())) {
                                     recursoEncontrado = recursosDisponibles.get(i);
                                 }
                             }
 
                             proyecto.agregarRecursoTecnologico(recursoEncontrado);
-                            }
                         }
                     }
-
-                    proyectos.add(proyecto);
                 }
+                System.out.print("\n" +proyecto.toString());
+                proyectos.add(proyecto);
             }
-        
+        }
+
         return proyectos;
     }
 
@@ -2502,13 +2615,13 @@ public class GUI extends javax.swing.JFrame {
                 writer.write("fecha de entrega: " + proyecto.getFechaFin() + "\n");
                 writer.write("ingenieros:\n");
                 for (Ingeniero ingeniero : proyecto.obtenerTodosLosIngenieros()) {
-                    writer.write("\tID: " + ingeniero.getIdIngeniero()+ "\n");
-                    
+                    writer.write("\tID: " + ingeniero.getIdIngeniero() + "\n");
+
                 }
                 writer.write("recursos tecnologicos:\n");
                 for (RecursoTecnologico recurso : proyecto.obtenerTodosLosRecursosTecnologicos()) {
-                    writer.write("\tID: " + recurso.getRecursoID()+ "\n");
- 
+                    writer.write("\tID: " + recurso.getRecursoID() + "\n");
+
                 }
                 writer.write("//fin\n");
             }
@@ -2544,16 +2657,10 @@ public class GUI extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        arrayIngenieros = cargarIngenierosDesdeArchivo("datos/ingenieros.datos");
-        arrayRecursos = cargarRecursosDesdeArchivo("datos/recursos.datos");
-        arrayProyectos = cargarProyectosDesdeArchivo("datos/proyectos.datos", arrayIngenieros, arrayRecursos);
-
-
-
-        //arrayProyectos.add(new DesarrolloDeSoftware("Instagram", "Red Social", "la de las fotos y las trolas", (float) 1000000, new Fecha(12, 12, 2009), new Fecha()));
-        //arrayProyectos.add(new DesarrolloDeHardware("Nokia 1100", "Telefono Celular", "Duro durito", (float) 1800200, new Fecha(12, 12, 2000), new Fecha(2, 12, 2005)));
-        //arrayProyectos.add(new DesarrolloDeSoftware("Facebook", "Red Social", "La vamos a re pegar negritooo", (float) 1000, new Fecha(12, 12, 2000), new Fecha()));
-
+        arrayIngenieros = cargarIngenierosDesdeArchivo("datos/ingenieros.txt");
+        arrayRecursos = cargarRecursosDesdeArchivo("datos/recursos.txt");
+        arrayProyectos = cargarProyectosDesdeArchivo("datos/proyectos.txt", arrayIngenieros, arrayRecursos);
+        //arrayProyectos = new ArrayList<>();
         //Create and display the form 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -2597,20 +2704,11 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel contenedor;
     private javax.swing.JPanel contenedorTitulo;
     private javax.swing.JLabel indiceArrayProyectos;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -2685,6 +2783,15 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel textCantProyectos1;
     private javax.swing.JLabel textCantProyectosHardware;
     private javax.swing.JLabel textCantProyectosSoftware;
+    private javax.swing.JLabel textCargarFin;
+    private javax.swing.JLabel textCargarFinAnio;
+    private javax.swing.JLabel textCargarFinDia;
+    private javax.swing.JLabel textCargarFinMes;
+    private javax.swing.JLabel textCargarInicio;
+    private javax.swing.JLabel textCargarInicioAnio;
+    private javax.swing.JLabel textCargarInicioDia;
+    private javax.swing.JLabel textCargarInicioMes;
+    private javax.swing.JLabel textCargarPresupuesto;
     private javax.swing.JLabel textFinalizacion;
     private javax.swing.JLabel textInicio;
     private javax.swing.JLabel textMostrarDescripcion;
