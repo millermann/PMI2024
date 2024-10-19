@@ -2800,10 +2800,10 @@ public class GUI extends javax.swing.JFrame {
                         if (linea.startsWith("ID: ")) {
                             String ingenieroId = linea.substring(4).trim(); // tiene que leer un id, por ej: ING12
 
-                            for (int i = 0; i < ingenierosDisponibles.size(); i++) {
-                                if (ingenieroId.equals(arrayIngenieros.get(i).getIdIngeniero())) {
-                                    ingenierosDisponibles.get(i).reemplazarIdProyectosAsociados(proyecto.getProyectoID(), "No Asignado");
-                                    proyecto.agregarIngeniero(ingenierosDisponibles.get(i));
+                            for (Ingeniero x : arrayIngenieros) {
+                                if (ingenieroId.equals(x.getIdIngeniero())) {
+                                    x.reemplazarIdProyectosAsociados(proyecto.getProyectoID(), "No Asignado");
+                                    proyecto.agregarIngeniero(x);
                                 }
                             }
 
@@ -2819,17 +2819,16 @@ public class GUI extends javax.swing.JFrame {
 
                             // Buscar el recurso en la lista de recursos disponibles
                             RecursoTecnologico recursoEncontrado = null;
-                            for (int i = 0; i < recursosDisponibles.size(); i++) {
-                                if (recursoId.equals(recursosDisponibles.get(i).getRecursoID())) {
-                                    recursoEncontrado = recursosDisponibles.get(i);
+                            for (RecursoTecnologico x : recursosDisponibles) {
+                                if (recursoId.equals(x.getRecursoID())) {
+                                    proyecto.agregarRecursoTecnologico(x);
                                 }
                             }
-
-                            proyecto.agregarRecursoTecnologico(recursoEncontrado);
                         }
                     }
+                } else {
+                    proyectos.add(proyecto);
                 }
-                proyectos.add(proyecto);
             }
         }
 
