@@ -689,7 +689,7 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelMostrarProyectoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tabMostrarIngYRecursos)
+                    .addComponent(tabMostrarIngYRecursos, javax.swing.GroupLayout.DEFAULT_SIZE, 1046, Short.MAX_VALUE)
                     .addComponent(botonVolverPanelPrincipalProyectos2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelMostrarProyectoLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -713,12 +713,16 @@ public class GUI extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(textMostrarHardSoft)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textFinalizacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textPresup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textFinalizacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(textInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelMostrarProyectoLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textPresup, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(textMostrarFechaInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(textMostrarFechaFin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -730,40 +734,30 @@ public class GUI extends javax.swing.JFrame {
             subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textMostrarTitulo)
+                    .addComponent(textMostrarTitulo1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textMostrarTitulo)
-                            .addComponent(textMostrarTitulo1))
-                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(textMostrarFechaFin)
-                                    .addComponent(textFinalizacion)))
-                            .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textMostrarHardSoft1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(textMostrarHardSoft, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textMostrarDescripcion)
-                                    .addComponent(textMostrarTitulo2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(textMostrarTitulo3)
-                                    .addComponent(textMostrarTipo)))))
-                    .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textPresup, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textMostrarPresupuesto))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textInicio)
-                            .addComponent(textMostrarFechaInicio))))
-                .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(textMostrarHardSoft1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textMostrarHardSoft)
+                        .addComponent(textPresup)
+                        .addComponent(textMostrarPresupuesto)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textMostrarDescripcion)
+                        .addComponent(textInicio)
+                        .addComponent(textMostrarFechaInicio))
+                    .addComponent(textMostrarTitulo2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textMostrarTitulo3)
+                    .addComponent(textMostrarTipo)
+                    .addComponent(textFinalizacion)
+                    .addComponent(textMostrarFechaFin))
+                .addGap(0, 41, Short.MAX_VALUE)
                 .addComponent(tabMostrarIngYRecursos, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonVolverPanelPrincipalProyectos2)
@@ -1298,7 +1292,7 @@ public class GUI extends javax.swing.JFrame {
         campoProyectoDescripcion.setToolTipText("Descripcion del Proyecto");
         campoProyectoDescripcion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                campoProyectoDescripcionMouseClicked(evt);
+                handlerSeleccionarCampoTexto(evt);
             }
         });
 
@@ -1313,7 +1307,7 @@ public class GUI extends javax.swing.JFrame {
         textCargarPresupuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textCargarPresupuesto.setText("Presupuesto:");
 
-        spinnerProyectoPresupuesto.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
+        spinnerProyectoPresupuesto.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1000.0f));
 
         textCargarInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         textCargarInicio.setText("Fecha de inicio:");
@@ -1999,10 +1993,6 @@ public class GUI extends javax.swing.JFrame {
         campoProyectoTipo.setText("Tipo de Dispositivo");
     }//GEN-LAST:event_radioHardwareActionPerformed
 
-    private void campoProyectoDescripcionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campoProyectoDescripcionMouseClicked
-        campoProyectoDescripcion.selectAll();
-    }//GEN-LAST:event_campoProyectoDescripcionMouseClicked
-
     private void botonAgregarIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarIngActionPerformed
         if (tablaIngDisponiblesCargarProyecto.getSelectedRowCount() == 0) {
             JOptionPane.showMessageDialog(null, "Para asociar a un ingeniero al proyecto, seleccionelo de la tabla a su izquierda.", "Error", 0);
@@ -2653,7 +2643,7 @@ public class GUI extends javax.swing.JFrame {
                             new Object[]{
                                 rec.getNombre(),
                                 rec.getDescripcion(),
-                                rec.getDescripcion(),}
+                                rec.getRecursoID(),}
                     );
                 }
 
@@ -2725,7 +2715,6 @@ public class GUI extends javax.swing.JFrame {
             handlerMostrarProyecto();
         }
     }//GEN-LAST:event_botonMostrarProyectoActionPerformed
-
     // permuta las filas seleccionadas de A a la tabla B (deben tener las mismas columnas)
     private void permutarFilasEntreTablas(javax.swing.JTable tablaA, DefaultTableModel modeloTablaA, DefaultTableModel modeloTablaB) {
         int[] indicesFilas = tablaA.getSelectedRows();
@@ -2750,15 +2739,13 @@ public class GUI extends javax.swing.JFrame {
     }
 
     public static ArrayList<ProyectoTecnologico> cargarProyectosDesdeArchivo(String nombreArchivo, ArrayList<Ingeniero> ingenierosDisponibles, ArrayList<RecursoTecnologico> recursosDisponibles) throws IOException {
-
         ArrayList<ProyectoTecnologico> proyectos = new ArrayList<>();
-
+        boolean recursoTecnologico = false;
         try (BufferedReader reader = new BufferedReader(new FileReader(nombreArchivo))) {
             String linea;
             ProyectoTecnologico proyecto = null;
             while ((linea = reader.readLine()) != null) {
                 linea = linea.trim(); // Eliminar espacios en blanco
-
                 // Determinar el tipo de proyecto
                 if (linea.startsWith("proyecto de hardware")) {
                     proyecto = new DesarrolloDeHardware();
@@ -2795,30 +2782,31 @@ public class GUI extends javax.swing.JFrame {
                     ));
                 } // Verificar y agregar ingenieros
                 else if (linea.startsWith("ingenieros:")) {
-
                     while (!(linea = reader.readLine().trim()).startsWith("recursos tecnologicos:")) {
-                        if (linea.startsWith("ID: ")) {
-                            String ingenieroId = linea.substring(4).trim(); // tiene que leer un id, por ej: ING12
-
-                            for (Ingeniero x : arrayIngenieros) {
+                        if (linea.startsWith("IDingeniero: ")) {
+                            String ingenieroId = linea.substring(13).trim(); // tiene que leer un id, por ej: ING12
+                            for (Ingeniero x : ingenierosDisponibles) {
                                 if (ingenieroId.equals(x.getIdIngeniero())) {
                                     x.reemplazarIdProyectosAsociados(proyecto.getProyectoID(), "No Asignado");
                                     proyecto.agregarIngeniero(x);
                                 }
                             }
-
                         }
                     }
-
+                    recursoTecnologico = true;
                 } // agregar recursos tecnológicos
-                else if (linea.startsWith("recursos tecnologicos:")) {
-
+                else if (true) {
+                    String recursoId = linea.substring(11).trim();
+                    for (RecursoTecnologico x : recursosDisponibles) {
+                        if (recursoId.equals(x.getRecursoID())) {
+                            proyecto.agregarRecursoTecnologico(x);
+                        }
+                    }
                     while (!(linea = reader.readLine().trim()).startsWith("//fin")) {
-                        if (linea.startsWith("ID: ")) {
-                            String recursoId = linea.substring(4).trim(); // tiene que leer un id, por ej: REC21
-
+                        if (linea.startsWith("IDrecurso: ")) {
+                            // tiene que leer un id, por ej: REC21
+                            recursoId = linea.substring(11).trim();
                             // Buscar el recurso en la lista de recursos disponibles
-                            RecursoTecnologico recursoEncontrado = null;
                             for (RecursoTecnologico x : recursosDisponibles) {
                                 if (recursoId.equals(x.getRecursoID())) {
                                     proyecto.agregarRecursoTecnologico(x);
@@ -2826,12 +2814,10 @@ public class GUI extends javax.swing.JFrame {
                             }
                         }
                     }
-                } else {
                     proyectos.add(proyecto);
                 }
             }
         }
-
         return proyectos;
     }
 
@@ -2910,12 +2896,12 @@ public class GUI extends javax.swing.JFrame {
                 writer.write("fecha de entrega: " + proyecto.getFechaFin() + "\n");
                 writer.write("ingenieros:\n");
                 for (Ingeniero ingeniero : proyecto.obtenerTodosLosIngenieros()) {
-                    writer.write("\tID: " + ingeniero.getIdIngeniero() + "\n");
+                    writer.write("\tIDingeniero: " + ingeniero.getIdIngeniero() + "\n");
 
                 }
                 writer.write("recursos tecnologicos:\n");
                 for (RecursoTecnologico recurso : proyecto.obtenerTodosLosRecursosTecnologicos()) {
-                    writer.write("\tID: " + recurso.getRecursoID() + "\n");
+                    writer.write("\tIDrecurso: " + recurso.getRecursoID() + "\n");
 
                 }
                 writer.write("//fin\n");

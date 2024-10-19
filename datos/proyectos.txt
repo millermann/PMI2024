@@ -1,13 +1,34 @@
 proyecto de software
-tipo: Tipo de Aplicacion
-ID: pSTxIgDpAv
-titulo: pepe
-descripcion: loso
-presupuesto: 1200.0
-fecha de inicio: 12/12/2024
-fecha de entrega: 12/12/2024
+tipo: Red Social
+ID: 2d7qehp73a
+titulo: Facebook
+descripcion: Red Multimedia entre personas
+presupuesto: 1.4948E7
+fecha de inicio: 7/2/2004
+fecha de entrega: 12/12/2031
 ingenieros:
-	ID: ING2
+	IDingeniero: ING6
+	IDingeniero: ING2
+	IDingeniero: ING0
 recursos tecnologicos:
-	ID: REC3
+	IDrecurso: REC14
+	IDrecurso: REC17
+	IDrecurso: REC32
+//fin
+proyecto de hardware
+tipo: Cajeros
+ID: NyH9fwFvTN
+titulo: VEA Cencosud
+descripcion: Sistema de cobro
+presupuesto: 120000.0
+fecha de inicio: 5/5/2023
+fecha de entrega: 15/5/2023
+ingenieros:
+	IDingeniero: ING12
+	IDingeniero: ING1
+recursos tecnologicos:
+	IDrecurso: REC4
+	IDrecurso: REC9
+	IDrecurso: REC13
+	IDrecurso: REC12
 //fin
