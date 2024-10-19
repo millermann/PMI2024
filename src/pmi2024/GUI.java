@@ -2117,10 +2117,10 @@ public class GUI extends javax.swing.JFrame {
          */
         // presupuesto
         float presupuesto;
-        if (spinnerProyectoPresupuesto.getValue() instanceof Integer) {
-            presupuesto = ((Integer) spinnerProyectoPresupuesto.getValue()).floatValue();
+        if (spinnerModProyectoPresupuesto.getValue() instanceof Integer) {
+            presupuesto = ((Integer) spinnerModProyectoPresupuesto.getValue()).floatValue();
         } else {
-            presupuesto = (float) spinnerProyectoPresupuesto.getValue(); // Ya es un Float
+            presupuesto = (float) spinnerModProyectoPresupuesto.getValue();
         }
 
         if (presupuesto == 0) {
