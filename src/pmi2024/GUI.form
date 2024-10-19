@@ -1271,18 +1271,18 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="botonModAgregarRecurso" linkSize="7" alignment="0" min="-2" pref="495" max="-2" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
                                           <Component id="jLabel37" min="-2" pref="494" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="scrollModRecDisponibles" max="32767" attributes="0"/>
+                                      <Component id="scrollModRecDisponibles" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="botonModAgregarRecurso" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="botonModQuitarRecurso" linkSize="7" max="32767" attributes="0"/>
-                                      <Component id="jLabel38" max="32767" attributes="0"/>
-                                      <Component id="scrollModRecAsignados" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel38" pref="512" max="32767" attributes="0"/>
+                                      <Component id="botonModQuitarRecurso" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="scrollModRecAsignados" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -1767,13 +1767,13 @@
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel4" max="32767" attributes="0"/>
-                                      <Component id="scrollIngDisponibles" pref="495" max="32767" attributes="0"/>
                                       <Component id="botonAgregarIng" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="scrollIngDisponibles" alignment="0" pref="514" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel5" max="32767" attributes="0"/>
-                                      <Component id="scrollIngSeleccionados" pref="495" max="32767" attributes="0"/>
+                                      <Component id="scrollIngSeleccionados" pref="514" max="32767" attributes="0"/>
                                       <Component id="botonQuitarIng" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -1912,19 +1912,19 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="scrollRecDisponibles" alignment="1" pref="498" max="32767" attributes="0"/>
-                                      <Component id="botonAgregarRecurso" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="scrollRecDisponibles" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="botonAgregarRecurso" alignment="0" pref="514" max="32767" attributes="0"/>
                                       <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="scrollRecSeleccionados" alignment="1" pref="492" max="32767" attributes="0"/>
-                                      <Component id="botonQuitarRecurso" alignment="1" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="scrollRecSeleccionados" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="botonQuitarRecurso" alignment="1" pref="514" max="32767" attributes="0"/>
                                       <Component id="jLabel7" alignment="1" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

@@ -1105,21 +1105,18 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabModRecursosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonModAgregarRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabModRecursosLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 22, Short.MAX_VALUE)
                         .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(scrollModRecDisponibles))
+                    .addComponent(scrollModRecDisponibles)
+                    .addComponent(botonModAgregarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(botonModQuitarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollModRecAsignados))
+                .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
+                    .addComponent(botonModQuitarRecurso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrollModRecAsignados, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
-
-        tabModRecursosLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {botonModAgregarRecurso, botonModQuitarRecurso});
-
         tabModRecursosLayout.setVerticalGroup(
             tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabModRecursosLayout.createSequentialGroup()
@@ -1467,12 +1464,12 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE)
-                    .addComponent(botonAgregarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(botonAgregarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrollIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollIngSeleccionados, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE)
+                    .addComponent(scrollIngSeleccionados, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
                     .addComponent(botonQuitarIng, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1620,13 +1617,13 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(tabRecursosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollRecDisponibles, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
-                    .addComponent(botonAgregarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrollRecDisponibles, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonAgregarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(scrollRecSeleccionados, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
-                    .addComponent(botonQuitarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(scrollRecSeleccionados)
+                    .addComponent(botonQuitarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1819,6 +1816,16 @@ public class GUI extends javax.swing.JFrame {
 
     private void botonAgregarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarProyectoActionPerformed
 
+        campoProyectoTitulo.setText("Título del Proyecto");
+        campoProyectoDescripcion.setText("Descripción...");
+        campoProyectoTipo.setText("Tipo de Dispositivo");
+        spinnerProyectoPresupuesto.setValue(0);
+        spinnerFechaInicioDia.setValue(12);
+        spinnerFechaInicioMes.setValue(12);
+        spinnerFechaInicioAnio.setValue(2024);
+        spinnerFechaFinDia.setValue(12);
+        spinnerFechaFinMes.setValue(12);
+        spinnerFechaFinAnio.setValue(2024);
         // elimina filas viejas
         modeloTablaIngenierosDisp.setRowCount(0);
         modeloTablaIngenierosSeleccionados.setRowCount(0);
@@ -2047,7 +2054,13 @@ public class GUI extends javax.swing.JFrame {
         Pos. 4: campoProyectoTitulo  / Pos. 5: campoProyectoDescripcion / Pos. 6: campoProyectoTipo  
          */
         // presupuesto
-        float presupuesto = (float) spinnerProyectoPresupuesto.getValue();
+        float presupuesto;
+        if (spinnerProyectoPresupuesto.getValue() instanceof Integer) {
+            presupuesto = ((Integer) spinnerProyectoPresupuesto.getValue()).floatValue();
+        } else {
+            presupuesto = (float) spinnerProyectoPresupuesto.getValue(); // Ya es un Float
+        }
+
         if (presupuesto == 0) {
             errores[0] = 1;
         }
@@ -2106,11 +2119,187 @@ public class GUI extends javax.swing.JFrame {
         return errores;
     }
 
+    private int[] validarModProyecto() {
+        int[] errores = new int[7];
+        /* 
+        Pos. 0: presupuesto / Pos. 1: fechas / Pos. 2: tabla ing / Pos. 3: tabla rec 
+        Pos. 4: campoProyectoTitulo  / Pos. 5: campoProyectoDescripcion / Pos. 6: campoProyectoTipo  
+         */
+        // presupuesto
+        float presupuesto;
+        if (spinnerProyectoPresupuesto.getValue() instanceof Integer) {
+            presupuesto = ((Integer) spinnerProyectoPresupuesto.getValue()).floatValue();
+        } else {
+            presupuesto = (float) spinnerProyectoPresupuesto.getValue(); // Ya es un Float
+        }
+
+        if (presupuesto == 0) {
+            errores[0] = 1;
+        }
+
+        // fechas
+        int finAnio = (int) spinnerModFechaFinAnio.getValue();
+        int inicioAnio = (int) spinnerModFechaInicioAnio.getValue();
+        if (finAnio <= inicioAnio) {
+            errores[1] = 1;
+
+            if (finAnio == inicioAnio) {
+                int finMes = (int) spinnerModFechaFinMes.getValue();
+                int inicioMes = (int) spinnerModFechaInicioMes.getValue();
+
+                if (finMes <= inicioMes) {
+                    if (finMes == inicioMes) {
+                        int finDia = (int) spinnerModFechaFinDia.getValue();
+                        int inicioDia = (int) spinnerModFechaInicioDia.getValue();
+
+                        if (finDia >= inicioDia) {
+                            errores[1] = 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        // tablas
+        if (modeloTablaIngenierosSeleccionados.getRowCount() == 0) {
+            errores[2] = 1;
+        }
+        if (modeloTablaRecursosSeleccionados.getRowCount() == 0) {
+            errores[3] = 1;
+        }
+
+        // jtextfields
+        if (campoModProyectoTitulo.getText().trim().isEmpty()) {
+            errores[4] = 1;
+        }
+        if (campoModProyectoTitulo.getText().equals("Título del Proyecto")) {
+            errores[4] = 2;
+        }
+        if (campoModProyectoDescripcion.getText().trim().isEmpty()) {
+            errores[5] = 1;
+        }
+        if (campoModProyectoDescripcion.getText().equals("Descripción...")) {
+            errores[5] = 2;
+        }
+        if (campoModProyectoTipo.getText().trim().isEmpty()) {
+            errores[6] = 1;
+        }
+        if (campoModProyectoTipo.getText().equals("Tipo de Dispositivo") || campoModProyectoTipo.getText().equals("Tipo de Aplicacion")) {
+            errores[6] = 2;
+        }
+
+        return errores;
+    }
+
+    private void mensajesErrorYAyuda(int[] errores) {
+        String mensajeError = "Se encontraron los siguientes problemas:";
+        if (errores[4] == 1) {
+            mensajeError += "\n + No se ha ingresado ningun título.";
+        }
+        if (errores[4] == 2) {
+            mensajeError += "\n + El título ingresado no es válido.";
+        }
+        if (errores[5] == 1) {
+            mensajeError += "\n + No se ha ingresado ninguna descripción.";
+        }
+        if (errores[5] == 2) {
+            mensajeError += "\n + La descripción ingresada no es válida.";
+        }
+        if (errores[6] == 1) {
+            mensajeError += "\n + No se ha ingresado ningun tipo.";
+        }
+        if (errores[6] == 2) {
+            mensajeError += "\n + El tipo ingresado no es válido.";
+        }
+        if (errores[0] == 1) {
+            mensajeError += "\n + Presupuesto no válido.";
+        }
+        if (errores[1] == 1) {
+            mensajeError += "\n + Fechas inválidas.";
+        }
+        if (errores[2] == 1) {
+            mensajeError += "\n + No se han seleccionado ingenieros.";
+        }
+        if (errores[3] == 1) {
+            mensajeError += "\n + No se han seleccionado recursos.";
+        }
+
+        String[] opciones = {"Ok", "Ayuda"};
+        int resp = JOptionPane.showOptionDialog(
+                null,
+                mensajeError,
+                "Datos Invalidos...",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                opciones,
+                2
+        );
+
+        if (resp == 1) {
+            String mensajeAyuda = "";
+            if (errores[4] == 1) {
+                mensajeAyuda += "\n + No se ha ingresado ningun título.";
+                mensajeAyuda += "\n     - El campo de texto esta vacio. Se necesita ingresar un titulo para poder cargar el proyecto.                    \n";
+            }
+            if (errores[4] == 2) {
+                mensajeAyuda += "\n + El título ingresado no es válido.";
+                mensajeAyuda += "\n     - \"Título del Proyecto\" no es un titulo valido. Ingrese un título distinto.                    \n";
+            }
+            if (errores[5] == 1) {
+                mensajeAyuda += "\n + No se ha ingresado ninguna descripción.";
+                mensajeAyuda += "\n     - El campo de texto esta vacio. Se necesita ingresar una descripción para poder cargar el proyecto.                    \n";
+            }
+            if (errores[5] == 2) {
+                mensajeAyuda += "\n + La descripción ingresada no es válida.";
+                mensajeAyuda += "\n     - \"Descripción...\" no es un titulo valido. Ingrese una descripción distinta.                    \n";
+            }
+            if (errores[6] == 1) {
+                mensajeAyuda += "\n + No se ha ingresado ningun tipo.";
+                mensajeAyuda += "\n     - El campo de texto esta vacio. Se necesita ingresar el tipo para poder cargar el proyecto.                    \n";
+            }
+            if (errores[6] == 2) {
+                mensajeAyuda += "\n + El tipo ingresado no es válido.";
+                mensajeAyuda += "\n     - \"Tipo de Dispositivo\" no es un tipo válido. Ingrese un tipo distinto.                    \n";
+            }
+            if (errores[0] == 1) {
+                mensajeAyuda += "\n + Presupuesto no válido.";
+                mensajeAyuda += "\n     - No se puede cargar un proyecto con presupuesto = 0. Ingrese un valor > 0.                    \n";
+            }
+            if (errores[1] == 1) {
+                mensajeAyuda += "\n + Fechas inválidas.";
+                mensajeAyuda += "\n     - La fecha de finalizacion no puede ser menor a la fecha de inicio. Por favor ingrese fechas validas.                    \n";
+            }
+            if (errores[2] == 1) {
+                mensajeAyuda += "\n + No se han seleccionado ingenieros.";
+                mensajeAyuda += "\n     - Para seleccionar ingenieros al proyecto, pulse la pestaña \"Ingenieros\", seleccione un elemento de la tabla a su izquierda y pulse el boton \"Agregar\"                    \n";
+            }
+            if (errores[3] == 1) {
+                mensajeAyuda += "\n + No se han seleccionado recursos.";
+                mensajeAyuda += "\n     - Para seleccionar ingenieros al proyecto, pulse la pestaña \"Recursos\", seleccione un elemento de la tabla a su izquierda y pulse el boton \"Agregar\"                    \n";
+            }
+
+            JOptionPane.showMessageDialog(
+                    null,
+                    mensajeAyuda,
+                    "Ayuda",
+                    1,
+                    null
+            );
+        }
+
+    }
+
     private void botonCargarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCargarProyectoActionPerformed
         int[] errores = validarCargarProyecto();
-        int[] sinErrores = {0, 0, 0, 0, 0, 0, 0};
 
-        if (errores == sinErrores) {
+        if (errores[0] == 0
+                && errores[1] == 0
+                && errores[2] == 0
+                && errores[3] == 0
+                && errores[4] == 0
+                && errores[5] == 0
+                && errores[6] == 0) {
             String titulo, descripcion, tipo;
             float presupuesto;
             Fecha fechaInicio, fechaFin;
@@ -2191,63 +2380,7 @@ public class GUI extends javax.swing.JFrame {
 
             handlerIrAlSubpanelPrincipalProyectos(evt);
         } else {
-            /* 
-                Pos. 0: presupuesto / Pos. 1: fechas / Pos. 2: tabla ing / Pos. 3: tabla rec  
-                Pos. 4: campoProyectoTitulo  / Pos. 5: campoProyectoDescripcion / Pos. 6: campoProyectoTipo  
-             */
-            String mensajeError = "Se encontraron los siguientes problemas:";
-            if (errores[4] == 1) {
-                mensajeError += "\n + No se ha ingresado ningun título.";
-            }
-            if (errores[4] == 2) {
-                mensajeError += "\n + El título ingresado no es válido.";
-            }
-            if (errores[5] == 1) {
-                mensajeError += "\n + No se ha ingresado ninguna descripción.";
-            }
-            if (errores[5] == 2) {
-                mensajeError += "\n + La descripción ingresada no es válida.";
-            }
-            if (errores[6] == 1) {
-                mensajeError += "\n + No se ha ingresado ningun tipo.";
-            }
-            if (errores[6] == 2) {
-                mensajeError += "\n + El tipo ingresado no es válido.";
-            }
-            if (errores[0] == 1) {
-                mensajeError += "\n + Presupuesto no válido.";
-            }
-            if (errores[1] == 1) {
-                mensajeError += "\n + Fechas inválidas.";
-            }
-            if (errores[2] == 1) {
-                mensajeError += "\n + No se han seleccionado ingenieros.";
-            }
-            if (errores[3] == 1) {
-                mensajeError += "\n + No se han seleccionado recursos.";
-            }
-
-            String[] opciones = {"Ok", "Ayuda"};
-            int resp = JOptionPane.showOptionDialog(
-                    null,
-                    mensajeError,
-                    "Datos Invalidos...",
-                    JOptionPane.DEFAULT_OPTION,
-                    JOptionPane.INFORMATION_MESSAGE,
-                    null,
-                    opciones,
-                    2
-            );
-
-            if (resp == 1) {
-                JOptionPane.showMessageDialog(
-                        null,
-                        "No existe ayuda. Hacete de abajo nene.",
-                        "Ayuda",
-                        1
-                );
-            }
-
+            mensajesErrorYAyuda(errores);
         }
     }//GEN-LAST:event_botonCargarProyectoActionPerformed
 
@@ -2284,100 +2417,112 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_botonModQuitarRecursoActionPerformed
 
     private void botonModProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModProyectoActionPerformed
+        int[] errores = validarModProyecto();
 
-        // Confirmar
-        String[] opciones = {"Si", "No"};
-        int confirmacion = JOptionPane.showOptionDialog(
-                null,
-                "Esta seguro de guardar los cambios?",
-                "Confirmar Modificacion",
-                JOptionPane.DEFAULT_OPTION,
-                JOptionPane.INFORMATION_MESSAGE,
-                null,
-                opciones,
-                opciones[1]
-        );
+        if (errores[0] == 0
+                && errores[1] == 0
+                && errores[2] == 0
+                && errores[3] == 0
+                && errores[4] == 0
+                && errores[5] == 0
+                && errores[6] == 0) {
+            // Confirmar
+            String[] opciones = {"Si", "No"};
+            int confirmacion = JOptionPane.showOptionDialog(
+                    null,
+                    "Esta seguro de guardar los cambios?",
+                    "Confirmar Modificacion",
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[1]
+            );
 
-        if (confirmacion == 0) {
-            int indice = Integer.parseInt(indiceArrayProyectos.getText());
+            if (confirmacion == 0) {
+                int indice = Integer.parseInt(indiceArrayProyectos.getText());
 
-            String titulo, descripcion, tipo, ware;
-            int dia, mes, anio;
-            float presupuesto;
+                String titulo, descripcion, tipo, ware;
+                int dia, mes, anio;
+                float presupuesto;
 
-            titulo = campoModProyectoTitulo.getText();
-            descripcion = campoModProyectoDescripcion.getText();
-            tipo = campoModProyectoTipo.getText();
+                titulo = campoModProyectoTitulo.getText();
+                descripcion = campoModProyectoDescripcion.getText();
+                tipo = campoModProyectoTipo.getText();
 
-            dia = (int) spinnerModFechaInicioDia.getValue();
-            mes = (int) spinnerModFechaInicioMes.getValue();
-            anio = (int) spinnerModFechaInicioAnio.getValue();
-            Fecha inicio = new Fecha(dia, mes, anio);
+                dia = (int) spinnerModFechaInicioDia.getValue();
+                mes = (int) spinnerModFechaInicioMes.getValue();
+                anio = (int) spinnerModFechaInicioAnio.getValue();
+                Fecha inicio = new Fecha(dia, mes, anio);
 
-            dia = (int) spinnerModFechaFinDia.getValue();
-            mes = (int) spinnerModFechaFinMes.getValue();
-            anio = (int) spinnerModFechaFinAnio.getValue();
-            Fecha fin = new Fecha(dia, mes, anio);
+                dia = (int) spinnerModFechaFinDia.getValue();
+                mes = (int) spinnerModFechaFinMes.getValue();
+                anio = (int) spinnerModFechaFinAnio.getValue();
+                Fecha fin = new Fecha(dia, mes, anio);
 
-            presupuesto = (float) spinnerModProyectoPresupuesto.getValue();
+                presupuesto = (float) spinnerModProyectoPresupuesto.getValue();
 
-            ProyectoTecnologico proyectoMod;
-            if (radioModHardware.isSelected()) {
-                proyectoMod = new DesarrolloDeHardware(titulo, tipo, descripcion, presupuesto, inicio, fin);
-            } else {
-                proyectoMod = new DesarrolloDeSoftware(titulo, tipo, descripcion, presupuesto, inicio, fin);
-            }
+                ProyectoTecnologico proyectoMod;
+                if (radioModHardware.isSelected()) {
+                    proyectoMod = new DesarrolloDeHardware(titulo, tipo, descripcion, presupuesto, inicio, fin);
+                } else {
+                    proyectoMod = new DesarrolloDeSoftware(titulo, tipo, descripcion, presupuesto, inicio, fin);
+                }
 
-            int filas = modeloTablaIngenierosSeleccionados.getRowCount();
-            ArrayList<Ingeniero> ingenierosMod = new ArrayList<>();
-            for (int i = 0; i < filas; i++) {
+                int filas = modeloTablaIngenierosSeleccionados.getRowCount();
+                ArrayList<Ingeniero> ingenierosMod = new ArrayList<>();
+                for (int i = 0; i < filas; i++) {
 
-                String idIng = (String) tablaIngSeleccionadosCargarProyecto.getValueAt(i, 5);
-                for (int j = 0; j < arrayIngenieros.size(); j++) {
+                    String idIng = (String) tablaIngSeleccionadosCargarProyecto.getValueAt(i, 5);
+                    for (int j = 0; j < arrayIngenieros.size(); j++) {
 
-                    if (idIng.equals(arrayIngenieros.get(j).getIdIngeniero())) {
-                        ingenierosMod.add(arrayIngenieros.get(j));
-                        break;
+                        if (idIng.equals(arrayIngenieros.get(j).getIdIngeniero())) {
+                            ingenierosMod.add(arrayIngenieros.get(j));
+                            break;
+                        }
+
                     }
 
                 }
 
-            }
+                filas = modeloTablaRecursosSeleccionados.getRowCount();
+                ArrayList<RecursoTecnologico> recursosMod = new ArrayList<>();
+                for (int i = 0; i < filas; i++) {
 
-            filas = modeloTablaRecursosSeleccionados.getRowCount();
-            ArrayList<RecursoTecnologico> recursosMod = new ArrayList<>();
-            for (int i = 0; i < filas; i++) {
+                    String idRec = (String) tablaRecSeleccionadosCargarProyecto.getValueAt(i, 2);
 
-                String idRec = (String) tablaRecSeleccionadosCargarProyecto.getValueAt(i, 2);
+                    for (int j = 0; j < arrayRecursos.size(); j++) {
 
-                for (int j = 0; j < arrayRecursos.size(); j++) {
+                        if (idRec.equals(arrayRecursos.get(j).getRecursoID())) {
+                            recursosMod.add(arrayRecursos.get(j));
+                            break;
+                        }
 
-                    if (idRec.equals(arrayRecursos.get(j).getRecursoID())) {
-                        recursosMod.add(arrayRecursos.get(j));
-                        break;
                     }
 
                 }
 
+                String id = proyectoMod.getProyectoID();
+                for (int i = 0; i < ingenierosMod.size(); i++) {
+                    ingenierosMod.get(i).reemplazarIdProyectosAsociados(id, "No Asignado");
+                }
+
+                for (Ingeniero x : ingenierosMod) {
+                    proyectoMod.agregarIngeniero(x);
+                }
+                for (RecursoTecnologico x : recursosMod) {
+                    proyectoMod.agregarRecursoTecnologico(x);
+                }
+
+                arrayProyectos.set(indice, proyectoMod);
+
+                handlerIrAlSubpanelPrincipalProyectos(evt);
+
             }
-
-            String id = proyectoMod.getProyectoID();
-            for (int i = 0; i < ingenierosMod.size(); i++) {
-                ingenierosMod.get(i).reemplazarIdProyectosAsociados(id, "No Asignado");
-            }
-
-            for (Ingeniero x : ingenierosMod) {
-                proyectoMod.agregarIngeniero(x);
-            }
-            for (RecursoTecnologico x : recursosMod) {
-                proyectoMod.agregarRecursoTecnologico(x);
-            }
-
-            arrayProyectos.set(indice, proyectoMod);
-
-            handlerIrAlSubpanelPrincipalProyectos(evt);
-
+        } else {
+            mensajesErrorYAyuda(errores);
         }
+
     }//GEN-LAST:event_botonModProyectoActionPerformed
 
     private void handlerIrAlSubpanelPrincipalProyectos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handlerIrAlSubpanelPrincipalProyectos
