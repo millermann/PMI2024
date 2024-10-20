@@ -113,7 +113,7 @@ public class GUI extends javax.swing.JFrame {
 
         setIconImage(Toolkit.getDefaultToolkit().getImage("icon.png")); // totalmente innecesario pero mira que lindo queda!
         setTitle("Organizador de Proyectos");
-        textTitulo.setText("MENU PRINCIPAL");
+        textTitulo.setText("M E N U    P R I N C I P A L");
     }
 
     /**
@@ -127,15 +127,17 @@ public class GUI extends javax.swing.JFrame {
 
         buttonGroupTipoProyecto = new javax.swing.ButtonGroup();
         buttonGroupModWare = new javax.swing.ButtonGroup();
+        screen = new javax.swing.JPanel();
         contenedorTitulo = new javax.swing.JPanel();
         textTitulo = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
         panelMenu = new javax.swing.JPanel();
+        opciones = new javax.swing.JPanel();
         botonProyectos = new javax.swing.JButton();
-        botonIngenieros = new javax.swing.JButton();
         botonRecursos = new javax.swing.JButton();
-        jLabel19 = new javax.swing.JLabel();
+        botonIngenieros = new javax.swing.JButton();
         botonSalir = new javax.swing.JButton();
+        imagenMenu = new javax.swing.JLabel();
         panelProyectos = new javax.swing.JPanel();
         subpanelPrincipalProyectos = new javax.swing.JPanel();
         scrollTablaProyectos = new javax.swing.JScrollPane();
@@ -150,12 +152,8 @@ public class GUI extends javax.swing.JFrame {
         botonOrdenarPresupuesto = new javax.swing.JButton();
         textCantProyectos1 = new javax.swing.JLabel();
         botonMostrarProyecto = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         subpanelMostrarProyecto = new javax.swing.JPanel();
-        textPresup = new javax.swing.JLabel();
-        textInicio = new javax.swing.JLabel();
-        textFinalizacion = new javax.swing.JLabel();
-        textMostrarFechaInicio = new javax.swing.JLabel();
-        textMostrarFechaFin = new javax.swing.JLabel();
         tabMostrarIngYRecursos = new javax.swing.JTabbedPane();
         tabMostrarIngenieros = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
@@ -170,11 +168,59 @@ public class GUI extends javax.swing.JFrame {
         textMostrarDescripcion = new javax.swing.JLabel();
         textMostrarTipo = new javax.swing.JLabel();
         textMostrarHardSoft = new javax.swing.JLabel();
-        textMostrarPresupuesto = new javax.swing.JLabel();
-        textMostrarTitulo1 = new javax.swing.JLabel();
         textMostrarTitulo2 = new javax.swing.JLabel();
         textMostrarTitulo3 = new javax.swing.JLabel();
         textMostrarHardSoft1 = new javax.swing.JLabel();
+        panelDetalles = new javax.swing.JPanel();
+        textFinalizacion = new javax.swing.JLabel();
+        textMostrarFechaInicio = new javax.swing.JLabel();
+        textMostrarFechaFin = new javax.swing.JLabel();
+        textInicio = new javax.swing.JLabel();
+        textPresup = new javax.swing.JLabel();
+        textMostrarPresupuesto = new javax.swing.JLabel();
+        subpanelCargarProyecto = new javax.swing.JPanel();
+        campoProyectoTitulo = new javax.swing.JTextField();
+        radioHardware = new javax.swing.JRadioButton();
+        radioSoftware = new javax.swing.JRadioButton();
+        campoProyectoDescripcion = new javax.swing.JTextField();
+        campoProyectoTipo = new javax.swing.JTextField();
+        textCargarPresupuesto = new javax.swing.JLabel();
+        spinnerProyectoPresupuesto = new javax.swing.JSpinner();
+        textCargarInicio = new javax.swing.JLabel();
+        textCargarInicioDia = new javax.swing.JLabel();
+        textCargarInicioMes = new javax.swing.JLabel();
+        textCargarInicioAnio = new javax.swing.JLabel();
+        spinnerFechaInicioDia = new javax.swing.JSpinner();
+        spinnerFechaInicioMes = new javax.swing.JSpinner();
+        spinnerFechaInicioAnio = new javax.swing.JSpinner();
+        textCargarFin = new javax.swing.JLabel();
+        textCargarFinDia = new javax.swing.JLabel();
+        textCargarFinMes = new javax.swing.JLabel();
+        textCargarFinAnio = new javax.swing.JLabel();
+        spinnerFechaFinDia = new javax.swing.JSpinner();
+        spinnerFechaFinMes = new javax.swing.JSpinner();
+        spinnerFechaFinAnio = new javax.swing.JSpinner();
+        tabIngYRecursos = new javax.swing.JTabbedPane();
+        tabIngenieros = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        scrollIngDisponibles = new javax.swing.JScrollPane();
+        tablaIngDisponiblesCargarProyecto = new javax.swing.JTable();
+        botonAgregarIng = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        scrollIngSeleccionados = new javax.swing.JScrollPane();
+        tablaIngSeleccionadosCargarProyecto = new javax.swing.JTable();
+        botonQuitarIng = new javax.swing.JButton();
+        tabRecursos = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        botonAgregarRecurso = new javax.swing.JButton();
+        botonQuitarRecurso = new javax.swing.JButton();
+        scrollRecDisponibles = new javax.swing.JScrollPane();
+        tablaRecDisponiblesCargarProyecto = new javax.swing.JTable();
+        scrollRecSeleccionados = new javax.swing.JScrollPane();
+        tablaRecSeleccionadosCargarProyecto = new javax.swing.JTable();
+        botonCargarProyecto = new javax.swing.JButton();
+        botonVolverPanelPrincipalProyectos = new javax.swing.JButton();
         subpanelModProyecto = new javax.swing.JPanel();
         campoModProyectoTitulo = new javax.swing.JTextField();
         radioModHardware = new javax.swing.JRadioButton();
@@ -219,57 +265,18 @@ public class GUI extends javax.swing.JFrame {
         botonModProyecto = new javax.swing.JButton();
         botonVolverPanelPrincipalProyectos1 = new javax.swing.JButton();
         indiceArrayProyectos = new javax.swing.JLabel();
-        subpanelCargarProyecto = new javax.swing.JPanel();
-        campoProyectoTitulo = new javax.swing.JTextField();
-        radioHardware = new javax.swing.JRadioButton();
-        radioSoftware = new javax.swing.JRadioButton();
-        campoProyectoDescripcion = new javax.swing.JTextField();
-        campoProyectoTipo = new javax.swing.JTextField();
-        textCargarPresupuesto = new javax.swing.JLabel();
-        spinnerProyectoPresupuesto = new javax.swing.JSpinner();
-        textCargarInicio = new javax.swing.JLabel();
-        textCargarInicioDia = new javax.swing.JLabel();
-        textCargarInicioMes = new javax.swing.JLabel();
-        textCargarInicioAnio = new javax.swing.JLabel();
-        spinnerFechaInicioDia = new javax.swing.JSpinner();
-        spinnerFechaInicioMes = new javax.swing.JSpinner();
-        spinnerFechaInicioAnio = new javax.swing.JSpinner();
-        textCargarFin = new javax.swing.JLabel();
-        textCargarFinDia = new javax.swing.JLabel();
-        textCargarFinMes = new javax.swing.JLabel();
-        textCargarFinAnio = new javax.swing.JLabel();
-        spinnerFechaFinDia = new javax.swing.JSpinner();
-        spinnerFechaFinMes = new javax.swing.JSpinner();
-        spinnerFechaFinAnio = new javax.swing.JSpinner();
-        tabIngYRecursos = new javax.swing.JTabbedPane();
-        tabIngenieros = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        scrollIngDisponibles = new javax.swing.JScrollPane();
-        tablaIngDisponiblesCargarProyecto = new javax.swing.JTable();
-        botonAgregarIng = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        scrollIngSeleccionados = new javax.swing.JScrollPane();
-        tablaIngSeleccionadosCargarProyecto = new javax.swing.JTable();
-        botonQuitarIng = new javax.swing.JButton();
-        tabRecursos = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        botonAgregarRecurso = new javax.swing.JButton();
-        botonQuitarRecurso = new javax.swing.JButton();
-        scrollRecDisponibles = new javax.swing.JScrollPane();
-        tablaRecDisponiblesCargarProyecto = new javax.swing.JTable();
-        scrollRecSeleccionados = new javax.swing.JScrollPane();
-        tablaRecSeleccionadosCargarProyecto = new javax.swing.JTable();
-        botonCargarProyecto = new javax.swing.JButton();
-        botonVolverPanelPrincipalProyectos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(241, 105, 73));
 
-        contenedorTitulo.setBackground(new java.awt.Color(241, 105, 73));
-        contenedorTitulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        screen.setBackground(new java.awt.Color(250, 194, 151));
 
-        textTitulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        contenedorTitulo.setBackground(new java.awt.Color(241, 105, 73));
+        contenedorTitulo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(195, 81, 54), 1, true));
+
+        textTitulo.setBackground(new java.awt.Color(255, 255, 255));
+        textTitulo.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        textTitulo.setForeground(new java.awt.Color(255, 237, 211));
         textTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textTitulo.setText("Titulo");
 
@@ -286,14 +293,18 @@ public class GUI extends javax.swing.JFrame {
             contenedorTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorTituloLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(textTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
+        contenedor.setBackground(new java.awt.Color(250, 194, 151));
+        contenedor.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(219, 167, 127), 1, true));
         contenedor.setLayout(new java.awt.CardLayout());
 
-        panelMenu.setBackground(new java.awt.Color(241, 105, 73));
-        panelMenu.setBorder(new javax.swing.border.MatteBorder(null));
+        panelMenu.setBackground(new java.awt.Color(250, 194, 151));
+
+        opciones.setBackground(new java.awt.Color(250, 194, 151));
+        opciones.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(228, 175, 134), 1, true));
 
         botonProyectos.setText("Proyectos");
         botonProyectos.addActionListener(new java.awt.event.ActionListener() {
@@ -302,9 +313,9 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        botonIngenieros.setText("Ingenieros");
-
         botonRecursos.setText("Recursos");
+
+        botonIngenieros.setText("Ingenieros");
 
         botonSalir.setText("Salir");
         botonSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -313,33 +324,55 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
-        panelMenu.setLayout(panelMenuLayout);
-        panelMenuLayout.setHorizontalGroup(
-            panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
+        javax.swing.GroupLayout opcionesLayout = new javax.swing.GroupLayout(opciones);
+        opciones.setLayout(opcionesLayout);
+        opcionesLayout.setHorizontalGroup(
+            opcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(opcionesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(opcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonProyectos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonRecursos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonProyectos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonIngenieros, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
-                    .addComponent(botonSalir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonIngenieros, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                    .addComponent(botonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        panelMenuLayout.setVerticalGroup(
-            panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
+        opcionesLayout.setVerticalGroup(
+            opcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, opcionesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botonProyectos)
+                .addComponent(botonProyectos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonIngenieros)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonRecursos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 484, Short.MAX_VALUE)
-                .addComponent(botonSalir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+        );
+
+        imagenMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imagenMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menu.png"))); // NOI18N
+
+        javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
+        panelMenu.setLayout(panelMenuLayout);
+        panelMenuLayout.setHorizontalGroup(
+            panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(opciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(imagenMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelMenuLayout.setVerticalGroup(
+            panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(opciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imagenMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         contenedor.add(panelMenu, "card2");
@@ -376,6 +409,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         tablaProyectos.setToolTipText("Haga doble click sobre un proyecto para mostrar toda la información");
+        tablaProyectos.setSelectionBackground(new java.awt.Color(255, 125, 82));
         tablaProyectos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tablaProyectosMouseClicked(evt);
@@ -407,6 +441,8 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        botonEliminarProyecto.setBackground(new java.awt.Color(233, 37, 37));
+        botonEliminarProyecto.setForeground(new java.awt.Color(255, 255, 255));
         botonEliminarProyecto.setText("Eliminar");
         botonEliminarProyecto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -436,6 +472,9 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Proyectos.png"))); // NOI18N
+
         javax.swing.GroupLayout subpanelPrincipalProyectosLayout = new javax.swing.GroupLayout(subpanelPrincipalProyectos);
         subpanelPrincipalProyectos.setLayout(subpanelPrincipalProyectosLayout);
         subpanelPrincipalProyectosLayout.setHorizontalGroup(
@@ -449,19 +488,19 @@ public class GUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(botonOrdenarPresupuesto))
                     .addGroup(subpanelPrincipalProyectosLayout.createSequentialGroup()
-                        .addComponent(botonMostrarProyecto, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                        .addComponent(botonMostrarProyecto, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonAgregarProyecto, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                        .addComponent(botonAgregarProyecto, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonModificarProyecto, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                        .addComponent(botonModificarProyecto, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonEliminarProyecto, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)))
+                        .addComponent(botonEliminarProyecto, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(subpanelPrincipalProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(subpanelPrincipalProyectosLayout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(subpanelPrincipalProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(scrollTablaProyectos, javax.swing.GroupLayout.DEFAULT_SIZE, 1046, Short.MAX_VALUE)
+                        .addComponent(scrollTablaProyectos, javax.swing.GroupLayout.DEFAULT_SIZE, 1148, Short.MAX_VALUE)
                         .addGroup(subpanelPrincipalProyectosLayout.createSequentialGroup()
                             .addGroup(subpanelPrincipalProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(botonVolverAlMenu)
@@ -474,11 +513,16 @@ public class GUI extends javax.swing.JFrame {
                                     .addComponent(textCantProyectosSoftware)))
                             .addGap(0, 0, Short.MAX_VALUE)))
                     .addContainerGap()))
+            .addGroup(subpanelPrincipalProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(subpanelPrincipalProyectosLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         subpanelPrincipalProyectosLayout.setVerticalGroup(
             subpanelPrincipalProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelPrincipalProyectosLayout.createSequentialGroup()
-                .addContainerGap(515, Short.MAX_VALUE)
+                .addContainerGap(505, Short.MAX_VALUE)
                 .addGroup(subpanelPrincipalProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonOrdenarPresupuesto)
                     .addComponent(textCantProyectos1))
@@ -491,7 +535,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(51, 51, 51))
             .addGroup(subpanelPrincipalProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(subpanelPrincipalProyectosLayout.createSequentialGroup()
-                    .addContainerGap(145, Short.MAX_VALUE)
+                    .addContainerGap(151, Short.MAX_VALUE)
                     .addComponent(scrollTablaProyectos, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(subpanelPrincipalProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -501,30 +545,21 @@ public class GUI extends javax.swing.JFrame {
                     .addGap(58, 58, 58)
                     .addComponent(botonVolverAlMenu)
                     .addContainerGap()))
+            .addGroup(subpanelPrincipalProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(subpanelPrincipalProyectosLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, Short.MAX_VALUE)
+                    .addGap(471, 471, 471)))
         );
 
         panelProyectos.add(subpanelPrincipalProyectos, "card3");
 
         subpanelMostrarProyecto.setBackground(new java.awt.Color(250, 194, 151));
 
-        textPresup.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textPresup.setText("Presupuesto:");
-
-        textInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        textInicio.setText("Fecha de inicio:");
-
-        textFinalizacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textFinalizacion.setText("F. Finalización:");
-
-        textMostrarFechaInicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textMostrarFechaInicio.setText("12/12/2024");
-
-        textMostrarFechaFin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textMostrarFechaFin.setText("12/12/2024");
-
         tabMostrarIngYRecursos.setBackground(new java.awt.Color(70, 130, 180));
 
-        tabMostrarIngenieros.setBackground(new java.awt.Color(255, 239, 190));
+        tabMostrarIngenieros.setBackground(new java.awt.Color(229, 221, 195));
+        tabMostrarIngenieros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 157, 132)));
 
         jLabel29.setText("Ingenieros Asignados:");
 
@@ -571,7 +606,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(tabMostrarIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrollIngMostrarAsignados)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 996, Short.MAX_VALUE))
+                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 1134, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabMostrarIngenierosLayout.setVerticalGroup(
@@ -580,13 +615,14 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel29)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollIngMostrarAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                .addComponent(scrollIngMostrarAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         tabMostrarIngYRecursos.addTab("Ingenieros", tabMostrarIngenieros);
 
-        tabMostrarRecursos.setBackground(new java.awt.Color(255, 239, 190));
+        tabMostrarRecursos.setBackground(new java.awt.Color(229, 221, 195));
+        tabMostrarRecursos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 157, 132)));
 
         jLabel39.setBackground(new java.awt.Color(255, 239, 190));
         jLabel39.setText("Recursos Asignados:");
@@ -640,7 +676,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(tabMostrarRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrollMostrarRecAsignados)
-                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 996, Short.MAX_VALUE))
+                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 1134, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabMostrarRecursosLayout.setVerticalGroup(
@@ -649,7 +685,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel39)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollMostrarRecAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                .addComponent(scrollMostrarRecAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -662,7 +698,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        textMostrarTitulo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        textMostrarTitulo.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         textMostrarTitulo.setText("Título");
 
         textMostrarDescripcion.setText("Descripción");
@@ -671,17 +707,69 @@ public class GUI extends javax.swing.JFrame {
 
         textMostrarHardSoft.setText("Hard/Soft Ware");
 
-        textMostrarPresupuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textMostrarPresupuesto.setText("MontoPresupuesto");
-
-        textMostrarTitulo1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        textMostrarTitulo1.setText("Título:");
-
         textMostrarTitulo2.setText("Descripción:");
 
         textMostrarTitulo3.setText("Tipo:");
 
         textMostrarHardSoft1.setText("Desarrollo de");
+
+        panelDetalles.setBackground(new java.awt.Color(250, 194, 151));
+        panelDetalles.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(219, 167, 127), 1, true));
+
+        textFinalizacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textFinalizacion.setText("F. Finalización:");
+
+        textMostrarFechaInicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textMostrarFechaInicio.setText("12/12/2024");
+
+        textMostrarFechaFin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textMostrarFechaFin.setText("12/12/2024");
+
+        textInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        textInicio.setText("Fecha de inicio:");
+
+        textPresup.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textPresup.setText("Presupuesto:");
+
+        textMostrarPresupuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textMostrarPresupuesto.setText("MontoPresupuesto");
+
+        javax.swing.GroupLayout panelDetallesLayout = new javax.swing.GroupLayout(panelDetalles);
+        panelDetalles.setLayout(panelDetallesLayout);
+        panelDetallesLayout.setHorizontalGroup(
+            panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelDetallesLayout.createSequentialGroup()
+                .addContainerGap(53, Short.MAX_VALUE)
+                .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(textInicio)
+                        .addComponent(textFinalizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textPresup, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textMostrarFechaFin, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(textMostrarFechaInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(textMostrarPresupuesto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)))
+                .addGap(20, 20, 20))
+        );
+        panelDetallesLayout.setVerticalGroup(
+            panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelDetallesLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textMostrarPresupuesto)
+                    .addComponent(textPresup))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textMostrarFechaInicio)
+                    .addComponent(textInicio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textMostrarFechaFin, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFinalizacion))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout subpanelMostrarProyectoLayout = new javax.swing.GroupLayout(subpanelMostrarProyecto);
         subpanelMostrarProyecto.setLayout(subpanelMostrarProyectoLayout);
@@ -690,7 +778,7 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelMostrarProyectoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tabMostrarIngYRecursos, javax.swing.GroupLayout.DEFAULT_SIZE, 1046, Short.MAX_VALUE)
+                    .addComponent(tabMostrarIngYRecursos)
                     .addComponent(botonVolverPanelPrincipalProyectos2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelMostrarProyectoLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -699,10 +787,6 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(textMostrarTitulo3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(textMostrarTipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                                .addComponent(textMostrarTitulo1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textMostrarTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
                                 .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
@@ -713,52 +797,37 @@ public class GUI extends javax.swing.JFrame {
                                         .addComponent(textMostrarHardSoft1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(textMostrarHardSoft)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(textFinalizacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(textInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelMostrarProyectoLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textPresup, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textMostrarFechaInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textMostrarFechaFin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textMostrarPresupuesto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE))
-                        .addGap(6, 6, 6)))
+                                .addComponent(textMostrarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(52, 52, 52)
+                        .addComponent(panelDetalles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         subpanelMostrarProyectoLayout.setVerticalGroup(
             subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textMostrarTitulo)
-                    .addComponent(textMostrarTitulo1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textMostrarHardSoft1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(textMostrarHardSoft)
-                        .addComponent(textPresup)
-                        .addComponent(textMostrarPresupuesto)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(textMostrarDescripcion)
-                        .addComponent(textInicio)
-                        .addComponent(textMostrarFechaInicio))
-                    .addComponent(textMostrarTitulo2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textMostrarTitulo3)
-                    .addComponent(textMostrarTipo)
-                    .addComponent(textFinalizacion)
-                    .addComponent(textMostrarFechaFin))
-                .addGap(0, 41, Short.MAX_VALUE)
+                    .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
+                        .addComponent(textMostrarTitulo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textMostrarHardSoft1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(textMostrarHardSoft, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textMostrarDescripcion)
+                            .addComponent(textMostrarTitulo2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textMostrarTitulo3)
+                            .addComponent(textMostrarTipo))
+                        .addGap(0, 19, Short.MAX_VALUE))
+                    .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
+                        .addComponent(panelDetalles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(tabMostrarIngYRecursos, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonVolverPanelPrincipalProyectos2)
@@ -766,6 +835,520 @@ public class GUI extends javax.swing.JFrame {
         );
 
         panelProyectos.add(subpanelMostrarProyecto, "card2");
+
+        subpanelCargarProyecto.setBackground(new java.awt.Color(250, 194, 151));
+
+        campoProyectoTitulo.setText("Título del Proyecto");
+        campoProyectoTitulo.setToolTipText("Título del Proyecto");
+        campoProyectoTitulo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                handlerSeleccionarCampoTexto(evt);
+            }
+        });
+
+        radioHardware.setText("Hardware");
+        radioHardware.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioHardwareActionPerformed(evt);
+            }
+        });
+
+        radioSoftware.setText("Software");
+        radioSoftware.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioSoftwareActionPerformed(evt);
+            }
+        });
+
+        campoProyectoDescripcion.setText("Descripción...");
+        campoProyectoDescripcion.setToolTipText("Descripcion del Proyecto");
+        campoProyectoDescripcion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                handlerSeleccionarCampoTexto(evt);
+            }
+        });
+
+        campoProyectoTipo.setText("Tipo de Dispositivo");
+        campoProyectoTipo.setToolTipText("Tipo del proyecto");
+        campoProyectoTipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                handlerSeleccionarCampoTexto(evt);
+            }
+        });
+
+        textCargarPresupuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarPresupuesto.setText("Presupuesto:");
+
+        spinnerProyectoPresupuesto.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1000.0f));
+
+        textCargarInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        textCargarInicio.setText("Fecha de inicio:");
+
+        textCargarInicioDia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarInicioDia.setText("Dia");
+
+        textCargarInicioMes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarInicioMes.setText("Mes");
+
+        textCargarInicioAnio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarInicioAnio.setText("Año");
+
+        spinnerFechaInicioDia.setModel(new javax.swing.SpinnerNumberModel(12, 1, 31, 1));
+
+        spinnerFechaInicioMes.setModel(new javax.swing.SpinnerNumberModel(12, 1, 12, 1));
+
+        spinnerFechaInicioAnio.setModel(new javax.swing.SpinnerNumberModel(2024, 1, null, 1));
+        spinnerFechaInicioAnio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        textCargarFin.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        textCargarFin.setText("F. Finalización:");
+
+        textCargarFinDia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarFinDia.setText("Dia");
+
+        textCargarFinMes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarFinMes.setText("Mes");
+
+        textCargarFinAnio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCargarFinAnio.setText("Año");
+
+        spinnerFechaFinDia.setModel(new javax.swing.SpinnerNumberModel(12, 1, 31, 1));
+
+        spinnerFechaFinMes.setModel(new javax.swing.SpinnerNumberModel(12, 1, 12, 1));
+
+        spinnerFechaFinAnio.setModel(new javax.swing.SpinnerNumberModel(2024, 1, null, 1));
+
+        tabIngYRecursos.setBackground(new java.awt.Color(241, 105, 73));
+        tabIngYRecursos.setForeground(new java.awt.Color(255, 255, 255));
+
+        tabIngenieros.setBackground(new java.awt.Color(229, 221, 195));
+        tabIngenieros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 157, 132)));
+
+        jLabel4.setText("Ingenieros Disponibles:");
+
+        scrollIngDisponibles.setToolTipText("");
+
+        tablaIngDisponiblesCargarProyecto.setBackground(new java.awt.Color(200, 200, 200));
+        tablaIngDisponiblesCargarProyecto.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Apellido", "Especialidad", "Contratacion"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaIngDisponiblesCargarProyecto.setToolTipText("Haga doble click izquierdo para seleccionar...");
+        tablaIngDisponiblesCargarProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                handlerCargarFila2Clicks(evt);
+            }
+        });
+        scrollIngDisponibles.setViewportView(tablaIngDisponiblesCargarProyecto);
+
+        botonAgregarIng.setText("Agregar");
+        botonAgregarIng.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarIngActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Ingenieros Asignados:");
+
+        scrollIngSeleccionados.setToolTipText("");
+
+        tablaIngSeleccionadosCargarProyecto.setBackground(new java.awt.Color(200, 200, 200));
+        tablaIngSeleccionadosCargarProyecto.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Apellido", "Especialidad", "Contratacion"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaIngSeleccionadosCargarProyecto.setToolTipText("Haga doble click izquierdo para seleccionar...");
+        tablaIngSeleccionadosCargarProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                handlerCargarFila2Clicks(evt);
+            }
+        });
+        scrollIngSeleccionados.setViewportView(tablaIngSeleccionadosCargarProyecto);
+
+        botonQuitarIng.setText("Quitar");
+        botonQuitarIng.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonQuitarIngActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout tabIngenierosLayout = new javax.swing.GroupLayout(tabIngenieros);
+        tabIngenieros.setLayout(tabIngenierosLayout);
+        tabIngenierosLayout.setHorizontalGroup(
+            tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabIngenierosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonAgregarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrollIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrollIngSeleccionados, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
+                    .addComponent(botonQuitarIng, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        tabIngenierosLayout.setVerticalGroup(
+            tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabIngenierosLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+                    .addComponent(scrollIngSeleccionados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonAgregarIng)
+                    .addComponent(botonQuitarIng))
+                .addContainerGap())
+        );
+
+        tabIngYRecursos.addTab("Ingenieros", tabIngenieros);
+
+        tabRecursos.setBackground(new java.awt.Color(229, 221, 195));
+        tabRecursos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 157, 132)));
+
+        jLabel6.setBackground(new java.awt.Color(255, 239, 190));
+        jLabel6.setText("Recursos Disponibles:");
+
+        jLabel7.setText("Recursos Asignados:");
+
+        botonAgregarRecurso.setText("Agregar");
+        botonAgregarRecurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarRecursoActionPerformed(evt);
+            }
+        });
+
+        botonQuitarRecurso.setText("Quitar");
+        botonQuitarRecurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonQuitarRecursoActionPerformed(evt);
+            }
+        });
+
+        scrollRecDisponibles.setToolTipText("");
+
+        tablaRecDisponiblesCargarProyecto.setBackground(new java.awt.Color(200, 200, 200));
+        tablaRecDisponiblesCargarProyecto.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nombre", "Descripcion"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaRecDisponiblesCargarProyecto.setToolTipText("Haga doble click izquierdo para seleccionar...");
+        tablaRecDisponiblesCargarProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                handlerCargarFila2Clicks(evt);
+            }
+        });
+        scrollRecDisponibles.setViewportView(tablaRecDisponiblesCargarProyecto);
+
+        scrollRecSeleccionados.setToolTipText("");
+
+        tablaRecSeleccionadosCargarProyecto.setBackground(new java.awt.Color(200, 200, 200));
+        tablaRecSeleccionadosCargarProyecto.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nombre", "Descripcion"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaRecSeleccionadosCargarProyecto.setToolTipText("Haga doble click izquierdo para seleccionar...");
+        tablaRecSeleccionadosCargarProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                handlerCargarFila2Clicks(evt);
+            }
+        });
+        scrollRecSeleccionados.setViewportView(tablaRecSeleccionadosCargarProyecto);
+
+        javax.swing.GroupLayout tabRecursosLayout = new javax.swing.GroupLayout(tabRecursos);
+        tabRecursos.setLayout(tabRecursosLayout);
+        tabRecursosLayout.setHorizontalGroup(
+            tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabRecursosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollRecDisponibles, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonAgregarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(scrollRecSeleccionados)
+                    .addComponent(botonQuitarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        tabRecursosLayout.setVerticalGroup(
+            tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabRecursosLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollRecDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+                    .addComponent(scrollRecSeleccionados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonAgregarRecurso)
+                    .addComponent(botonQuitarRecurso))
+                .addContainerGap())
+        );
+
+        tabIngYRecursos.addTab("Recursos", tabRecursos);
+
+        botonCargarProyecto.setText("Cargar Proyecto");
+        botonCargarProyecto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCargarProyectoActionPerformed(evt);
+            }
+        });
+
+        botonVolverPanelPrincipalProyectos.setText("Volver");
+        botonVolverPanelPrincipalProyectos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handlerIrAlSubpanelPrincipalProyectos(evt);
+            }
+        });
+
+        javax.swing.GroupLayout subpanelCargarProyectoLayout = new javax.swing.GroupLayout(subpanelCargarProyecto);
+        subpanelCargarProyecto.setLayout(subpanelCargarProyectoLayout);
+        subpanelCargarProyectoLayout.setHorizontalGroup(
+            subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tabIngYRecursos)
+                    .addComponent(botonCargarProyecto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonVolverPanelPrincipalProyectos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelCargarProyectoLayout.createSequentialGroup()
+                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
+                                .addComponent(campoProyectoTitulo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(radioHardware)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(radioSoftware)
+                                .addGap(8, 8, 8))
+                            .addComponent(campoProyectoDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+                            .addComponent(campoProyectoTipo))
+                        .addGap(200, 200, 200)
+                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
+                                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
+                                        .addGap(181, 181, 181)
+                                        .addComponent(textCargarInicioDia, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
+                                        .addComponent(textCargarFin, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(textCargarFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(11, 11, 11)))
+                                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelCargarProyectoLayout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(spinnerFechaFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(spinnerFechaInicioDia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6)
+                                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textCargarFinMes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textCargarInicioMes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(textCargarPresupuesto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
+                                .addComponent(textCargarInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(145, 145, 145)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
+                                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(spinnerFechaFinMes, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                    .addComponent(spinnerFechaInicioMes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6)
+                                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
+                                        .addComponent(textCargarInicioAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(spinnerFechaInicioAnio))
+                                    .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
+                                        .addComponent(textCargarFinAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(spinnerFechaFinAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(spinnerProyectoPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+
+        subpanelCargarProyectoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {spinnerFechaInicioDia, spinnerFechaInicioMes});
+
+        subpanelCargarProyectoLayout.setVerticalGroup(
+            subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
+                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campoProyectoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(radioHardware)
+                                .addComponent(radioSoftware)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoProyectoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoProyectoTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
+                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(spinnerProyectoPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textCargarPresupuesto))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(spinnerFechaInicioAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textCargarInicio)
+                            .addComponent(spinnerFechaInicioDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spinnerFechaInicioMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textCargarInicioDia)
+                            .addComponent(textCargarInicioMes)
+                            .addComponent(textCargarInicioAnio))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(spinnerFechaFinAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spinnerFechaFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spinnerFechaFinMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textCargarFinDia)
+                            .addComponent(textCargarFinMes)
+                            .addComponent(textCargarFinAnio)
+                            .addComponent(textCargarFin))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tabIngYRecursos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonCargarProyecto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonVolverPanelPrincipalProyectos)
+                .addGap(18, 18, 18))
+        );
+
+        spinnerProyectoPresupuesto.getAccessibleContext().setAccessibleName("");
+        spinnerProyectoPresupuesto.getAccessibleContext().setAccessibleDescription("Presupuesto del proyecto");
+
+        panelProyectos.add(subpanelCargarProyecto, "card2");
 
         subpanelModProyecto.setBackground(new java.awt.Color(250, 194, 151));
 
@@ -844,9 +1427,10 @@ public class GUI extends javax.swing.JFrame {
 
         spinnerModFechaFinAnio.setModel(new javax.swing.SpinnerNumberModel(2024, 1, null, 1));
 
-        tabModIngYRecursos.setBackground(new java.awt.Color(70, 130, 180));
+        tabModIngYRecursos.setBackground(new java.awt.Color(241, 105, 73));
 
-        tabModIngenieros.setBackground(new java.awt.Color(255, 239, 190));
+        tabModIngenieros.setBackground(new java.awt.Color(229, 221, 195));
+        tabModIngenieros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 157, 132)));
 
         jLabel11.setText("Ingenieros Disponibles:");
 
@@ -952,13 +1536,13 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonModAgregarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
                     .addComponent(scrollModIngDisponibles))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonModQuitarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollModIngAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE))
+                    .addComponent(scrollModIngAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabModIngenierosLayout.setVerticalGroup(
@@ -970,7 +1554,7 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollModIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addComponent(scrollModIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
                     .addComponent(scrollModIngAsignados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -981,7 +1565,8 @@ public class GUI extends javax.swing.JFrame {
 
         tabModIngYRecursos.addTab("Ingenieros", tabModIngenieros);
 
-        tabModRecursos.setBackground(new java.awt.Color(255, 239, 190));
+        tabModRecursos.setBackground(new java.awt.Color(229, 221, 195));
+        tabModRecursos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 157, 132)));
 
         jLabel37.setText("Recursos Disponibles:");
 
@@ -1101,13 +1686,13 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabModRecursosLayout.createSequentialGroup()
-                        .addGap(0, 22, Short.MAX_VALUE)
+                        .addGap(0, 73, Short.MAX_VALUE)
                         .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(scrollModRecDisponibles)
                     .addComponent(botonModAgregarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
+                    .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
                     .addComponent(botonModQuitarRecurso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(scrollModRecAsignados, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -1121,7 +1706,7 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabel38))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollModRecDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addComponent(scrollModRecDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
                     .addComponent(scrollModRecAsignados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1265,542 +1850,49 @@ public class GUI extends javax.swing.JFrame {
 
         panelProyectos.add(subpanelModProyecto, "card2");
 
-        subpanelCargarProyecto.setBackground(new java.awt.Color(250, 194, 151));
-
-        campoProyectoTitulo.setText("Título del Proyecto");
-        campoProyectoTitulo.setToolTipText("Título del Proyecto");
-        campoProyectoTitulo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                handlerSeleccionarCampoTexto(evt);
-            }
-        });
-
-        radioHardware.setText("Hardware");
-        radioHardware.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioHardwareActionPerformed(evt);
-            }
-        });
-
-        radioSoftware.setText("Software");
-        radioSoftware.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioSoftwareActionPerformed(evt);
-            }
-        });
-
-        campoProyectoDescripcion.setText("Descripción...");
-        campoProyectoDescripcion.setToolTipText("Descripcion del Proyecto");
-        campoProyectoDescripcion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                handlerSeleccionarCampoTexto(evt);
-            }
-        });
-
-        campoProyectoTipo.setText("Tipo de Dispositivo");
-        campoProyectoTipo.setToolTipText("Tipo del proyecto");
-        campoProyectoTipo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                handlerSeleccionarCampoTexto(evt);
-            }
-        });
-
-        textCargarPresupuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textCargarPresupuesto.setText("Presupuesto:");
-
-        spinnerProyectoPresupuesto.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1000.0f));
-
-        textCargarInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        textCargarInicio.setText("Fecha de inicio:");
-
-        textCargarInicioDia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textCargarInicioDia.setText("Dia");
-
-        textCargarInicioMes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textCargarInicioMes.setText("Mes");
-
-        textCargarInicioAnio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textCargarInicioAnio.setText("Año");
-
-        spinnerFechaInicioDia.setModel(new javax.swing.SpinnerNumberModel(12, 1, 31, 1));
-
-        spinnerFechaInicioMes.setModel(new javax.swing.SpinnerNumberModel(12, 1, 12, 1));
-
-        spinnerFechaInicioAnio.setModel(new javax.swing.SpinnerNumberModel(2024, 1, null, 1));
-        spinnerFechaInicioAnio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        textCargarFin.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        textCargarFin.setText("F. Finalización:");
-
-        textCargarFinDia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textCargarFinDia.setText("Dia");
-
-        textCargarFinMes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textCargarFinMes.setText("Mes");
-
-        textCargarFinAnio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textCargarFinAnio.setText("Año");
-
-        spinnerFechaFinDia.setModel(new javax.swing.SpinnerNumberModel(12, 1, 31, 1));
-
-        spinnerFechaFinMes.setModel(new javax.swing.SpinnerNumberModel(12, 1, 12, 1));
-
-        spinnerFechaFinAnio.setModel(new javax.swing.SpinnerNumberModel(2024, 1, null, 1));
-
-        tabIngYRecursos.setBackground(new java.awt.Color(70, 130, 180));
-
-        tabIngenieros.setBackground(new java.awt.Color(255, 239, 190));
-
-        jLabel4.setText("Ingenieros Disponibles:");
-
-        scrollIngDisponibles.setToolTipText("");
-
-        tablaIngDisponiblesCargarProyecto.setBackground(new java.awt.Color(200, 200, 200));
-        tablaIngDisponiblesCargarProyecto.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Nombre", "Apellido", "Especialidad", "Contratacion"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablaIngDisponiblesCargarProyecto.setToolTipText("Haga doble click izquierdo para seleccionar...");
-        tablaIngDisponiblesCargarProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                handlerCargarFila2Clicks(evt);
-            }
-        });
-        scrollIngDisponibles.setViewportView(tablaIngDisponiblesCargarProyecto);
-
-        botonAgregarIng.setText("Agregar");
-        botonAgregarIng.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregarIngActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setText("Ingenieros Asignados:");
-
-        scrollIngSeleccionados.setToolTipText("");
-
-        tablaIngSeleccionadosCargarProyecto.setBackground(new java.awt.Color(200, 200, 200));
-        tablaIngSeleccionadosCargarProyecto.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Nombre", "Apellido", "Especialidad", "Contratacion"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablaIngSeleccionadosCargarProyecto.setToolTipText("Haga doble click izquierdo para seleccionar...");
-        tablaIngSeleccionadosCargarProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                handlerCargarFila2Clicks(evt);
-            }
-        });
-        scrollIngSeleccionados.setViewportView(tablaIngSeleccionadosCargarProyecto);
-
-        botonQuitarIng.setText("Quitar");
-        botonQuitarIng.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonQuitarIngActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout tabIngenierosLayout = new javax.swing.GroupLayout(tabIngenieros);
-        tabIngenieros.setLayout(tabIngenierosLayout);
-        tabIngenierosLayout.setHorizontalGroup(
-            tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tabIngenierosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonAgregarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollIngSeleccionados, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
-                    .addComponent(botonQuitarIng, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        tabIngenierosLayout.setVerticalGroup(
-            tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabIngenierosLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                    .addComponent(scrollIngSeleccionados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonAgregarIng)
-                    .addComponent(botonQuitarIng))
-                .addContainerGap())
-        );
-
-        tabIngYRecursos.addTab("Ingenieros", tabIngenieros);
-
-        tabRecursos.setBackground(new java.awt.Color(255, 239, 190));
-
-        jLabel6.setBackground(new java.awt.Color(255, 239, 190));
-        jLabel6.setText("Recursos Disponibles:");
-
-        jLabel7.setText("Recursos Asignados:");
-
-        botonAgregarRecurso.setText("Agregar");
-        botonAgregarRecurso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregarRecursoActionPerformed(evt);
-            }
-        });
-
-        botonQuitarRecurso.setText("Quitar");
-        botonQuitarRecurso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonQuitarRecursoActionPerformed(evt);
-            }
-        });
-
-        scrollRecDisponibles.setToolTipText("");
-
-        tablaRecDisponiblesCargarProyecto.setBackground(new java.awt.Color(200, 200, 200));
-        tablaRecDisponiblesCargarProyecto.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Nombre", "Descripcion"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablaRecDisponiblesCargarProyecto.setToolTipText("Haga doble click izquierdo para seleccionar...");
-        tablaRecDisponiblesCargarProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                handlerCargarFila2Clicks(evt);
-            }
-        });
-        scrollRecDisponibles.setViewportView(tablaRecDisponiblesCargarProyecto);
-
-        scrollRecSeleccionados.setToolTipText("");
-
-        tablaRecSeleccionadosCargarProyecto.setBackground(new java.awt.Color(200, 200, 200));
-        tablaRecSeleccionadosCargarProyecto.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Nombre", "Descripcion"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablaRecSeleccionadosCargarProyecto.setToolTipText("Haga doble click izquierdo para seleccionar...");
-        tablaRecSeleccionadosCargarProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                handlerCargarFila2Clicks(evt);
-            }
-        });
-        scrollRecSeleccionados.setViewportView(tablaRecSeleccionadosCargarProyecto);
-
-        javax.swing.GroupLayout tabRecursosLayout = new javax.swing.GroupLayout(tabRecursos);
-        tabRecursos.setLayout(tabRecursosLayout);
-        tabRecursosLayout.setHorizontalGroup(
-            tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tabRecursosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollRecDisponibles, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonAgregarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(scrollRecSeleccionados)
-                    .addComponent(botonQuitarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        tabRecursosLayout.setVerticalGroup(
-            tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabRecursosLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollRecDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                    .addComponent(scrollRecSeleccionados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tabRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonAgregarRecurso)
-                    .addComponent(botonQuitarRecurso))
-                .addContainerGap())
-        );
-
-        tabIngYRecursos.addTab("Recursos", tabRecursos);
-
-        botonCargarProyecto.setText("Cargar Proyecto");
-        botonCargarProyecto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCargarProyectoActionPerformed(evt);
-            }
-        });
-
-        botonVolverPanelPrincipalProyectos.setText("Volver");
-        botonVolverPanelPrincipalProyectos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                handlerIrAlSubpanelPrincipalProyectos(evt);
-            }
-        });
-
-        javax.swing.GroupLayout subpanelCargarProyectoLayout = new javax.swing.GroupLayout(subpanelCargarProyecto);
-        subpanelCargarProyecto.setLayout(subpanelCargarProyectoLayout);
-        subpanelCargarProyectoLayout.setHorizontalGroup(
-            subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tabIngYRecursos)
-                    .addComponent(botonCargarProyecto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonVolverPanelPrincipalProyectos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelCargarProyectoLayout.createSequentialGroup()
-                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
-                                .addComponent(campoProyectoTitulo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(radioHardware)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(radioSoftware)
-                                .addGap(8, 8, 8))
-                            .addComponent(campoProyectoDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
-                            .addComponent(campoProyectoTipo))
-                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                                        .addGap(222, 222, 222)
-                                        .addComponent(textCargarInicioDia, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
-                                        .addComponent(textCargarFin, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textCargarFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(11, 11, 11)))
-                                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelCargarProyectoLayout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(spinnerFechaFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(spinnerFechaInicioDia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(6, 6, 6)
-                                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textCargarFinMes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textCargarInicioMes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textCargarPresupuesto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelCargarProyectoLayout.createSequentialGroup()
-                                        .addComponent(textCargarInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(145, 145, 145)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(spinnerFechaFinMes, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                    .addComponent(spinnerFechaInicioMes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(6, 6, 6)
-                                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                                        .addComponent(textCargarInicioAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(spinnerFechaInicioAnio))
-                                    .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                                        .addComponent(textCargarFinAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(spinnerFechaFinAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(spinnerProyectoPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(6, 6, 6)))
-                .addContainerGap())
-        );
-
-        subpanelCargarProyectoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {spinnerFechaInicioDia, spinnerFechaInicioMes});
-
-        subpanelCargarProyectoLayout.setVerticalGroup(
-            subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                        .addComponent(campoProyectoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoProyectoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoProyectoTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(radioHardware)
-                                .addComponent(radioSoftware))
-                            .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(spinnerProyectoPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(textCargarPresupuesto)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(spinnerFechaInicioAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textCargarInicio)
-                            .addComponent(spinnerFechaInicioDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spinnerFechaInicioMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textCargarInicioDia)
-                            .addComponent(textCargarInicioMes)
-                            .addComponent(textCargarInicioAnio))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(spinnerFechaFinAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spinnerFechaFinDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spinnerFechaFinMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textCargarFinDia)
-                            .addComponent(textCargarFinMes)
-                            .addComponent(textCargarFinAnio)
-                            .addComponent(textCargarFin))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tabIngYRecursos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonCargarProyecto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonVolverPanelPrincipalProyectos)
-                .addGap(18, 18, 18))
-        );
-
-        spinnerProyectoPresupuesto.getAccessibleContext().setAccessibleName("");
-        spinnerProyectoPresupuesto.getAccessibleContext().setAccessibleDescription("Presupuesto del proyecto");
-
-        panelProyectos.add(subpanelCargarProyecto, "card2");
-
         contenedor.add(panelProyectos, "card3");
+
+        javax.swing.GroupLayout screenLayout = new javax.swing.GroupLayout(screen);
+        screen.setLayout(screenLayout);
+        screenLayout.setHorizontalGroup(
+            screenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1174, Short.MAX_VALUE)
+            .addGroup(screenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(screenLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(screenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(contenedorTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addContainerGap()))
+        );
+        screenLayout.setVerticalGroup(
+            screenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 684, Short.MAX_VALUE)
+            .addGroup(screenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(screenLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(contenedorTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenedorTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(screen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(contenedorTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(screen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVolverAlMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverAlMenuActionPerformed
-        textTitulo.setText("MENU PRINCIPAL");
+        textTitulo.setText("M E N U    P R I N C I P A L");
         contenedor.removeAll();
         contenedor.add(panelMenu);
         contenedor.repaint();
@@ -1853,7 +1945,7 @@ public class GUI extends javax.swing.JFrame {
 
         radioHardware.setSelected(true);
 
-        textTitulo.setText("CARGA PROYECTOS");
+        textTitulo.setText("C A R G A    P R O Y E C T O S");
 
         contenedor.removeAll();
         contenedor.add(panelProyectos.add(subpanelCargarProyecto));
@@ -1893,7 +1985,7 @@ public class GUI extends javax.swing.JFrame {
             }
 
             indiceArrayProyectos.setText(String.valueOf(indice));
-            textTitulo.setText("MODIFICAR PROYECTO");
+            textTitulo.setText("M O D I F I C A R    P R O Y E C T O");
             campoModProyectoTitulo.setText(proyecto.getTitulo());
             campoModProyectoDescripcion.setText(proyecto.getDescripcion());
             campoModProyectoTipo.setText(proyecto.getTipo());
@@ -2520,7 +2612,7 @@ public class GUI extends javax.swing.JFrame {
         botonVolverAlMenu.setVisible(true);
         DecimalFormat formateado = new DecimalFormat("#,###");
         formateado.setMaximumFractionDigits(3);
-        
+
         modeloTablaProyectos.setRowCount(0);
 
         for (int i = 0; i < arrayProyectos.size(); i++) {
@@ -2538,7 +2630,7 @@ public class GUI extends javax.swing.JFrame {
             );
 
         }
-        textTitulo.setText("PROYECTOS");
+        textTitulo.setText("P R O Y E C T O S");
         textCantProyectos.setText("Cantidad de proyectos: " + modeloTablaProyectos.getRowCount());
         textCantProyectosHardware.setText("+Hardware: " + DesarrolloDeHardware.getCantidadProyHardware());
         textCantProyectosSoftware.setText("+Software: " + DesarrolloDeSoftware.getCantidadProySoftware());
@@ -2576,40 +2668,45 @@ public class GUI extends javax.swing.JFrame {
                     opciones,
                     opciones[1]
             );
+            if (confirmacion == 0) {
+                int filaSeleccionada = tablaProyectos.getSelectedRow(), indice = 0;
+                String id = (String) tablaProyectos.getValueAt(filaSeleccionada, 6);
 
-            int filaSeleccionada = tablaProyectos.getSelectedRow(), indice = 0;
-            String id = (String) tablaProyectos.getValueAt(filaSeleccionada, 6);
-
-            for (int i = 0; i < arrayProyectos.size(); i++) {
-                if (arrayProyectos.get(i).getProyectoID().equals(id)) {
-                    indice = i;
-                    break;
+                for (int i = 0; i < arrayProyectos.size(); i++) {
+                    if (arrayProyectos.get(i).getProyectoID().equals(id)) {
+                        indice = i;
+                        break;
+                    }
                 }
+
+                for (int i = 0; i < arrayProyectos.get(indice).obtenerCantidadIngenieros(); i++) {
+                    arrayProyectos.get(indice).obtenerTodosLosIngenieros().get(i).reemplazarIdProyectosAsociados("No Asignado", id);
+                }
+
+                if (arrayProyectos.get(indice).getWare().equals("Hardware")) {
+                    DesarrolloDeHardware.disminuirCantidadProyectosHardware();
+                } else {
+                    DesarrolloDeSoftware.disminuirCantidadProyectosSoftware();
+                }
+
+                arrayProyectos.remove(indice);
+
+                handlerIrAlSubpanelPrincipalProyectos(evt);
+
             }
-
-            for (int i = 0; i < arrayProyectos.get(indice).obtenerCantidadIngenieros(); i++) {
-                arrayProyectos.get(indice).obtenerTodosLosIngenieros().get(i).reemplazarIdProyectosAsociados("No Asignado", id);
-            }
-
-            if (arrayProyectos.get(indice).getWare().equals("Hardware")) {
-                DesarrolloDeHardware.disminuirCantidadProyectosHardware();
-            } else {
-                DesarrolloDeSoftware.disminuirCantidadProyectosSoftware();
-            }
-
-            arrayProyectos.remove(indice);
-
-            handlerIrAlSubpanelPrincipalProyectos(evt);
 
         }
     }//GEN-LAST:event_botonEliminarProyectoActionPerformed
 
     private void handlerMostrarProyecto() {
+        DecimalFormat formateado = new DecimalFormat("#,###");
+        formateado.setMaximumFractionDigits(3);
+        
         int filaSeleccionada = tablaProyectos.convertRowIndexToModel(tablaProyectos.getSelectedRow());
-
+        
         String idProyectoSeleccionado = (String) modeloTablaProyectos.getValueAt(filaSeleccionada, 6);
         ProyectoTecnologico ProyectoAMostrar;
-
+        
         for (int i = 0; i < arrayProyectos.size(); i++) {
             if (idProyectoSeleccionado.equals(arrayProyectos.get(i).getProyectoID())) {
                 ProyectoAMostrar = arrayProyectos.get(i);
@@ -2618,7 +2715,7 @@ public class GUI extends javax.swing.JFrame {
                 textMostrarHardSoft.setText(ProyectoAMostrar.getWare());
                 textMostrarDescripcion.setText(ProyectoAMostrar.getDescripcion());
                 textMostrarTipo.setText(ProyectoAMostrar.getTipo());
-                textMostrarPresupuesto.setText(String.valueOf(ProyectoAMostrar.getPresupuesto()));
+                textMostrarPresupuesto.setText(String.valueOf(formateado.format(ProyectoAMostrar.getPresupuesto())));
                 textMostrarFechaInicio.setText(ProyectoAMostrar.getFechaInicio().toString());
                 textMostrarFechaFin.setText(ProyectoAMostrar.getFechaFin().toString());
 
@@ -2650,7 +2747,7 @@ public class GUI extends javax.swing.JFrame {
                     );
                 }
 
-                textTitulo.setText("VER PROYECTO");
+                textTitulo.setText("V E R   P R O Y E C T O");
                 contenedor.removeAll();
                 contenedor.add(subpanelMostrarProyecto);
                 contenedor.repaint();
@@ -2988,11 +3085,12 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField campoProyectoTitulo;
     private javax.swing.JPanel contenedor;
     private javax.swing.JPanel contenedorTitulo;
+    private javax.swing.JLabel imagenMenu;
     private javax.swing.JLabel indiceArrayProyectos;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -3009,12 +3107,15 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel opciones;
+    private javax.swing.JPanel panelDetalles;
     private javax.swing.JPanel panelMenu;
     private javax.swing.JPanel panelProyectos;
     private javax.swing.JRadioButton radioHardware;
     private javax.swing.JRadioButton radioModHardware;
     private javax.swing.JRadioButton radioModSoftware;
     private javax.swing.JRadioButton radioSoftware;
+    private javax.swing.JPanel screen;
     private javax.swing.JScrollPane scrollIngDisponibles;
     private javax.swing.JScrollPane scrollIngMostrarAsignados;
     private javax.swing.JScrollPane scrollIngSeleccionados;
@@ -3087,7 +3188,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel textMostrarPresupuesto;
     private javax.swing.JLabel textMostrarTipo;
     private javax.swing.JLabel textMostrarTitulo;
-    private javax.swing.JLabel textMostrarTitulo1;
     private javax.swing.JLabel textMostrarTitulo2;
     private javax.swing.JLabel textMostrarTitulo3;
     private javax.swing.JLabel textPresup;
