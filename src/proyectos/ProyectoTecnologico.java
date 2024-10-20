@@ -11,13 +11,11 @@ public abstract class ProyectoTecnologico {
     private String titulo, descripcion;
     private float presupuesto;
     private Fecha fechaInicio, fechaFin;
-    private static int cantidad = 0;
     private List<Ingeniero> ingenieros = new ArrayList<>();
     private List<RecursoTecnologico> recursosTecnologicos = new ArrayList<>();
 
     public ProyectoTecnologico() {
         this.proyectoID = generarCodigo();
-        cantidad++;
     }
 
     public ProyectoTecnologico(String titulo, String descripcion, float presupuesto, Fecha fechaInicio, Fecha fechaFin) {
@@ -27,7 +25,6 @@ public abstract class ProyectoTecnologico {
         this.presupuesto = presupuesto;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        cantidad++;
     }
     
     // metodos abstractos
@@ -84,10 +81,6 @@ public abstract class ProyectoTecnologico {
         this.fechaFin = fechaFin;
     }
 
-    public static int getCantidad() {
-        return cantidad;
-    }
-    
     //metodos para modificar ingenieros y recursos tecnologicos
     public void agregarIngeniero(Ingeniero ingeniero) {
         ingenieros.add(ingeniero);

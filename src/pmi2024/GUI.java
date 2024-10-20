@@ -111,7 +111,7 @@ public class GUI extends javax.swing.JFrame {
         buttonGroupModWare.add(radioModHardware);
         buttonGroupModWare.add(radioModSoftware);
 
-        setIconImage(Toolkit.getDefaultToolkit().getImage("icon.png")); // totalmente innecesario pero mira que lindo queda!
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/icon.png"))); // totalmente innecesario pero mira que lindo queda!
         setTitle("Organizador de Proyectos");
         textTitulo.setText("M E N U    P R I N C I P A L");
     }
@@ -698,39 +698,53 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        textMostrarTitulo.setBackground(new java.awt.Color(50, 33, 25));
         textMostrarTitulo.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        textMostrarTitulo.setForeground(new java.awt.Color(84, 55, 42));
         textMostrarTitulo.setText("Título");
 
+        textMostrarDescripcion.setForeground(new java.awt.Color(84, 55, 42));
         textMostrarDescripcion.setText("Descripción");
 
+        textMostrarTipo.setForeground(new java.awt.Color(84, 55, 42));
         textMostrarTipo.setText("Tipo");
 
+        textMostrarHardSoft.setForeground(new java.awt.Color(84, 55, 42));
         textMostrarHardSoft.setText("Hard/Soft Ware");
 
+        textMostrarTitulo2.setForeground(new java.awt.Color(84, 55, 42));
         textMostrarTitulo2.setText("Descripción:");
 
+        textMostrarTitulo3.setForeground(new java.awt.Color(84, 55, 42));
         textMostrarTitulo3.setText("Tipo:");
 
+        textMostrarHardSoft1.setForeground(new java.awt.Color(84, 55, 42));
         textMostrarHardSoft1.setText("Desarrollo de");
 
         panelDetalles.setBackground(new java.awt.Color(250, 194, 151));
         panelDetalles.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(219, 167, 127), 1, true));
 
+        textFinalizacion.setForeground(new java.awt.Color(84, 55, 42));
         textFinalizacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textFinalizacion.setText("F. Finalización:");
 
+        textMostrarFechaInicio.setForeground(new java.awt.Color(84, 55, 42));
         textMostrarFechaInicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textMostrarFechaInicio.setText("12/12/2024");
 
+        textMostrarFechaFin.setForeground(new java.awt.Color(84, 55, 42));
         textMostrarFechaFin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textMostrarFechaFin.setText("12/12/2024");
 
+        textInicio.setForeground(new java.awt.Color(84, 55, 42));
         textInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         textInicio.setText("Fecha de inicio:");
 
+        textPresup.setForeground(new java.awt.Color(84, 55, 42));
         textPresup.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textPresup.setText("Presupuesto:");
 
+        textMostrarPresupuesto.setForeground(new java.awt.Color(84, 55, 42));
         textMostrarPresupuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textMostrarPresupuesto.setText("MontoPresupuesto");
 
@@ -798,9 +812,7 @@ public class GUI extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(textMostrarHardSoft)))
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
-                                .addComponent(textMostrarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(textMostrarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(52, 52, 52)
                         .addComponent(panelDetalles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -1305,11 +1317,11 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(subpanelCargarProyectoLayout.createSequentialGroup()
-                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(campoProyectoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(subpanelCargarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(radioHardware)
-                                .addComponent(radioSoftware)))
+                                .addComponent(radioSoftware))
+                            .addComponent(campoProyectoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoProyectoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1976,7 +1988,7 @@ public class GUI extends javax.swing.JFrame {
             }
 
             ProyectoTecnologico proyecto = arrayProyectos.get(indice);
-
+            
             if (arrayProyectos.get(indice).getWare().equals("Hardware")) {
                 radioModHardware.setSelected(true);
 
@@ -2028,22 +2040,31 @@ public class GUI extends javax.swing.JFrame {
             }
 
             // carga tabla de recursos disp && no pertenecen al proy
+            ArrayList<RecursoTecnologico> recsAsignados = proyecto.obtenerTodosLosRecursosTecnologicos();
             for (int i = 0; i < arrayRecursos.size(); i++) {
+                Boolean encontrado = false;
                 RecursoTecnologico recursoDisponible = arrayRecursos.get(i);
-                ArrayList<RecursoTecnologico> recsAsignados = proyecto.obtenerTodosLosRecursosTecnologicos();
 
                 // si no hay recursos cargados no aparece nada -> controlar que siempre se carguen con recursos
                 for (int j = 0; j < proyecto.obtenerCantidadRecursosTecnologicos(); j++) {
-
-                    if (!recursoDisponible.getRecursoID().equals(recsAsignados.get(j).getRecursoID())) {
-                        modeloTablaRecursosDisponibles.addRow(
-                                new Object[]{
-                                    arrayRecursos.get(i).getNombre(),
-                                    arrayRecursos.get(i).getDescripcion(),
-                                    arrayRecursos.get(i).getRecursoID()
-                                }
-                        );
+                    RecursoTecnologico recursoAsignado = recsAsignados.get(j);
+                    if (recursoDisponible.getRecursoID().equals(recursoAsignado.getRecursoID())) {
+                        encontrado = true;
+                        break;
                     }
+
+                }
+
+                if (encontrado == false) {
+
+                    modeloTablaRecursosDisponibles.addRow(
+                            new Object[]{
+                                arrayRecursos.get(i).getNombre(),
+                                arrayRecursos.get(i).getDescripcion(),
+                                arrayRecursos.get(i).getRecursoID()
+                            }
+                    );
+
                 }
 
             }
@@ -2545,7 +2566,14 @@ public class GUI extends javax.swing.JFrame {
 
                 presupuesto = (float) spinnerModProyectoPresupuesto.getValue();
 
+                if (arrayProyectos.get(indice).getWare().equals("Hardware")) {
+                    DesarrolloDeHardware.disminuirCantidadProyectosHardware();
+                } else {
+                    DesarrolloDeSoftware.disminuirCantidadProyectosSoftware();
+                }
+
                 ProyectoTecnologico proyectoMod;
+
                 if (radioModHardware.isSelected()) {
                     proyectoMod = new DesarrolloDeHardware(titulo, tipo, descripcion, presupuesto, inicio, fin);
                 } else {
@@ -2682,12 +2710,14 @@ public class GUI extends javax.swing.JFrame {
                 for (int i = 0; i < arrayProyectos.get(indice).obtenerCantidadIngenieros(); i++) {
                     arrayProyectos.get(indice).obtenerTodosLosIngenieros().get(i).reemplazarIdProyectosAsociados("No Asignado", id);
                 }
-
+                
                 if (arrayProyectos.get(indice).getWare().equals("Hardware")) {
                     DesarrolloDeHardware.disminuirCantidadProyectosHardware();
                 } else {
                     DesarrolloDeSoftware.disminuirCantidadProyectosSoftware();
                 }
+                
+                
 
                 arrayProyectos.remove(indice);
 
@@ -2701,12 +2731,12 @@ public class GUI extends javax.swing.JFrame {
     private void handlerMostrarProyecto() {
         DecimalFormat formateado = new DecimalFormat("#,###");
         formateado.setMaximumFractionDigits(3);
-        
+
         int filaSeleccionada = tablaProyectos.convertRowIndexToModel(tablaProyectos.getSelectedRow());
-        
+
         String idProyectoSeleccionado = (String) modeloTablaProyectos.getValueAt(filaSeleccionada, 6);
         ProyectoTecnologico ProyectoAMostrar;
-        
+
         for (int i = 0; i < arrayProyectos.size(); i++) {
             if (idProyectoSeleccionado.equals(arrayProyectos.get(i).getProyectoID())) {
                 ProyectoAMostrar = arrayProyectos.get(i);

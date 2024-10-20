@@ -589,10 +589,7 @@
                                               </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="textMostrarTitulo" min="-2" pref="353" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="textMostrarTitulo" alignment="0" min="-2" pref="353" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                                       <Component id="panelDetalles" min="-2" max="-2" attributes="0"/>
@@ -821,39 +818,63 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="textMostrarTitulo">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="19" green="21" red="32" type="rgb"/>
+                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="24" style="3"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="2a" green="37" red="54" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="T&#xed;tulo"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="textMostrarDescripcion">
                       <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="2a" green="37" red="54" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Descripci&#xf3;n"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="textMostrarTipo">
                       <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="2a" green="37" red="54" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Tipo"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="textMostrarHardSoft">
                       <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="2a" green="37" red="54" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Hard/Soft Ware"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="textMostrarTitulo2">
                       <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="2a" green="37" red="54" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Descripci&#xf3;n:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="textMostrarTitulo3">
                       <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="2a" green="37" red="54" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Tipo:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="textMostrarHardSoft1">
                       <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="2a" green="37" red="54" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Desarrollo de"/>
                       </Properties>
                     </Component>
@@ -921,36 +942,54 @@
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="textFinalizacion">
                           <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="2a" green="37" red="54" type="rgb"/>
+                            </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
                             <Property name="text" type="java.lang.String" value="F. Finalizaci&#xf3;n:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="textMostrarFechaInicio">
                           <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="2a" green="37" red="54" type="rgb"/>
+                            </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
                             <Property name="text" type="java.lang.String" value="12/12/2024"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="textMostrarFechaFin">
                           <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="2a" green="37" red="54" type="rgb"/>
+                            </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
                             <Property name="text" type="java.lang.String" value="12/12/2024"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="textInicio">
                           <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="2a" green="37" red="54" type="rgb"/>
+                            </Property>
                             <Property name="horizontalAlignment" type="int" value="4"/>
                             <Property name="text" type="java.lang.String" value="Fecha de inicio:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="textPresup">
                           <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="2a" green="37" red="54" type="rgb"/>
+                            </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
                             <Property name="text" type="java.lang.String" value="Presupuesto:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="textMostrarPresupuesto">
                           <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="2a" green="37" red="54" type="rgb"/>
+                            </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
                             <Property name="text" type="java.lang.String" value="MontoPresupuesto"/>
                           </Properties>
@@ -1063,12 +1102,12 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="campoProyectoTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                               <Component id="radioHardware" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="radioSoftware" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
+                                          <Component id="campoProyectoTitulo" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="campoProyectoDescripcion" min="-2" max="-2" attributes="0"/>
