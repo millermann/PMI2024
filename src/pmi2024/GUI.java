@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.logging.Level;
@@ -2517,7 +2518,9 @@ public class GUI extends javax.swing.JFrame {
 
     private void handlerIrAlSubpanelPrincipalProyectos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handlerIrAlSubpanelPrincipalProyectos
         botonVolverAlMenu.setVisible(true);
-
+        DecimalFormat formateado = new DecimalFormat("#,###");
+        formateado.setMaximumFractionDigits(3);
+        
         modeloTablaProyectos.setRowCount(0);
 
         for (int i = 0; i < arrayProyectos.size(); i++) {
@@ -2529,7 +2532,7 @@ public class GUI extends javax.swing.JFrame {
                         arrayProyectos.get(i).getDescripcion(),
                         arrayProyectos.get(i).getFechaInicio(),
                         arrayProyectos.get(i).getFechaFin(),
-                        arrayProyectos.get(i).getPresupuesto(),
+                        formateado.format(arrayProyectos.get(i).getPresupuesto()),
                         arrayProyectos.get(i).getProyectoID()
                     }
             );
