@@ -2,6 +2,7 @@ package pmi2024;
 
 import fecha.Fecha;
 import ingenieros.Ingeniero;
+import java.awt.Color;
 import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,6 +14,7 @@ import java.util.Comparator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -111,6 +113,20 @@ public class GUI extends javax.swing.JFrame {
         buttonGroupModWare.add(radioModHardware);
         buttonGroupModWare.add(radioModSoftware);
 
+        tablaProyectos.setComponentPopupMenu(popUpTablaProyectos);
+
+        tablaProyectos.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                if (javax.swing.SwingUtilities.isRightMouseButton(evt)) {
+                    int filaSeleccionada = tablaProyectos.rowAtPoint(evt.getPoint());
+                    if (filaSeleccionada != -1) {
+                        tablaProyectos.setRowSelectionInterval(filaSeleccionada, filaSeleccionada);
+                    }
+                }
+            }
+        });
+
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/icon.png"))); // totalmente innecesario pero mira que lindo queda!
         setTitle("Organizador de Proyectos");
         textTitulo.setText("M E N U    P R I N C I P A L");
@@ -127,6 +143,10 @@ public class GUI extends javax.swing.JFrame {
 
         buttonGroupTipoProyecto = new javax.swing.ButtonGroup();
         buttonGroupModWare = new javax.swing.ButtonGroup();
+        popUpTablaProyectos = new javax.swing.JPopupMenu();
+        menuItemMostrar = new javax.swing.JMenuItem();
+        menuItemModificar = new javax.swing.JMenuItem();
+        menuItemEliminar = new javax.swing.JMenuItem();
         screen = new javax.swing.JPanel();
         contenedorTitulo = new javax.swing.JPanel();
         textTitulo = new javax.swing.JLabel();
@@ -266,8 +286,40 @@ public class GUI extends javax.swing.JFrame {
         botonVolverPanelPrincipalProyectos1 = new javax.swing.JButton();
         indiceArrayProyectos = new javax.swing.JLabel();
 
+        popUpTablaProyectos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+
+        menuItemMostrar.setText("Mostrar proyecto");
+        menuItemMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        menuItemMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMostrarProyectoActionPerformed(evt);
+            }
+        });
+        popUpTablaProyectos.add(menuItemMostrar);
+
+        menuItemModificar.setText("Modificar proyecto");
+        menuItemModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModificarProyectoActionPerformed(evt);
+            }
+        });
+        popUpTablaProyectos.add(menuItemModificar);
+
+        menuItemEliminar.setText("Eliminar proyecto");
+        menuItemEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarProyectoActionPerformed(evt);
+            }
+        });
+        popUpTablaProyectos.add(menuItemEliminar);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(241, 105, 73));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         screen.setBackground(new java.awt.Color(250, 194, 151));
 
@@ -408,8 +460,8 @@ public class GUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tablaProyectos.setToolTipText("Haga doble click sobre un proyecto para mostrar toda la información");
-        tablaProyectos.setSelectionBackground(new java.awt.Color(255, 125, 82));
+        tablaProyectos.setToolTipText("Haga doble click sobre un proyecto para mostrar toda la información o pulse click derecho para ver más opciones...");
+        tablaProyectos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tablaProyectos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tablaProyectosMouseClicked(evt);
@@ -419,6 +471,7 @@ public class GUI extends javax.swing.JFrame {
         if (tablaProyectos.getColumnModel().getColumnCount() > 0) {
             tablaProyectos.getColumnModel().getColumn(1).setPreferredWidth(100);
         }
+        tablaProyectos.getAccessibleContext().setAccessibleDescription("Haga doble click sobre un proyecto para mostrar toda la información o presione click derecho para más opciones...");
 
         botonVolverAlMenu.setText("Volver Al Menu");
         botonVolverAlMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -792,7 +845,7 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, subpanelMostrarProyectoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(subpanelMostrarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tabMostrarIngYRecursos)
+                    .addComponent(tabMostrarIngYRecursos, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
                     .addComponent(botonVolverPanelPrincipalProyectos2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, subpanelMostrarProyectoLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -810,9 +863,9 @@ public class GUI extends javax.swing.JFrame {
                                     .addGroup(subpanelMostrarProyectoLayout.createSequentialGroup()
                                         .addComponent(textMostrarHardSoft1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textMostrarHardSoft)))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(textMostrarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(textMostrarHardSoft))
+                                    .addComponent(textMostrarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(52, 52, 52)
                         .addComponent(panelDetalles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -1395,7 +1448,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Presupuesto:");
 
-        spinnerModProyectoPresupuesto.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
+        spinnerModProyectoPresupuesto.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1000.0f));
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Fecha de inicio:");
@@ -1988,7 +2041,7 @@ public class GUI extends javax.swing.JFrame {
             }
 
             ProyectoTecnologico proyecto = arrayProyectos.get(indice);
-            
+
             if (arrayProyectos.get(indice).getWare().equals("Hardware")) {
                 radioModHardware.setSelected(true);
 
@@ -2710,14 +2763,12 @@ public class GUI extends javax.swing.JFrame {
                 for (int i = 0; i < arrayProyectos.get(indice).obtenerCantidadIngenieros(); i++) {
                     arrayProyectos.get(indice).obtenerTodosLosIngenieros().get(i).reemplazarIdProyectosAsociados("No Asignado", id);
                 }
-                
+
                 if (arrayProyectos.get(indice).getWare().equals("Hardware")) {
                     DesarrolloDeHardware.disminuirCantidadProyectosHardware();
                 } else {
                     DesarrolloDeSoftware.disminuirCantidadProyectosSoftware();
                 }
-                
-                
 
                 arrayProyectos.remove(indice);
 
@@ -2845,6 +2896,35 @@ public class GUI extends javax.swing.JFrame {
             handlerMostrarProyecto();
         }
     }//GEN-LAST:event_botonMostrarProyectoActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        setDefaultCloseOperation(javax.swing.JFrame.DO_NOTHING_ON_CLOSE);
+
+        String[] opciones = {"Guardar y salir", "Salir sin guardar", "Cancelar"};
+        int resp = JOptionPane.showOptionDialog(
+                null,
+                "Esta seguro que desea salir del programa?.\nSolo podran ser guardados los cambios ya efectuados.",
+                "Salir del programa.",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.WARNING_MESSAGE,
+                null,
+                opciones,
+                2
+        );
+
+        if (resp == 0) {
+            try {
+                guardarProyectosEnArchivo(arrayProyectos, "datos/proyectos.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        if (resp == 1) {
+            System.exit(0);
+        }
+
+    }//GEN-LAST:event_formWindowClosing
     // permuta las filas seleccionadas de A a la tabla B (deben tener las mismas columnas)
     private void permutarFilasEntreTablas(javax.swing.JTable tablaA, DefaultTableModel modeloTablaA, DefaultTableModel modeloTablaB) {
         int[] indicesFilas = tablaA.getSelectedRows();
@@ -3137,10 +3217,14 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuItem menuItemEliminar;
+    private javax.swing.JMenuItem menuItemModificar;
+    private javax.swing.JMenuItem menuItemMostrar;
     private javax.swing.JPanel opciones;
     private javax.swing.JPanel panelDetalles;
     private javax.swing.JPanel panelMenu;
     private javax.swing.JPanel panelProyectos;
+    private javax.swing.JPopupMenu popUpTablaProyectos;
     private javax.swing.JRadioButton radioHardware;
     private javax.swing.JRadioButton radioModHardware;
     private javax.swing.JRadioButton radioModSoftware;
