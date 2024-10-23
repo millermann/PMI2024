@@ -62,7 +62,7 @@ nombre: Base de Datos MySQL
 descripcion: Sistema de gestion de bases de datos relacional, popular en aplicaciones web.
 
 nombre: Lenguaje Java
-descripcion: Lenguaje de programacion orientado a objetos, ampliamente utilizado en aplicaciones empresariales.
+descripcion: Lenguaje de programacion orientado a objetos.
 
 nombre: Sistema Operativo Windows
 descripcion: Sistema operativo propietario desarrollado por Microsoft.
@@ -75,9 +75,6 @@ descripcion: Sistema de control de versiones distribuido para rastrear cambios e
 
 nombre: API REST
 descripcion: Interfaz de programacion que permite la comunicacion entre aplicaciones a traves de HTTP.
-
-nombre: Sistema de Gestion de Bases de Datos PostgreSQL
-descripcion: Sistema de bases de datos relacional y de codigo abierto.
 
 nombre: VirtualBox
 descripcion: Software de virtualizacion que permite ejecutar sistemas operativos dentro de otros.
