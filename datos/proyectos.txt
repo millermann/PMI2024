@@ -32,3 +32,35 @@ recursos tecnologicos:
 	IDrecurso: REC13
 	IDrecurso: REC12
 //fin
+proyecto de software
+tipo: Compraventa
+ID: HPmBdXRGhk
+titulo: Mercado Libre
+descripcion: Dedicada al comercio electrónico en Iberoamérica, con sede en Montevideo, Uruguay.
+presupuesto: 4.82E8
+fecha de inicio: 2/8/1999
+fecha de entrega: 6/8/2038
+ingenieros:
+	IDingeniero: ING4
+	IDingeniero: ING2
+	IDingeniero: ING13
+recursos tecnologicos:
+	IDrecurso: REC2
+	IDrecurso: REC15
+	IDrecurso: REC20
+//fin
+proyecto de hardware
+tipo: Base de Datos
+ID: TKrBZ6KkO0
+titulo: SIU Guaraní
+descripcion: Sistema de Alumnos
+presupuesto: 145000.0
+fecha de inicio: 9/12/1982
+fecha de entrega: 10/9/2024
+ingenieros:
+	IDingeniero: ING14
+recursos tecnologicos:
+	IDrecurso: REC7
+	IDrecurso: REC12
+	IDrecurso: REC2
+//fin

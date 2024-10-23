@@ -169,4 +169,13 @@ public class Ingeniero {
             }
         }
     }
+    
+    public boolean trabajaEnElProyecto(String idProyecto){
+        for (int i = 0; i < 3; i++) {
+            if (idsProyectosAsociados[i].equals(idProyecto) == true){
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -2,9 +2,9 @@ package pmi2024;
 
 import fecha.Fecha;
 import ingenieros.Ingeniero;
-import java.awt.Color;
 import java.awt.Toolkit;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,7 +15,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
-import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -38,11 +37,8 @@ public class GUI extends javax.swing.JFrame {
 
     private TableRowSorter<TableModel> ordenadorTablaPresupuesto;
 
-    /**
+    /*
      * Creates new form OrganizadorDeProyectos
-     *
-     * @param arrayIngenieros
-     * @param arrayProyectos
      */
     public GUI() {
 
@@ -50,7 +46,7 @@ public class GUI extends javax.swing.JFrame {
 
         //    tablas    //
         // Para el mostrar y ordenar todos los proyectos (subpanelProy)
-        String[] columnasTablaProyectos = {"Nombre", "Tipo", "Descripcion", "Inicio", "Fin", "Presupuesto", "ID"};
+        String[] columnasTablaProyectos = {"Nombre", "Desarrollo", "Tipo", "Descripcion", "Inicio", "Fin", "Presupuesto", "ID"};
         modeloTablaProyectos = new DefaultTableModel(columnasTablaProyectos, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -59,8 +55,8 @@ public class GUI extends javax.swing.JFrame {
         };
         tablaProyectos.setModel(modeloTablaProyectos);
         // ocultar la columna ID
-        tablaProyectos.getColumnModel().getColumn(6).setMinWidth(0);
-        tablaProyectos.getColumnModel().getColumn(6).setMaxWidth(0);
+        tablaProyectos.getColumnModel().getColumn(7).setMinWidth(0);
+        tablaProyectos.getColumnModel().getColumn(7).setMaxWidth(0);
 
         ordenadorTablaPresupuesto = new TableRowSorter<>(modeloTablaProyectos);
         ordenadorTablaPresupuesto.setComparator(5, Comparator.naturalOrder());
@@ -97,7 +93,6 @@ public class GUI extends javax.swing.JFrame {
         tablaIngDisponiblesModProyecto.getColumnModel().getColumn(5).setMaxWidth(0);
         tablaIngAsignadosModProyecto.getColumnModel().getColumn(5).setMinWidth(0);
         tablaIngAsignadosModProyecto.getColumnModel().getColumn(5).setMaxWidth(0);
-
 
         // Para el mostrar y seleccionar recursos (subpanelProyCarga, subpanelMostrarProy, subpanelModProy)
         String[] columnasTablaRecursos = {"Nombre", "Descripcion", "ID"};
@@ -136,13 +131,12 @@ public class GUI extends javax.swing.JFrame {
         buttonGroupTipoProyecto.add(radioSoftware);
         buttonGroupModWare.add(radioModHardware);
         buttonGroupModWare.add(radioModSoftware);
-        
+
         // 2.024 -> 2024 de los spinners
         spinnerFechaInicioAnio.setEditor(new JSpinner.NumberEditor(spinnerFechaInicioAnio, "0"));
         spinnerFechaFinAnio.setEditor(new JSpinner.NumberEditor(spinnerFechaFinAnio, "0"));
         spinnerModFechaInicioAnio.setEditor(new JSpinner.NumberEditor(spinnerModFechaInicioAnio, "0"));
         spinnerModFechaFinAnio.setEditor(new JSpinner.NumberEditor(spinnerModFechaFinAnio, "0"));
-        
 
         tablaProyectos.setComponentPopupMenu(popUpTablaProyectos);
 
@@ -157,7 +151,7 @@ public class GUI extends javax.swing.JFrame {
                 }
             }
         });
-        
+
         setDefaultCloseOperation(javax.swing.JFrame.DO_NOTHING_ON_CLOSE);
         setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/icon.png")));
@@ -238,7 +232,7 @@ public class GUI extends javax.swing.JFrame {
         campoProyectoTipo = new javax.swing.JTextField();
         tabIngYRecursos = new javax.swing.JTabbedPane();
         tabIngenieros = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        textIngDispCargar = new javax.swing.JLabel();
         scrollIngDisponibles = new javax.swing.JScrollPane();
         tablaIngDisponiblesCargarProyecto = new javax.swing.JTable();
         botonAgregarIng = new javax.swing.JButton();
@@ -282,7 +276,7 @@ public class GUI extends javax.swing.JFrame {
         campoModProyectoTipo = new javax.swing.JTextField();
         tabModIngYRecursos = new javax.swing.JTabbedPane();
         tabModIngenieros = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
+        textIngDispMod = new javax.swing.JLabel();
         scrollModIngDisponibles = new javax.swing.JScrollPane();
         tablaIngDisponiblesModProyecto = new javax.swing.JTable();
         botonModAgregarIng = new javax.swing.JButton();
@@ -988,7 +982,7 @@ public class GUI extends javax.swing.JFrame {
         tabIngenieros.setBackground(new java.awt.Color(229, 221, 195));
         tabIngenieros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 157, 132)));
 
-        jLabel4.setText("Ingenieros Disponibles:");
+        textIngDispCargar.setText("Ingenieros Disponibles:");
 
         scrollIngDisponibles.setToolTipText("");
 
@@ -1095,7 +1089,7 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(tabIngenierosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textIngDispCargar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonAgregarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(scrollIngDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1110,7 +1104,7 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabIngenierosLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textIngDispCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1518,7 +1512,7 @@ public class GUI extends javax.swing.JFrame {
         tabModIngenieros.setBackground(new java.awt.Color(229, 221, 195));
         tabModIngenieros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(192, 157, 132)));
 
-        jLabel11.setText("Ingenieros Disponibles:");
+        textIngDispMod.setText("Ingenieros Disponibles:");
 
         tablaIngDisponiblesModProyecto.setBackground(new java.awt.Color(200, 200, 200));
         tablaIngDisponiblesModProyecto.setModel(new javax.swing.table.DefaultTableModel(
@@ -1623,13 +1617,13 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonModAgregarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
+                    .addComponent(textIngDispMod, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
                     .addComponent(scrollModIngDisponibles))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonModQuitarIng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollModIngAsignados, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE))
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
+                    .addComponent(scrollModIngAsignados, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         tabModIngenierosLayout.setVerticalGroup(
@@ -1637,7 +1631,7 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabModIngenierosLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textIngDispMod, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModIngenierosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1772,16 +1766,14 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabModRecursosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabModRecursosLayout.createSequentialGroup()
-                        .addGap(0, 147, Short.MAX_VALUE)
-                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(scrollModRecDisponibles)
-                    .addComponent(botonModAgregarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(botonModAgregarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrollModRecDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabModRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
                     .addComponent(botonModQuitarRecurso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollModRecAsignados, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(scrollModRecAsignados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE))
                 .addContainerGap())
         );
         tabModRecursosLayout.setVerticalGroup(
@@ -2069,6 +2061,7 @@ public class GUI extends javax.swing.JFrame {
         campoProyectoTitulo.setText("Título del Proyecto");
         campoProyectoDescripcion.setText("Descripción...");
         campoProyectoTipo.setText("Tipo de Dispositivo");
+        textIngDispCargar.setText("Ingenieros Disponibles:");
         spinnerProyectoPresupuesto.setValue(0);
         spinnerFechaInicioDia.setValue(12);
         spinnerFechaInicioMes.setValue(12);
@@ -2095,6 +2088,10 @@ public class GUI extends javax.swing.JFrame {
                             arrayIngenieros.get(i).getIdIngeniero(),}
                 );
             }
+        }
+
+        if (modeloTablaIngenierosDisp.getRowCount() == 0) {
+            textIngDispCargar.setText("Ingenieros Disponibles:   No hay más ing. disponibles (Se encuentran todos trabajando)");
         }
         for (int i = 0; i < arrayRecursos.size(); i++) {
             modeloTablaRecursosDisponibles.addRow(
@@ -2129,7 +2126,7 @@ public class GUI extends javax.swing.JFrame {
         } else {
 
             int filaSeleccionada = tablaProyectos.getSelectedRow(), indice = 0;
-            String id = (String) tablaProyectos.getValueAt(filaSeleccionada, 6);
+            String id = (String) tablaProyectos.getValueAt(filaSeleccionada, 7);
 
             for (int i = 0; i < arrayProyectos.size(); i++) {
                 if (arrayProyectos.get(i).getProyectoID().equals(id)) {
@@ -2148,6 +2145,7 @@ public class GUI extends javax.swing.JFrame {
             }
 
             indiceArrayProyectos.setText(String.valueOf(indice));
+            textIngDispMod.setText("Ingenieros Disponibles:");
             textTitulo.setText("M O D I F I C A R    P R O Y E C T O");
             campoModProyectoTitulo.setText(proyecto.getTitulo());
             campoModProyectoDescripcion.setText(proyecto.getDescripcion());
@@ -2188,6 +2186,10 @@ public class GUI extends javax.swing.JFrame {
                     }
 
                 }
+            }
+
+            if (modeloTablaIngenierosDisp.getRowCount() == 0) {
+                textIngDispMod.setText("Ingenieros Disponibles:   No hay más ing. disponibles (Se encuentran todos trabajando)");
             }
 
             // carga tabla de recursos disp && no pertenecen al proy
@@ -2313,6 +2315,8 @@ public class GUI extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
             }
+
+            System.exit(0);
         }
 
         if (resp == 1) {
@@ -2388,19 +2392,20 @@ public class GUI extends javax.swing.JFrame {
         if (campoProyectoTitulo.getText().trim().isEmpty()) {
             errores[4] = 1;
         }
-        if (campoProyectoTitulo.getText().equals("Título del Proyecto")) {
+        if (campoProyectoTitulo.getText().trim().equals("Título del Proyecto")) {
             errores[4] = 2;
         }
         if (campoProyectoDescripcion.getText().trim().isEmpty()) {
             errores[5] = 1;
         }
-        if (campoProyectoDescripcion.getText().equals("Descripción...")) {
+        if (campoProyectoDescripcion.getText().trim().equals("Descripción...")) {
             errores[5] = 2;
         }
         if (campoProyectoTipo.getText().trim().isEmpty()) {
             errores[6] = 1;
         }
-        if (campoProyectoTipo.getText().equals("Tipo de Dispositivo") || campoProyectoTipo.getText().equals("Tipo de Aplicacion")) {
+        if (campoProyectoTipo.getText().trim().equals("Tipo de Dispositivo")
+                || campoProyectoTipo.getText().trim().equals("Tipo de Aplicacion")) {
             errores[6] = 2;
         }
 
@@ -2460,19 +2465,20 @@ public class GUI extends javax.swing.JFrame {
         if (campoModProyectoTitulo.getText().trim().isEmpty()) {
             errores[4] = 1;
         }
-        if (campoModProyectoTitulo.getText().equals("Título del Proyecto")) {
+        if (campoModProyectoTitulo.getText().trim().equals("Título del Proyecto")) {
             errores[4] = 2;
         }
         if (campoModProyectoDescripcion.getText().trim().isEmpty()) {
             errores[5] = 1;
         }
-        if (campoModProyectoDescripcion.getText().equals("Descripción...")) {
+        if (campoModProyectoDescripcion.getText().trim().equals("Descripción...")) {
             errores[5] = 2;
         }
         if (campoModProyectoTipo.getText().trim().isEmpty()) {
             errores[6] = 1;
         }
-        if (campoModProyectoTipo.getText().equals("Tipo de Dispositivo") || campoModProyectoTipo.getText().equals("Tipo de Aplicacion")) {
+        if (campoModProyectoTipo.getText().trim().equals("Tipo de Dispositivo")
+                || campoModProyectoTipo.getText().trim().equals("Tipo de Aplicacion")) {
             errores[6] = 2;
         }
 
@@ -2527,44 +2533,44 @@ public class GUI extends javax.swing.JFrame {
         if (resp == 1) {
             String mensajeAyuda = "";
             if (errores[4] == 1) {
-                mensajeAyuda += "\n + No se ha ingresado ningun título.";
-                mensajeAyuda += "\n     - El campo de texto esta vacio. Se necesita ingresar un titulo para poder cargar el proyecto.                    \n";
+                mensajeAyuda += "\n + \"No se ha ingresado ningún título.\"";
+                mensajeAyuda += "\n     - El campo de texto está vacío. Se necesita ingresar un título para poder cargar el proyecto.                    \n";
             }
             if (errores[4] == 2) {
-                mensajeAyuda += "\n + El título ingresado no es válido.";
-                mensajeAyuda += "\n     - \"Título del Proyecto\" no es un titulo valido. Ingrese un título distinto.                    \n";
+                mensajeAyuda += "\n + \"El título ingresado no es válido.\"";
+                mensajeAyuda += "\n     - \"Título del Proyecto\" no es un título válido. Ingrese un título distinto.                    \n";
             }
             if (errores[5] == 1) {
-                mensajeAyuda += "\n + No se ha ingresado ninguna descripción.";
-                mensajeAyuda += "\n     - El campo de texto esta vacio. Se necesita ingresar una descripción para poder cargar el proyecto.                    \n";
+                mensajeAyuda += "\n + \"No se ha ingresado ninguna descripción.\"";
+                mensajeAyuda += "\n     - El campo de texto está vacío. Se necesita ingresar una descripción para poder cargar el proyecto.                    \n";
             }
             if (errores[5] == 2) {
-                mensajeAyuda += "\n + La descripción ingresada no es válida.";
-                mensajeAyuda += "\n     - \"Descripción...\" no es un titulo valido. Ingrese una descripción distinta.                    \n";
+                mensajeAyuda += "\n + \"La descripción ingresada no es válida.\"";
+                mensajeAyuda += "\n     - \"Descripción...\" no es un título válido. Ingrese una descripción distinta.                    \n";
             }
             if (errores[6] == 1) {
-                mensajeAyuda += "\n + No se ha ingresado ningun tipo.";
-                mensajeAyuda += "\n     - El campo de texto esta vacio. Se necesita ingresar el tipo para poder cargar el proyecto.                    \n";
+                mensajeAyuda += "\n + \"No se ha ingresado ningun tipo.\"";
+                mensajeAyuda += "\n     - El campo de texto está vacío. Se necesita ingresar el tipo para poder cargar el proyecto.                    \n";
             }
             if (errores[6] == 2) {
-                mensajeAyuda += "\n + El tipo ingresado no es válido.";
+                mensajeAyuda += "\n + \"El tipo ingresado no es válido.\"";
                 mensajeAyuda += "\n     - \"Tipo de Dispositivo\" no es un tipo válido. Ingrese un tipo distinto.                    \n";
             }
             if (errores[0] == 1) {
-                mensajeAyuda += "\n + Presupuesto no válido.";
+                mensajeAyuda += "\n + \"Presupuesto no válido.\"";
                 mensajeAyuda += "\n     - No se puede cargar un proyecto con presupuesto = 0. Ingrese un valor > 0.                    \n";
             }
             if (errores[1] == 1) {
-                mensajeAyuda += "\n + Fechas inválidas.";
+                mensajeAyuda += "\n + \"Fechas inválidas.\"";
                 mensajeAyuda += "\n     - La fecha de finalizacion no puede ser menor a la fecha de inicio. Por favor ingrese fechas validas.                    \n";
             }
             if (errores[2] == 1) {
-                mensajeAyuda += "\n + No se han seleccionado ingenieros.";
-                mensajeAyuda += "\n     - Para seleccionar ingenieros al proyecto, pulse la pestaña \"Ingenieros\", seleccione un elemento de la tabla a su izquierda y pulse el boton \"Agregar\"                    \n";
+                mensajeAyuda += "\n + \"No se han seleccionado ingenieros.\"";
+                mensajeAyuda += "\n     - Para seleccionar ingenieros al proyecto, pulse la pestaña \"Ingenieros\", seleccione un elemento de la tabla a su izquierda, luego pulse el boton \"Agregar\"                    \n";
             }
             if (errores[3] == 1) {
                 mensajeAyuda += "\n + No se han seleccionado recursos.";
-                mensajeAyuda += "\n     - Para seleccionar ingenieros al proyecto, pulse la pestaña \"Recursos\", seleccione un elemento de la tabla a su izquierda y pulse el boton \"Agregar\"                    \n";
+                mensajeAyuda += "\n     - Para seleccionar ingenieros al proyecto, pulse la pestaña \"Recursos\", seleccione un elemento de la tabla a su izquierda, luego pulse el boton \"Agregar\"                    \n";
             }
 
             JOptionPane.showMessageDialog(
@@ -2588,6 +2594,7 @@ public class GUI extends javax.swing.JFrame {
                 && errores[4] == 0
                 && errores[5] == 0
                 && errores[6] == 0) {
+
             String titulo, descripcion, tipo;
             float presupuesto;
             Fecha fechaInicio, fechaFin;
@@ -2595,9 +2602,9 @@ public class GUI extends javax.swing.JFrame {
             ArrayList<RecursoTecnologico> recursosTecnologicos = new ArrayList<>();
             ProyectoTecnologico proyecto;
 
-            titulo = campoProyectoTitulo.getText();
-            descripcion = campoProyectoDescripcion.getText();
-            tipo = campoProyectoTipo.getText();
+            titulo = campoProyectoTitulo.getText().trim();
+            descripcion = campoProyectoDescripcion.getText().trim();
+            tipo = campoProyectoTipo.getText().trim();
 
             fechaInicio = new Fecha(
                     (int) spinnerFechaInicioDia.getValue(),
@@ -2734,9 +2741,9 @@ public class GUI extends javax.swing.JFrame {
                 int dia, mes, anio;
                 float presupuesto;
 
-                titulo = campoModProyectoTitulo.getText();
-                descripcion = campoModProyectoDescripcion.getText();
-                tipo = campoModProyectoTipo.getText();
+                titulo = campoModProyectoTitulo.getText().trim();
+                descripcion = campoModProyectoDescripcion.getText().trim();
+                tipo = campoModProyectoTipo.getText().trim();
 
                 dia = (int) spinnerModFechaInicioDia.getValue();
                 mes = (int) spinnerModFechaInicioMes.getValue();
@@ -2763,6 +2770,8 @@ public class GUI extends javax.swing.JFrame {
                 } else {
                     proyectoMod = new DesarrolloDeSoftware(titulo, tipo, descripcion, presupuesto, inicio, fin);
                 }
+                String idProyViejo = arrayProyectos.get(indice).getProyectoID();
+                proyectoMod.setProyectoID(idProyViejo);
 
                 int filas = modeloTablaIngenierosSeleccionados.getRowCount();
                 ArrayList<Ingeniero> ingenierosMod = new ArrayList<>();
@@ -2780,6 +2789,35 @@ public class GUI extends javax.swing.JFrame {
 
                 }
 
+                // sacar el idProyAsociado a todos los ing deseleccionados
+                ArrayList<Ingeniero> viejosIngenierosSelecc = arrayProyectos.get(indice).obtenerTodosLosIngenieros();
+                for (int i = 0; i < viejosIngenierosSelecc.size(); i++) {
+                    boolean deseleccionado = true;
+                    Ingeniero ingViejo = viejosIngenierosSelecc.get(i);
+
+                    for (int j = 0; j < ingenierosMod.size(); j++) {
+                        String idIngNuevo = ingenierosMod.get(j).getIdIngeniero();
+
+                        if (ingViejo.getIdIngeniero().equals(idIngNuevo)) {
+                            deseleccionado = false;
+                            break;
+                        }
+                    }
+
+                    if (deseleccionado) {
+                        ingViejo.reemplazarIdProyectosAsociados("No Asignado", idProyViejo);
+                    }
+                }
+
+                // poner el idProyAsociado a los nuevos ing seleccionados 
+                String idProyMod = proyectoMod.getProyectoID();
+                for (int i = 0; i < ingenierosMod.size(); i++) {
+                    // controlar que sea nuevo en el proy, sino se duplican los ids
+                    if (ingenierosMod.get(i).trabajaEnElProyecto(idProyMod) == false) {
+                        ingenierosMod.get(i).reemplazarIdProyectosAsociados(idProyMod, "No Asignado");
+                    }
+                }
+
                 filas = modeloTablaRecursosSeleccionados.getRowCount();
                 ArrayList<RecursoTecnologico> recursosMod = new ArrayList<>();
                 for (int i = 0; i < filas; i++) {
@@ -2795,11 +2833,6 @@ public class GUI extends javax.swing.JFrame {
 
                     }
 
-                }
-
-                String id = proyectoMod.getProyectoID();
-                for (int i = 0; i < ingenierosMod.size(); i++) {
-                    ingenierosMod.get(i).reemplazarIdProyectosAsociados(id, "No Asignado");
                 }
 
                 for (Ingeniero x : ingenierosMod) {
@@ -2832,6 +2865,7 @@ public class GUI extends javax.swing.JFrame {
             modeloTablaProyectos.addRow(
                     new Object[]{
                         arrayProyectos.get(i).getTitulo(),
+                        arrayProyectos.get(i).getWare(),
                         arrayProyectos.get(i).getTipo(),
                         arrayProyectos.get(i).getDescripcion(),
                         arrayProyectos.get(i).getFechaInicio(),
@@ -2882,7 +2916,7 @@ public class GUI extends javax.swing.JFrame {
             );
             if (confirmacion == 0) {
                 int filaSeleccionada = tablaProyectos.getSelectedRow(), indice = 0;
-                String id = (String) tablaProyectos.getValueAt(filaSeleccionada, 6);
+                String id = (String) tablaProyectos.getValueAt(filaSeleccionada, 7);
 
                 for (int i = 0; i < arrayProyectos.size(); i++) {
                     if (arrayProyectos.get(i).getProyectoID().equals(id)) {
@@ -2916,7 +2950,7 @@ public class GUI extends javax.swing.JFrame {
 
         int filaSeleccionada = tablaProyectos.convertRowIndexToModel(tablaProyectos.getSelectedRow());
 
-        String idProyectoSeleccionado = (String) modeloTablaProyectos.getValueAt(filaSeleccionada, 6);
+        String idProyectoSeleccionado = (String) modeloTablaProyectos.getValueAt(filaSeleccionada, 7);
         ProyectoTecnologico ProyectoAMostrar;
 
         for (int i = 0; i < arrayProyectos.size(); i++) {
@@ -3033,7 +3067,7 @@ public class GUI extends javax.swing.JFrame {
         String[] opciones = {"Guardar y salir", "Salir sin guardar", "Cancelar"};
         int resp = JOptionPane.showOptionDialog(
                 null,
-                "Esta seguro que desea salir del programa?.\nSolo podran ser guardados los cambios ya efectuados.",
+                "Esta seguro que desea salir del programa?.\nSolo podrán ser guardados los cambios ya efectuados.\nCualquier modificación o carga que este llevando a cabo será descartada...",
                 "Salir del programa",
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.WARNING_MESSAGE,
@@ -3052,7 +3086,7 @@ public class GUI extends javax.swing.JFrame {
         }
 
         if (resp == 1) {
-            String[] opciones2 = {"Aceptar", "Cancelar"};
+            String[] opciones2 = {"Salir sin Guardar", "Cancelar"};
             resp = JOptionPane.showOptionDialog(
                     null,
                     "Esta seguro que desea salir del programa sin guardar los cambios?.\nTodos los cambios que haya realizado se perderán...",
@@ -3070,7 +3104,7 @@ public class GUI extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_formWindowClosing
-    
+
     private void permutarFilasEntreTablas(javax.swing.JTable tablaA, DefaultTableModel modeloTablaA, DefaultTableModel modeloTablaB) {
         // permuta las filas seleccionadas de A a la tabla B (deben tener las mismas columnas)
         int[] indicesFilas = tablaA.getSelectedRows();
@@ -3097,7 +3131,9 @@ public class GUI extends javax.swing.JFrame {
     public static ArrayList<ProyectoTecnologico> cargarProyectosDesdeArchivo(String nombreArchivo, ArrayList<Ingeniero> ingenierosDisponibles, ArrayList<RecursoTecnologico> recursosDisponibles) throws IOException {
         ArrayList<ProyectoTecnologico> proyectos = new ArrayList<>();
         boolean recursoTecnologico = false;
-        try (BufferedReader reader = new BufferedReader(new FileReader(nombreArchivo))) {
+        File archivoProyectos = new File(nombreArchivo);
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(archivoProyectos.getPath()))) {
             String linea;
             ProyectoTecnologico proyecto = null;
             while ((linea = reader.readLine()) != null) {
@@ -3173,7 +3209,12 @@ public class GUI extends javax.swing.JFrame {
                     proyectos.add(proyecto);
                 }
             }
+        } catch (IOException e) {
+            archivoProyectos.createNewFile();
+            JOptionPane.showMessageDialog(null, "El programa no ha sido capaz de recuperar los proyectos guardados\nError: No se ha encontrado el archivo \"proyectos.txt\"", "Error", 0);
+
         }
+
         return proyectos;
     }
 
@@ -3199,13 +3240,16 @@ public class GUI extends javax.swing.JFrame {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "No se ha podido recuperar los recursos guardados. El programa se cerrará...\nError: No se ha encontrado el archivo \"recursos.txt\"", "Error", 0);
+            System.exit(1);
         }
         return arrayRecursos;
     }
 
-    public static ArrayList<Ingeniero> cargarIngenierosDesdeArchivo(String archivo) {
+    public static ArrayList<Ingeniero> cargarIngenierosDesdeArchivo(String archivo) throws IOException {
         ArrayList<Ingeniero> ingenieros = new ArrayList<>();
+        File archivoIng = new File(archivo);
+
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
             String linea;
             while ((linea = br.readLine()) != null) {
@@ -3229,7 +3273,8 @@ public class GUI extends javax.swing.JFrame {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "No se ha podido recuperar los ingenieros guardados. El programa se cerrará...\nError: No se ha encontrado el archivo \"ingenieros.txt\"", "Error", 0);
+            System.exit(1);
         }
         return ingenieros;
     }
@@ -3343,7 +3388,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel indiceArrayProyectos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel29;
@@ -3356,7 +3400,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -3440,6 +3483,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel textCargarInicioMes;
     private javax.swing.JLabel textCargarPresupuesto;
     private javax.swing.JLabel textFinalizacion;
+    private javax.swing.JLabel textIngDispCargar;
+    private javax.swing.JLabel textIngDispMod;
     private javax.swing.JLabel textInicio;
     private javax.swing.JLabel textMostrarDescripcion;
     private javax.swing.JLabel textMostrarFechaFin;
