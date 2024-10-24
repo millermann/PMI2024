@@ -100,7 +100,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="1174" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="1083" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -115,7 +115,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="684" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="668" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -212,23 +212,23 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="opciones" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="imagenMenu" pref="746" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="opciones" max="32767" attributes="0"/>
+                              <Component id="imagenMenu" pref="1057" max="32767" attributes="0"/>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="opciones" max="32767" attributes="0"/>
-                              <Component id="imagenMenu" pref="606" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="imagenMenu" pref="460" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="opciones" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -255,8 +255,8 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="botonProyectos" alignment="1" pref="376" max="32767" attributes="0"/>
-                                  <Component id="botonSalir" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="botonSalir" max="32767" attributes="0"/>
+                                  <Component id="botonProyectos" alignment="1" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -265,9 +265,9 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="botonProyectos" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
+                              <Component id="botonProyectos" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="botonSalir" min="-2" pref="52" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -327,60 +327,43 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="textCantProyectos2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="campoBuscar" pref="175" max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="botonBuscar" linkSize="7" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="botonBuscarVolver" linkSize="7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="botonMostrarProyecto" pref="319" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonAgregarProyecto" pref="320" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonModificarProyecto" pref="320" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonEliminarProyecto" pref="320" max="32767" attributes="0"/>
+                                      <Component id="contenedorTabla" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="textCantProyectos1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="botonOrdenarPresupuesto" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="botonMostrarProyecto" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonAgregarProyecto" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonModificarProyecto" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonEliminarProyecto" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="scrollTablaProyectos" pref="1297" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="botonVolverAlMenu" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                  <Component id="textCantProyectos" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="textCantProyectosHardware" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="textCantProyectosSoftware" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel2" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="botonVolverAlMenu" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="948" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -388,122 +371,224 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="507" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="botonOrdenarPresupuesto" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="textCantProyectos1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campoBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="botonBuscarVolver" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="botonBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="textCantProyectos2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
+                              <Component id="contenedorTabla" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="botonMostrarProyecto" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="botonAgregarProyecto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="botonAgregarProyecto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonMostrarProyecto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="botonModificarProyecto" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="botonEliminarProyecto" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="27" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="121" max="32767" attributes="0"/>
-                                  <Component id="scrollTablaProyectos" min="-2" pref="378" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="textCantProyectos" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="textCantProyectosHardware" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="textCantProyectosSoftware" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                  <EmptySpace pref="567" max="32767" attributes="0"/>
                                   <Component id="botonVolverAlMenu" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel2" pref="108" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="504" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="scrollTablaProyectos">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
+                    <Container class="javax.swing.JPanel" name="contenedorTabla">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="97" green="c2" red="fa" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                            <LineBorder roundedCorners="true">
+                              <Color PropertyName="color" blue="7f" green="a7" red="db" type="rgb"/>
+                            </LineBorder>
+                          </Border>
+                        </Property>
+                      </Properties>
 
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="scrollTablaProyectos" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                          <Component id="textCantProyectos" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="textCantProyectosHardware" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="textCantProyectosSoftware" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="botonOrdenarPresupuesto" min="-2" pref="184" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="scrollTablaProyectos" pref="442" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="botonOrdenarPresupuesto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textCantProyectos" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textCantProyectosHardware" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textCantProyectosSoftware" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="tablaProyectos">
+                        <Container class="javax.swing.JScrollPane" name="scrollTablaProyectos">
+                          <AuxValues>
+                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                          </AuxValues>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JTable" name="tablaProyectos">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                                </Property>
+                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                  <Table columnCount="7" rowCount="4">
+                                    <Column editable="false" title="Nombre" type="java.lang.String"/>
+                                    <Column editable="false" title="Descripcion" type="java.lang.String"/>
+                                    <Column editable="false" title="Tipo" type="java.lang.String"/>
+                                    <Column editable="false" title="Inicio" type="java.lang.Object"/>
+                                    <Column editable="false" title="Fin" type="java.lang.Object"/>
+                                    <Column editable="false" title="Presupuesto" type="java.lang.Float"/>
+                                    <Column editable="false" title="ID" type="java.lang.Object"/>
+                                  </Table>
+                                </Property>
+                                <Property name="toolTipText" type="java.lang.String" value="Haga doble click sobre un proyecto para mostrar toda la informaci&#xf3;n o pulse click derecho para ver m&#xe1;s opciones..."/>
+                                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                                  <TableColumnModel selectionModel="0">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                  </TableColumnModel>
+                                </Property>
+                                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                  <Color id="Default Cursor"/>
+                                </Property>
+                                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                                </Property>
+                              </Properties>
+                              <AccessibilityProperties>
+                                <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="Haga doble click sobre un proyecto para mostrar toda la informaci&#xf3;n o presione click derecho para m&#xe1;s opciones..."/>
+                              </AccessibilityProperties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tablaProyectosMouseClicked"/>
+                              </Events>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Component class="javax.swing.JLabel" name="textCantProyectos">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="c8" green="c8" red="c8" type="rgb"/>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="25" green="2c" red="3e" type="rgb"/>
                             </Property>
-                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="7" rowCount="4">
-                                <Column editable="false" title="Nombre" type="java.lang.String"/>
-                                <Column editable="false" title="Descripcion" type="java.lang.String"/>
-                                <Column editable="false" title="Tipo" type="java.lang.String"/>
-                                <Column editable="false" title="Inicio" type="java.lang.Object"/>
-                                <Column editable="false" title="Fin" type="java.lang.Object"/>
-                                <Column editable="false" title="Presupuesto" type="java.lang.Float"/>
-                                <Column editable="false" title="ID" type="java.lang.Object"/>
-                              </Table>
-                            </Property>
-                            <Property name="toolTipText" type="java.lang.String" value="Haga doble click sobre un proyecto para mostrar toda la informaci&#xf3;n o pulse click derecho para ver m&#xe1;s opciones..."/>
-                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                              </TableColumnModel>
-                            </Property>
-                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
-                            </Property>
-                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                            </Property>
+                            <Property name="text" type="java.lang.String" value="Cantidad de proyectos: NA"/>
                           </Properties>
-                          <AccessibilityProperties>
-                            <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="Haga doble click sobre un proyecto para mostrar toda la informaci&#xf3;n o presione click derecho para m&#xe1;s opciones..."/>
-                          </AccessibilityProperties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="textCantProyectosHardware">
+                          <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="25" green="2c" red="3e" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="+Hardware: NA"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="textCantProyectosSoftware">
+                          <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="25" green="2c" red="3e" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="+Software: NA"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="botonOrdenarPresupuesto">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Ordenar por Presupuesto"/>
+                          </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tablaProyectosMouseClicked"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonOrdenarPresupuestoActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
                     </Container>
+                    <Component class="javax.swing.JTextField" name="campoBuscar">
+                      <Properties>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="text" type="java.lang.String" value="Titulo"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="botonBuscar">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Buscar"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonBuscarActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="botonBuscarVolver">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Volver"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonBuscarVolverActionPerformed"/>
+                      </Events>
+                    </Component>
                     <Component class="javax.swing.JButton" name="botonVolverAlMenu">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Volver Al Menu"/>
@@ -542,46 +627,6 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEliminarProyectoActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="textCantProyectos">
-                      <Properties>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="25" green="2c" red="3e" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Cantidad de proyectos: NA"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="textCantProyectosHardware">
-                      <Properties>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="25" green="2c" red="3e" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="+Hardware: NA"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="textCantProyectosSoftware">
-                      <Properties>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="25" green="2c" red="3e" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="+Software: NA"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="botonOrdenarPresupuesto">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Ordenar"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonOrdenarPresupuestoActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="textCantProyectos1">
-                      <Properties>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="25" green="2c" red="3e" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Pulse para ordenar por presupuestos:"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JButton" name="botonMostrarProyecto">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Mostrar"/>
@@ -589,14 +634,6 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonMostrarProyectoActionPerformed"/>
                       </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel2">
-                      <Properties>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/imagenes/Proyectos.png"/>
-                        </Property>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel1">
                       <Properties>
@@ -607,6 +644,14 @@
                           <Color blue="38" green="43" red="5e" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="&quot;Haga doble click sobre un proyecto para mostrar toda la informaci&#xf3;n o pulse click derecho para ver m&#xe1;s opciones...&quot;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="textCantProyectos2">
+                      <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="25" green="2c" red="3e" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Buscar:"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -629,7 +674,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="tabMostrarIngYRecursos" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="tabMostrarIngYRecursos" alignment="1" pref="0" max="32767" attributes="0"/>
                                   <Component id="botonVolverPanelPrincipalProyectos2" alignment="1" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
@@ -686,7 +731,7 @@
                                           <Component id="textMostrarTitulo3" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="textMostrarTipo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="panelDetalles" max="32767" attributes="0"/>
@@ -739,7 +784,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="scrollIngMostrarAsignados" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel29" alignment="0" pref="1283" max="32767" attributes="0"/>
+                                          <Component id="jLabel29" alignment="0" pref="1043" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -819,7 +864,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="scrollMostrarRecAsignados" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel39" alignment="0" pref="1283" max="32767" attributes="0"/>
+                                          <Component id="jLabel39" alignment="0" pref="1043" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -1225,12 +1270,12 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="textIngDispCargar" max="32767" attributes="0"/>
                                           <Component id="botonAgregarIng" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="scrollIngDisponibles" alignment="0" pref="638" max="32767" attributes="0"/>
+                                          <Component id="scrollIngDisponibles" alignment="0" pref="519" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel5" max="32767" attributes="0"/>
-                                          <Component id="scrollIngSeleccionados" pref="639" max="32767" attributes="0"/>
+                                          <Component id="scrollIngSeleccionados" pref="518" max="32767" attributes="0"/>
                                           <Component id="botonQuitarIng" alignment="1" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -1247,7 +1292,7 @@
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="scrollIngDisponibles" pref="315" max="32767" attributes="0"/>
+                                          <Component id="scrollIngDisponibles" pref="297" max="32767" attributes="0"/>
                                           <Component id="scrollIngSeleccionados" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -1379,13 +1424,13 @@
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="scrollRecDisponibles" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="botonAgregarRecurso" alignment="0" pref="638" max="32767" attributes="0"/>
+                                          <Component id="botonAgregarRecurso" alignment="0" pref="519" max="32767" attributes="0"/>
                                           <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="scrollRecSeleccionados" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="botonQuitarRecurso" alignment="1" pref="639" max="32767" attributes="0"/>
+                                          <Component id="botonQuitarRecurso" alignment="1" pref="518" max="32767" attributes="0"/>
                                           <Component id="jLabel7" alignment="1" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -1402,7 +1447,7 @@
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="scrollRecDisponibles" alignment="0" pref="315" max="32767" attributes="0"/>
+                                          <Component id="scrollRecDisponibles" alignment="0" pref="297" max="32767" attributes="0"/>
                                           <Component id="scrollRecSeleccionados" alignment="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -1933,13 +1978,13 @@
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="botonModAgregarIng" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="textIngDispMod" alignment="0" pref="638" max="32767" attributes="0"/>
+                                          <Component id="textIngDispMod" alignment="0" pref="519" max="32767" attributes="0"/>
                                           <Component id="scrollModIngDisponibles" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="botonModQuitarIng" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel12" alignment="0" pref="639" max="32767" attributes="0"/>
+                                          <Component id="jLabel12" alignment="0" pref="518" max="32767" attributes="0"/>
                                           <Component id="scrollModIngAsignados" alignment="1" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -1956,7 +2001,7 @@
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="scrollModIngDisponibles" alignment="0" pref="315" max="32767" attributes="0"/>
+                                          <Component id="scrollModIngDisponibles" alignment="0" pref="297" max="32767" attributes="0"/>
                                           <Component id="scrollModIngAsignados" alignment="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -2084,13 +2129,13 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="botonModAgregarRecurso" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel37" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="scrollModRecDisponibles" alignment="0" pref="641" max="32767" attributes="0"/>
+                                          <Component id="scrollModRecDisponibles" alignment="0" pref="522" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel38" pref="636" max="32767" attributes="0"/>
+                                          <Component id="jLabel38" pref="515" max="32767" attributes="0"/>
                                           <Component id="botonModQuitarRecurso" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="scrollModRecAsignados" alignment="1" pref="636" max="32767" attributes="0"/>
+                                          <Component id="scrollModRecAsignados" alignment="1" pref="515" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -2106,7 +2151,7 @@
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="scrollModRecDisponibles" alignment="0" pref="315" max="32767" attributes="0"/>
+                                          <Component id="scrollModRecDisponibles" alignment="0" pref="297" max="32767" attributes="0"/>
                                           <Component id="scrollModRecAsignados" alignment="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
